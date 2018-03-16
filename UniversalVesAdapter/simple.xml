@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smooks-resource-list
+	 xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+	 xmlns:json="http://www.milyn.org/xsd/smooks/json-1.1.xsd"
+	 xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.2.xsd">
+    <json:reader rootName="simple"  keyWhitspaceReplacement="-">
+	</json:reader>
+    <jb:bean class="com.example.demo.Simple" beanId="simple" createOnElement="simple">
+    	<jb:value property="orderId" data="#/orderId" />
+    	<jb:value property="username" data="#/username" />
+    	<jb:wiring property="customer" beanIdRef="customer"/>
+    	<jb:wiring property="orderItems" beanIdRef="orderItems"/>    	
+    </jb:bean>
+    
+    <jb:bean class="com.example.demo.Customer" beanId="customer" createOnElement="customer-details">
+    	<jb:value property="userName" data="#/username" />
+    	<jb:value property="firstName" data="#/firstname" />
+    	<jb:value property="lastName" data="#/lastname"/>
+    	<jb:value property="state" data="#/state"/>
+    </jb:bean>    
+    
+	<jb:bean class="java.util.ArrayList" beanId="orderItems" createOnElement="simple">
+    	<jb:wiring beanIdRef="orderItem"/>
+    </jb:bean>    
+    
+    <jb:bean class="com.example.demo.OrderItem" beanId="orderItem" createOnElement="order-item/element">
+    	<jb:value property="quantity" data="#/quantity" decoder="Integer"/>
+        <jb:value property="productId" data="#/product-id" />
+        <jb:value property="price" data="#/price" decoder="BigDecimal" />
+        <jb:value property="title" data="#/title" />
+    </jb:bean>    
+    
+</smooks-resource-list>
