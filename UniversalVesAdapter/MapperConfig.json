@@ -1,0 +1,16 @@
+{
+	"entries" : [
+		{
+			"priority" : 1,
+			"evaluation" : {
+					"operand" : "EQUALS",
+					"field" : "notify OID",
+					"value" : ".1.3.6.1.4.1.74.2.46.12.1.1",
+					"datatype" : "string",
+					"lhs" : null,
+					"rhs" : null	
+				},
+			"result" : "snmp"
+		}		
+	]
+}
