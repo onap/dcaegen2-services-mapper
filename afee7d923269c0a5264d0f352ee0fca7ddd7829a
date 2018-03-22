@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_48763cda",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 51
+      },
+      "writtenOn": "2018-03-22T18:35:34Z",
+      "side": 1,
+      "message": "Please add module inclusions here:\n\u003cmodules\u003e\n  \u003cmodule\u003esnmpmapper\u003c/module\u003e\n  \u003cmodule\u003eUniversalVesAdapter\u003c/module\u003e\n\u003c/modules\u003e",
+      "revId": "afee7d923269c0a5264d0f352ee0fca7ddd7829a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
