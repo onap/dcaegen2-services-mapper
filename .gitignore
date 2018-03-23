@@ -1,0 +1,4 @@
+# Package Files #
+*.jar
+.mvn/*
+.settings/*
