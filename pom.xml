@@ -312,7 +312,7 @@
                 </plugin>
 
                 <!-- SUREFIRE TEST PLUGIN -->
-                <plugin>
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${surefire.plugin.version}</version>
@@ -341,7 +341,7 @@
                         <excludes>
                             <exclude>${integration.test.pattern}</exclude>
                         </excludes>
-                        <!-- Sets the VM argument line used when unit tests are run. -->
+                        Sets the VM argument line used when unit tests are run.
                         <argLine>${surefireArgLine}</argLine>
                     </configuration>
                     <dependencies>
@@ -352,9 +352,9 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-
+ -->
                 <!-- FAIL SAFE PLUGIN FOR INTEGRATION TEST -->
-                <plugin>
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${failsafe.plugin.version}</version>
@@ -367,16 +367,16 @@
                             </goals>
                             <configuration>
                                 <skipTests>${skip.integration.tests}</skipTests>
-                                <!-- Sets the VM argument line used when integration tests are run. -->
-                                <!--suppress MavenModelInspection -->
+                                Sets the VM argument line used when integration tests are run.
+                                suppress MavenModelInspection
                                 <argLine>${failsafeArgLine}</argLine>
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin> -->
 
                 <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
-                <plugin>
+                <!-- <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>${findbugs.plugin.version}</version>
@@ -384,7 +384,7 @@
                         <effort>Max</effort>
                         <threshold>Low</threshold>
                         <xmlOutput>true</xmlOutput>
-                        <!-- BUILD FAIL ON FINDBUGS ERRORS -->
+                        BUILD FAIL ON FINDBUGS ERRORS
                         <failOnError>${findbugs.failOnError}</failOnError>
                         <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
                         <outputDirectory>${project.reporting.outputDirectory}/findbugs</outputDirectory>
@@ -400,7 +400,7 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin> -->
 
                 <!-- PMD PLUGIN SETUP -->
                <!--  <plugin>
@@ -486,7 +486,7 @@
 
 
                 <!-- GIT COMMIT ID PLUGIN -->
-                <plugin>
+                <!-- <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
                     <version>${gitcommitid.plugin.version}</version>
@@ -506,7 +506,7 @@
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin> -->
 
 
                 <!-- JAR PLUGIN -->
@@ -532,13 +532,13 @@
                     <version>${maven.site.plugin}</version>
                 </plugin>
 
-                <plugin>
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jxr-plugin</artifactId>
                     <version>${jxr.plugin.version}</version>
                 </plugin>
-
-                <plugin>
+ -->
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>${project.info.reports.plugin.version}</version>
@@ -546,13 +546,13 @@
                         <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
                         <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                     </configuration>
-                </plugin>
+                </plugin> -->
 
-                <plugin>
+                <!-- <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-report-plugin</artifactId>
                     <version>${surefire.report.plugin.version}</version>
-                </plugin>
+                </plugin> -->
 
             </plugins>
 
@@ -570,15 +570,15 @@
                 <artifactId>maven-jar-plugin</artifactId>
             </plugin>
 
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
             </plugin>
-
-            <plugin>
+ -->
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -606,20 +606,20 @@
                 <inherited>false</inherited>
             </plugin> -->
 
-            <plugin>
+            <!-- <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
-            </plugin>
+            </plugin> -->
 
         </plugins>
     </build>
 
     <reporting>
         <plugins>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-            </plugin>
+            </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -628,22 +628,22 @@
                     <suppressionsLocation>${checkstyle.suppression.file.name}</suppressionsLocation>
                 </configuration>
             </plugin>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
+            </plugin> -->
            <!--  <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
             </plugin> -->
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin>
-            <plugin>
+            </plugin> -->
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
+            </plugin> -->
         </plugins>
     </reporting>
 
@@ -669,7 +669,7 @@
 
     <modules>
         <module>UniversalVesAdapter</module>
-       <!--  <module></module> -->
+        <module>snmpmapper</module>
     </modules>
 
 </project>
