@@ -25,7 +25,7 @@ package org.onap.universalvesadapter.exception;
  * @author kmalbari
  *
  */
-public class ConfigFileReadException extends Exception {
+public class ConfigFileReadException extends VesException {
 
 	/**
 	 * 
@@ -35,4 +35,10 @@ public class ConfigFileReadException extends Exception {
 	public ConfigFileReadException(String exceptionMessage) {
 		super(exceptionMessage);
 	}
+	
+	public ConfigFileReadException(String exceptionMessage, Exception exception) {
+		super(exceptionMessage, exception);
+	}	
+	
+	
 }

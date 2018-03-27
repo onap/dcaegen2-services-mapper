@@ -17,27 +17,32 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-package org.onap.universalvesadapter.exception;
+package org.onap.dcaegen2.ves.domain;
 
-/**
- * Exception thrown during mapping config operations 
- * 
- * @author kmalbari
- *
- */
-public class MapperConfigException extends VesException {
+import static org.junit.Assert.*;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7876042513908918292L;
+import java.util.HashMap;
+import java.util.Map;
 
-	public MapperConfigException(String string) {
-		super(string);
-	}
-	
-	public MapperConfigException(String string, Exception exception) {
-		super(string, exception);
-	}
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class InternalHeaderFieldsTest {
+
+    @Autowired
+    InternalHeaderFields internalHeaderFields = new InternalHeaderFields();
+    Object value = new Object();
+    Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @Test
+    public void test() {
+        internalHeaderFields.setAdditionalProperty("name", value);
+        additionalProperties.put("name", value);
+        
+        assertEquals (internalHeaderFields.getAdditionalProperties(),additionalProperties);
+        assert (internalHeaderFields.toString() != null);
+        assert (internalHeaderFields.hashCode() != 0);
+        
+        
+    }
 
 }

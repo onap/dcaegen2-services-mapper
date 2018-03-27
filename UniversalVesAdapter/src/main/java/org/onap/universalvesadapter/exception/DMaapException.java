@@ -25,7 +25,7 @@ package org.onap.universalvesadapter.exception;
  * @author kmalbari
  *
  */
-public class DMaapException extends Exception {
+public class DMaapException extends VesException {
 
 	/**
 	 * 
@@ -36,6 +36,9 @@ public class DMaapException extends Exception {
 		super(string);
 	}
 
+	public DMaapException(String string, Exception exception) {
+		super(string, exception);
+	}
 	
 	
 }

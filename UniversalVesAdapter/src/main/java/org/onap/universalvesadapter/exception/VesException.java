@@ -37,4 +37,8 @@ public class VesException extends Exception {
 	public VesException(String string) {
 		super(string);
 	}
+	
+	public VesException(String string, Exception exception) {
+		super(string, exception);
+	}	
 }

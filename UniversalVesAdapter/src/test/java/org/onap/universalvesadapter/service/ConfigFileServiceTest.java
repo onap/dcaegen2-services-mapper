@@ -17,27 +17,18 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-package org.onap.universalvesadapter.exception;
+/*package org.onap.universalvesadapter.service;
 
-/**
- * Exception thrown during mapping config operations 
- * 
- * @author kmalbari
- *
- */
-public class MapperConfigException extends VesException {
+import static org.junit.Assert.*;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7876042513908918292L;
+import org.junit.Test;
 
-	public MapperConfigException(String string) {
-		super(string);
-	}
-	
-	public MapperConfigException(String string, Exception exception) {
-		super(string, exception);
-	}
+public class ConfigFileServiceTest {
+
+    @Test
+    public void test() {
+        fail("Not yet implemented");
+    }
 
 }
+*/

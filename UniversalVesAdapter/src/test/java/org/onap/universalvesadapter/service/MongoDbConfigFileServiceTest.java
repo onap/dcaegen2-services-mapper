@@ -17,36 +17,43 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-package org.onap.universalvesadapter.service;
+/*package org.onap.universalvesadapter.service;
 
-import org.onap.universalvesadapter.domain.ConfigFileData;
-import org.springframework.stereotype.Component;
+import static org.junit.Assert.*;
 
-/**
- * Service to use mongo db as config file repository
- * 
- * @author kmalbari
- *
- */
-@Component
-public class MongoDbConfigFileService implements ConfigFileService {
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.onap.universalvesadapter.Application;
+import org.onap.universalvesadapter.service.MongoDbConfigFileService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-	/* (non-Javadoc)
-	 * @see org.onap.universalvesadapter.service.ConfigFileService#readConfigFile(java.lang.String)
-	 */
-	public String readConfigFile(String configFileName){
-		//HERE CONFIG FILE DATA WOULD COME FROM MONGO DB
-		ConfigFileData configFileData = new ConfigFileData();
-		configFileData.setXmlFileName(configFileName);
-		configFileData.setXmlContent("<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes=Application.class)
+public class MongoDbConfigFileServiceTest {
+
+
+    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());    
+    
+    
+    @Autowired
+    private MongoDbConfigFileService mongoDbConfigFileService;
+    
+    @Test
+    public void testReadConfigFile() {
+        String configContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
                 + "<smooks-resource-list   xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\"   "
                 + "xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\"    "
                 + " xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.2.xsd\">     "
                 + "     <json:reader rootName=\"simple\"  keyWhitspaceReplacement=\"-\">    "
                 + "     </json:reader>     "
-                + "</smooks-resource-list>");
-		return configFileData.getXmlContent();
-	}
-	
-	
+                + "</smooks-resource-list>";
+        
+        assertEquals(configContent, mongoDbConfigFileService.readConfigFile("sample.xml"));
+    }
+
 }
+*/

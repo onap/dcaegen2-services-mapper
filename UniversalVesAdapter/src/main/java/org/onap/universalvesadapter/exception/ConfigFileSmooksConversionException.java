@@ -26,7 +26,7 @@ package org.onap.universalvesadapter.exception;
  * @author kmalbari
  *
  */
-public class ConfigFileSmooksConversionException extends Exception {
+public class ConfigFileSmooksConversionException extends VesException {
 
 	/**
 	 * 
@@ -35,6 +35,10 @@ public class ConfigFileSmooksConversionException extends Exception {
 	
 	public ConfigFileSmooksConversionException(String string) {
 		super(string);
+	}
+	
+	public ConfigFileSmooksConversionException(String string, Exception exception) {
+		super(string, exception);
 	}
 
 }
