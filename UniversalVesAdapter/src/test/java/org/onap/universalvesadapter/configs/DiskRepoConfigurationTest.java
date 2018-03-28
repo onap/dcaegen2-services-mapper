@@ -17,42 +17,35 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-package org.onap.universalvesadapter.service;
+package org.onap.universalvesadapter.configs;
 
 import static org.junit.Assert.*;
 
+import org.onap.universalvesadapter.Application;
+import org.onap.universalvesadapter.configs.DiskRepoConfiguration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.onap.universalvesadapter.Application;
-import org.onap.universalvesadapter.service.MongoDbConfigFileService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=Application.class)
-public class MongoDbConfigFileServiceTest {
-
-
-    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());    
-    
-    
-    @Autowired
-    private MongoDbConfigFileService mongoDbConfigFileService;
-    
-    @Test
-    public void testReadConfigFile() {
-        String configContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
-                + "<smooks-resource-list   xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\"   "
-                + "xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\"    "
-                + " xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.2.xsd\">     "
-                + "     <json:reader rootName=\"simple\"  keyWhitspaceReplacement=\"-\">    "
-                + "     </json:reader>     "
-                + "</smooks-resource-list>";
-        
-        assertEquals(configContent, mongoDbConfigFileService.readConfigFile("sample.xml"));
-    }
+public class DiskRepoConfigurationTest {
+	
+	@InjectMocks
+	@Autowired
+	DiskRepoConfiguration diskRepoConfiguration = new DiskRepoConfiguration();
+	
+	@Test
+	public void test() {
+		
+		
+		String actualdata = diskRepoConfiguration.getFileRepositoryUrl();
+		
+		assertEquals("http://localhost:8888/fileAsString/", actualdata);
+	}
 
 }

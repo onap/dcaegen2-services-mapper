@@ -17,15 +17,21 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-/*package org.onap.universalvesadapter.service;
+package org.onap.universalvesadapter.service;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
+import org.onap.dcaegen2.ves.domain.AdditionalField;
 import org.onap.universalvesadapter.Application;
 import org.onap.universalvesadapter.exception.MapperConfigException;
 import org.onap.universalvesadapter.service.AdapterService;
@@ -42,16 +48,25 @@ import org.springframework.util.FileCopyUtils;
 @SpringBootTest(classes=Application.class)
 public class AdapterServiceTest {
 
-    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());
+//    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());
     
-    @Autowired
+	@Before
+    public void setup() {
+           MockitoAnnotations.initMocks(this);
+    }
+
+	@Autowired
+    @InjectMocks
     private AdapterService adapterService;
+	
+	
+	//AdapterService adapterService = new AdapterService();
     
     @Value("${mapperConfig.file}")
     private String mapperConfigFile;    
     
-    @Test
-    public void identifyEventTypeFromIncomingJson() {
+   /* @Test
+    public void identifyEventTypeFromIncomingJson() throws MapperConfigException, FileNotFoundException, IOException {
         
         String inputJsonString = "{ "
                 + "\"protocol version\":\"v2c\", "
@@ -77,15 +92,42 @@ public class AdapterServiceTest {
                 + "}";
         
         String domain = "";
-        try {
+       
             String mappingConfigFileData = FileCopyUtils.copyToString(new FileReader(mapperConfigFile));
             MapperConfigUtils.readMapperConfigFile(mappingConfigFileData);
             domain = adapterService.identifyEventTypeFromIncomingJson(inputJsonString);
-        } catch (MapperConfigException | IOException exception) {
-            eLOGGER.error("Error occurred : ", exception );
-        }
+        adapterService.identifyEventTypeFromIncomingJson(inputJsonString);
+        
         
         assertEquals("snmp", domain);
-    }
-
-}*/
+    }*/
+	 @Test
+	 public void testidentifyEventTypeFromIncomingJson() throws MapperConfigException{
+		 String inputJsonString = "{ "
+               + "\"protocol version\":\"v2c\", "
+               + "\"notify OID\":\".1.3.6.1.4.1.74.2.46.12.1.1AAA\", "
+               + "\"cambria.partition\":\"dcae-snmp.client.research.att.com\", "
+               + "\"trap category\":\"UCSNMP-HEARTBEAT\", "
+               + "\"epoch_serno\": 15161177410000, "
+               + "\"community\":\"public\", "
+               + "\"time received\": 1516117741, "
+               + "\"agent name\":\"localhost\", "
+               + "\"agent address\":\"127.0.0.1\", "
+               + "\"community len\": 6, "
+               + "\"notify OID len\": 12, "
+               + "\"varbinds\": [{ "
+               + "    \"varbind_type\":\"octet\", "
+               + "    \"varbind_oid\":\".1.3.6.1.4.1.74.2.46.12.1.1.1\", "
+               + "    \"varbind_value\":\"ucsnmp heartbeat - ignore\" "
+               + " }, { "
+               + "    \"varbind_type\":\"octet\", "
+               + "    \"varbind_oid\":\".1.3.6.1.4.1.74.2.46.12.1.1.2\", "
+               + "    \"varbind_value\":\"Tue Jan 16 10:49:01 EST 2018\" "
+               + " }] "
+               + "}";
+//		 when(MapperConfigUtils.checkIncomingJsonForMatchingDomain(inputJsonString)).thenReturn("snmp");
+		 String actualDomain=adapterService.identifyEventTypeFromIncomingJson(inputJsonString);
+		 assertEquals("default", actualDomain);
+	 }
+    
+}

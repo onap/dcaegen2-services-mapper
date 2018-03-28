@@ -17,16 +17,17 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-/*package org.onap.universalvesadapter.service;
+package org.onap.universalvesadapter.service;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
-
 import java.net.URI;
-
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.onap.universalvesadapter.Application;
 import org.onap.universalvesadapter.exception.ConfigFileReadException;
 import org.onap.universalvesadapter.service.DiskRepoConfigFileService;
@@ -34,7 +35,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -44,24 +44,37 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootTest(classes = Application.class)
 public class DiskRepoConfigFileServiceTest {
 
+    @Mock
+    RestTemplate restTemplate;
+    
+    @InjectMocks
     @Autowired
     DiskRepoConfigFileService diskRepoConfigFileService;
     
     private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());
+
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }   
+    
     
     @Test
     public void testReadConfigFile() {
         
         String result = "test file";
+
+        ResponseEntity<String> fileDataEntity = new ResponseEntity<String>(result, HttpStatus.OK);
         
+        Mockito.when(restTemplate.getForEntity(Mockito.any(URI.class), Mockito.any(Class.class))).thenReturn(fileDataEntity);
         
         try {
             String readConfigFile = diskRepoConfigFileService.readConfigFile("testCase.xml");
             assertEquals(result, readConfigFile);
         } catch (ConfigFileReadException exception) {
-            eLOGGER.error("Error occurred : ", exception );
+            eLOGGER.error("Error occurred : ", exception);
         }
         
     }
 
-}*/
+}
