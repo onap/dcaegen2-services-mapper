@@ -237,7 +237,7 @@ public class MapperConfigUtils {
         }
         if (null != evaluation.getOperand()) {
 
-            if (EnumUtils.isValidEnum(JoinOperator.class, evaluation.getOperand())) {
+            if (MapperConfigUtils.isValidEnum(JoinOperator.class, evaluation.getOperand())) {
                 // if(JOIN_OPERATOR.contains(evaluation.getOperand())){
                 switch (JoinOperator.valueOf(evaluation.getOperand())) {
                     case AND:
@@ -251,7 +251,7 @@ public class MapperConfigUtils {
                 }
             }
 
-            if (EnumUtils.isValidEnum(ExpressionOperator.class, evaluation.getOperand())) {
+            if (MapperConfigUtils.isValidEnum(ExpressionOperator.class, evaluation.getOperand())) {
                 // if(EXPR_OPERATOR.contains(evaluation.getOperand())){
 
                 // currently it is assumed field being compared is first level
@@ -261,7 +261,7 @@ public class MapperConfigUtils {
                 if (null != field && null != evaluation.getDatatype() && actualObj.has(field)) {
                     switch (ExpressionOperator.valueOf(evaluation.getOperand())) {
                         case EQUALS:
-                            if (EnumUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
+                            if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
@@ -276,7 +276,7 @@ public class MapperConfigUtils {
                             } else
                                 return false;
                         case STARTSWITH:
-                            if (EnumUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
+                            if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
@@ -287,7 +287,7 @@ public class MapperConfigUtils {
                             } else
                                 return false;
                         case ENDSWITH:
-                            if (EnumUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
+                            if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
@@ -298,7 +298,7 @@ public class MapperConfigUtils {
                             } else
                                 return false;
                         case CONTAINS:
-                            if (EnumUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
+                            if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
@@ -318,5 +318,29 @@ public class MapperConfigUtils {
 
         return false;
     }
+    /**
+     * <p>Checks if the specified name is a valid enum for the class.</p>
+     *
+     * <p>This method differs from {@link Enum#valueOf} in that checks if the name is
+     * a valid enum without needing to catch the exception.</p>
+     *
+     * @param <E> the type of the enumeration
+     * @param enumClass  the class of the enum to query, not null
+     * @param enumName   the enum name, null returns false
+     * @return true if the enum name is valid, otherwise false
+     */
+
+    public static <E extends Enum<E>> boolean isValidEnum(final Class<E> enumClass, final String enumName) {
+        if (enumName == null) {
+            return false;
+        }
+        try {
+            Enum.valueOf(enumClass, enumName);
+            return true;
+        } catch (final IllegalArgumentException ex) {
+            return false;
+        }
+    }
+
 
 }

@@ -17,7 +17,7 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-/*package org.onap.universalvesadapter.controller;
+package org.onap.universalvesadapter.controller;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -63,4 +63,3 @@ public class VesControllerTest {
 
 
 }
-*/

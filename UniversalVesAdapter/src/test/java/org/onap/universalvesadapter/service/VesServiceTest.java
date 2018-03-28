@@ -17,7 +17,7 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-/*package org.onap.universalvesadapter.service;
+package org.onap.universalvesadapter.service;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.doNothing;
@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -47,7 +48,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.att.nsa.mr.client.MRConsumer;
-
+@Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class VesServiceTest {
@@ -140,4 +141,3 @@ public class VesServiceTest {
     }
 
 }
-*/

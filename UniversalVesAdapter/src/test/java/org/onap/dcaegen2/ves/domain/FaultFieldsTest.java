@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.antlr.grammar.v3.ANTLRParser.action_return;
-import org.apache.bcel.generic.NEW;
+//import org.apache.bcel.generic.NEW;
 import org.junit.Test;
 
 public class FaultFieldsTest {

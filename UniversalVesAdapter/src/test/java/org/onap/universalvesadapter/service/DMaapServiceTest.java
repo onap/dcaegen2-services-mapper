@@ -17,7 +17,7 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
-/*package org.onap.universalvesadapter.service;
+package org.onap.universalvesadapter.service;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.doNothing;
@@ -140,4 +140,3 @@ public class DMaapServiceTest {
 
 }
 
-*/
