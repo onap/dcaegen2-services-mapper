@@ -67,7 +67,7 @@ public class FileUploadControllerTest {
     
     
     @Test
-    public void test() throws Exception {
+    public void listUploadedFilesTest() throws Exception {
         
         Model map = new ExtendedModelMap();
         
@@ -79,7 +79,7 @@ public class FileUploadControllerTest {
         try {
             Mockito.when(storageService.loadAll()).thenReturn(list.stream());
         } catch (Exception e) {
-//            eLOGGER.error("Error occurred : " + e.getMessage());
+
         }
        
         try {
@@ -87,7 +87,7 @@ public class FileUploadControllerTest {
             
             assertEquals("uploadForm", listUploadedFiles);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
       

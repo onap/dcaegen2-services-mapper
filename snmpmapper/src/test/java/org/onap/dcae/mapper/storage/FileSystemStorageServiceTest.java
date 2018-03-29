@@ -21,8 +21,16 @@ package org.onap.dcae.mapper.storage;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
-
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,59 +43,102 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.core.io.Resource;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.multipart.MultipartFile;
 
 
+
 @RunWith(SpringRunner.class)
-@WebMvcTest(value = FileUploadController.class, secure = false)
+@SpringBootTest(classes=SnmpmapperApplication.class)
 public class FileSystemStorageServiceTest {
     
     
   
     StorageProperties sp = new StorageProperties();
-     
-    //FileSystemStorageService service = new FileSystemStorageService(sp);
+     @Autowired
+    FileSystemStorageService fileSystemStorageService ;
 
     
-//    
-//    @Before
-//    public void init() {
-//        MockitoAnnotations.initMocks(this);
-//    }
-//    
     
     @Value("${fileService.rootPath}")
     private String location;
+   
     
     
-    @Autowired
-    private MockMvc mockMvc;
+    byte[] content = null;
     
-    @Mock
-    MultipartFile file;
+   
     
-    @MockBean
-    private FileSystemStorageService fileSystemStorageService;
+    
+   
     String filename;
     
     
     @Test
-    public void testFileSystemStorageService() {
+    public void testFileSystemStorageServiceLoadMethod() throws IOException {
+    	fileSystemStorageService.init();
+    	saveFile();
         
-        fileSystemStorageService.init();
-        fileSystemStorageService.load(filename);
-        
+        Path filePath = fileSystemStorageService.load("TestFile.txt");
+      
+        assertEquals(Paths.get(location), filePath.getParent());
+       
        
     }
     
+   
+    
     @Test
-    public void test() {
-         Path rootLocation = null;;
-        sp.setLocation(location);
-        FileSystemStorageService fss=new FileSystemStorageService(sp);
+    public void storeTest() throws IOException
+    {
+    	fileSystemStorageService.init();
+    	saveFile();
+        
+        assertEquals(true, Files.exists(Paths.get(location, "TestFile.txt")));
+        
+    	
+    	
+    	
+    	
+    }
 
-}
+	private void saveFile() throws IOException {
+		Files.deleteIfExists(Paths.get(location, "TestFile.txt"));
+    	content = "randomString".getBytes();
+    	MultipartFile file=new MockMultipartFile("TestFile.txt","TestFile.txt", "text/plain", content);
+    	
+    	
+        fileSystemStorageService.store(file);
+	}
+	@Test
+    public void testFileSystemStorageServiceLoadAllMethod() throws IOException {
+    	fileSystemStorageService.init();
+    	saveFile();
+        
+        Stream<Path> filePath = fileSystemStorageService.loadAll();
+      List<Path> listOfPaths =filePath.collect(Collectors.toList()); 
+        
+       assertEquals(true, listOfPaths.contains(Paths.get("TestFile.txt")));
+       
+       
+    }
+	
+	 @Test
+	    public void testFileSystemStorageServiceLoadResourceMethod() throws IOException {
+	    	fileSystemStorageService.init();
+	    	saveFile();
+	        
+	      
+	        
+	        Resource fileResource = fileSystemStorageService.loadAsResource("TestFile.txt");
+
+	      
+	        assertEquals(Paths.get(location,"TestFile.txt").getFileName().toString(), fileResource.getFilename());
+	       
+	       
+	    }
     
 }
