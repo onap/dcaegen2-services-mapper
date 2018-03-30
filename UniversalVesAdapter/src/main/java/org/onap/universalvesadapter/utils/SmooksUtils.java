@@ -70,6 +70,7 @@ public class SmooksUtils {
         Locale.setDefault(defaultLocale);
         VesEvent vesEvent = (VesEvent) executionContext.getBeanContext().getBean("vesEvent");
         LOGGER.debug("Converted vesEvent from incoming json"); 
+        
 		return vesEvent;
 	}
 
