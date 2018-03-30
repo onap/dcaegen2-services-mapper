@@ -65,7 +65,7 @@ public class AdapterServiceTest {
     @Value("${mapperConfig.file}")
     private String mapperConfigFile;    
     
-   /* @Test
+    @Test
     public void identifyEventTypeFromIncomingJson() throws MapperConfigException, FileNotFoundException, IOException {
         
         String inputJsonString = "{ "
@@ -93,15 +93,29 @@ public class AdapterServiceTest {
         
         String domain = "";
        
-            String mappingConfigFileData = FileCopyUtils.copyToString(new FileReader(mapperConfigFile));
-            MapperConfigUtils.readMapperConfigFile(mappingConfigFileData);
+        String mappingFileContent = "{" + "  \"entries\" : [" 
+                + "      {" 
+                + "          \"priority\" : 1,"
+                + "          \"evaluation\" : {" 
+                + "                  \"operand\" : \"STARTSWITH\","
+                + "                  \"field\" : \"notify OID\"," 
+                + "                  \"value\" : \".1.3.6.1.4.1.74\","
+                + "                  \"datatype\" : \"STRING\"," 
+                + "                  \"lhs\" : null,"
+                + "                  \"rhs\" : null  " 
+                + "              }," 
+                + "          \"result\" : \"snmp\""
+                + "      }       " 
+                + "  ]" 
+                + "}"; 
+            MapperConfigUtils.readMapperConfigFile(mappingFileContent);
             domain = adapterService.identifyEventTypeFromIncomingJson(inputJsonString);
         adapterService.identifyEventTypeFromIncomingJson(inputJsonString);
         
         
         assertEquals("snmp", domain);
-    }*/
-	 @Test
+    }
+	 /*@Test
 	 public void testidentifyEventTypeFromIncomingJson() throws MapperConfigException{
 		 String inputJsonString = "{ "
                + "\"protocol version\":\"v2c\", "
@@ -128,6 +142,6 @@ public class AdapterServiceTest {
 //		 when(MapperConfigUtils.checkIncomingJsonForMatchingDomain(inputJsonString)).thenReturn("snmp");
 		 String actualDomain=adapterService.identifyEventTypeFromIncomingJson(inputJsonString);
 		 assertEquals("default", actualDomain);
-	 }
+	 }*/
     
 }
