@@ -28,39 +28,51 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "name",
-    "value"
+    "vendorName",
+    "vfModuleName",
+    "vnfName"
 })
-public class AdditionalField {
+public class VendorVnfNameFields {
 
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("value")
-    private String value;
+    @JsonProperty("vendorName")
+    private String vendorName;
+    @JsonProperty("vfModuleName")
+    private String vfModuleName;
+    @JsonProperty("vnfName")
+    private String vnfName;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("vendorName")
+    public String getVendorName() {
+        return vendorName;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("vendorName")
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
     }
 
-    @JsonProperty("value")
-    public String getValue() {
-        return value;
+    @JsonProperty("vfModuleName")
+    public String getVfModuleName() {
+        return vfModuleName;
     }
 
-    @JsonProperty("value")
-    public void setValue(String value) {
-        this.value = value;
+    @JsonProperty("vfModuleName")
+    public void setVfModuleName(String vfModuleName) {
+        this.vfModuleName = vfModuleName;
+    }
+
+    @JsonProperty("vnfName")
+    public String getVnfName() {
+        return vnfName;
+    }
+
+    @JsonProperty("vnfName")
+    public void setVnfName(String vnfName) {
+        this.vnfName = vnfName;
     }
 
     @JsonAnyGetter
@@ -73,5 +85,6 @@ public class AdditionalField {
         this.additionalProperties.put(name, value);
     }
 
-    
+   
+
 }

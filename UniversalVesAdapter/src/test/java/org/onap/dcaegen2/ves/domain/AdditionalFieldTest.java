@@ -31,21 +31,40 @@ public class AdditionalFieldTest {
     
     @Autowired
     AdditionalField additionalField = new AdditionalField();
-    Object value1 = new Object();
-    Map<String, Object> map = new HashMap<String, Object>();
-
+//    Object value1 = new Object();
+//    Map<String, Object> map = new HashMap<String, Object>();
+//
+//    @Test
+//    public void test() {
+//        additionalField.setAdditionalProperty("name", value1);
+//        additionalField.setName("name2");
+//        additionalField.setValue("value2");
+//        
+//        map.put("name", value1);
+//        assertEquals(additionalField.getName(),"name2");
+//        assertEquals(additionalField.getValue(),"value2");
+//        assertEquals(additionalField.getAdditionalProperties(),map);
+//        assert (additionalField.toString() != null);
+//        assert (additionalField.hashCode() != 0);
+//    }
+    
     @Test
-    public void test() {
-        additionalField.setAdditionalProperty("name", value1);
-        additionalField.setName("name2");
-        additionalField.setValue("value2");
-        
-        map.put("name", value1);
-        assertEquals(additionalField.getName(),"name2");
-        assertEquals(additionalField.getValue(),"value2");
-        assertEquals(additionalField.getAdditionalProperties(),map);
-        assert (additionalField.toString() != null);
-        assert (additionalField.hashCode() != 0);
+    public void testgetName() {
+    	additionalField.getName();
+    }
+    
+    @Test
+    public void testsetName() {
+    	additionalField.setName("Test");
     }
 
+    @Test
+    public void testgetValue() {
+    	additionalField.getValue();
+    }
+    
+    @Test
+    public void testsetValue() {
+    	additionalField.setValue("Test");
+    }
 }
