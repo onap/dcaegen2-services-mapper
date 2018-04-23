@@ -105,8 +105,9 @@
 			<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>${docker.maven.version}</version>
                 <configuration>
+                    <skipDockerBuild>false</skipDockerBuild>
                     <imageName>${onap.nexus.dockerregistry.daily}/onap/${project.groupId}.${project.artifactId}</imageName>
                     <baseImage>openjdk:8-jre</baseImage>
                     <entryPoint>["java", "-jar", "/opt/${project.build.finalName}.jar", "server"]</entryPoint>

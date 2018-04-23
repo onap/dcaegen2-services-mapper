@@ -73,6 +73,7 @@
         <httpclient.version>4.5.2</httpclient.version>
         <commons.lang3.version>3.5</commons.lang3.version>
 
+        <docker.maven.version>0.4.11</docker.maven.version>
 
         <!--TESTING DEPENDENCIES -->
         <junit.version>4.12</junit.version>
@@ -191,6 +192,11 @@
                 <artifactId>json-path-assert</artifactId>
                 <version>${jayway.jsonpath.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker.maven.version}</version>
             </dependency>
 
         </dependencies>
@@ -554,6 +560,14 @@
                     <version>${surefire.report.plugin.version}</version>
                 </plugin> -->
 
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker.maven.version}</version>
+                    <configuration>
+                        <skipDockerBuild>true</skipDockerBuild>
+                    </configuration>
+                </plugin>
             </plugins>
 
         </pluginManagement>
