@@ -43,10 +43,10 @@ public class DMaapMrUrlConfigurationTest {
 		String actualdata2 = dMaapMrUrlConfiguration.getPublisherProperties();
 		String actualdata3 = dMaapMrUrlConfiguration.getUrl();
 		
-		assertEquals("/src/main/resources/dme2/consumer.properties", actualdata1);
-		assertEquals("/src/main/resources/dme2/publisher.properties", actualdata2);
+		assertEquals("../UniversalVesAdapter/src/main/resources/dme2/consumer.properties", actualdata1);
+		assertEquals("../UniversalVesAdapter/src/main/resources/dme2/publisher.properties", actualdata2);
 		assertEquals("http://localhost:8080/greeting12", actualdata3);
-		
+
 		
 	}
 
