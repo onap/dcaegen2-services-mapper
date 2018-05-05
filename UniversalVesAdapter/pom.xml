@@ -148,7 +148,7 @@
 				<version>${docker.maven.version}</version>
 				<configuration>
 					<skipDockerBuild>false</skipDockerBuild>
-					<imageName>${onap.nexus.dockerregistry.daily}/onap/org.onap.dcaegen2.mapper.${project.artifactId}</imageName>
+					<imageName>${onap.nexus.dockerregistry.daily}/onap/${project.groupId}.universalvesadaptor</imageName>
 					<baseImage>openjdk:8-jre</baseImage>
 					<entryPoint>["java", "-jar", "/opt/${project.build.finalName}.jar",
 						"server"]</entryPoint>
