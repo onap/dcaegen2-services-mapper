@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Mon, 07 May 2018 21:06:40 +0000
+Reviewed-on: https://gerrit.onap.org/r/46411
+Project: dcaegen2/services/mapper
+Branch: refs/heads/master
