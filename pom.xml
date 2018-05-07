@@ -682,8 +682,8 @@
     </profiles>  
 
     <modules>
-        <module>UniversalVesAdapter</module>
         <module>snmpmapper</module>
+        <module>UniversalVesAdapter</module>
     </modules>
 
 </project>
