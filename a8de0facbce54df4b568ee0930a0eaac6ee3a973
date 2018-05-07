@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_32e363a5",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-07T03:04:45Z",
+      "side": 1,
+      "message": "How does this change help?",
+      "range": {
+        "startLine": 685,
+        "startChar": 7,
+        "endLine": 686,
+        "endChar": 44
+      },
+      "revId": "a8de0facbce54df4b568ee0930a0eaac6ee3a973",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
