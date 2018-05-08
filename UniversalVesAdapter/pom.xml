@@ -162,7 +162,7 @@
 						<expose>8080</expose>
 					</exposes>
 					<imageTags>
-						<imageTag>${project.version}-SNAPSHOT-${maven.build.timestamp}Z</imageTag>
+						<!--imageTag>${project.version}-SNAPSHOT-${maven.build.timestamp}Z</imageTag-->
 						<imageTag>${project.version}</imageTag>
 						<imageTag>latest</imageTag>
 					</imageTags>
