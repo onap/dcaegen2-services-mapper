@@ -52,6 +52,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+		<!--nexus-->
+		<onap.nexus.url>https://nexus.onap.org</onap.nexus.url>
+		<sitePath>/content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}</sitePath>
+		<!--maven-->
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy.MM.dd.HH.mm</maven.build.timestamp.format>
+		<!--docker-->
+		<docker.tag>${project.version}-${timestamp}</docker.tag>
+		<docker.latest.tag>${project.version}-latest</docker.latest.tag>
+		<docker.pull.registry>nexus3.onap.org:10001</docker.pull.registry>
+		<docker.push.registry>nexus3.onap.org:10003</docker.push.registry>
 	</properties>
 
 	<dependencies>
@@ -103,7 +115,80 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+ 		<plugin>
+		    <groupId>io.fabric8</groupId>
+		    <artifactId>docker-maven-plugin</artifactId>
+		    <version>0.19.1</version>
+		    <configuration>
+		        <verbose>true</verbose>
+		        <apiVersion>1.23</apiVersion>
+		        <pullRegistry>${docker.pull.registry}</pullRegistry>
+		        <pushRegistry>${docker.push.registry}</pushRegistry>
+		        <images>
+		            <image>
+		                <name>org.onap.dcaegen2.services.mapper.${project.artifactId}</name>
+		                <alias>dcaegen2-snmpmapper</alias>
+		                <build>
+		                    <cleanup>true</cleanup>
+		                    <tags>
+		                        <tag>${docker.tag}</tag>
+		                        <tag>${docker.latest.tag}</tag>
+		                    </tags>
+		                    <dockerFileDir>${project.basedir}</dockerFileDir>
+		                </build>
+					 <!--<run> 
+						<ports> 
+						   <port>tomcat.port:8888</port>
+						</ports>
+						<wait> 
+						 <http>
+						  <url>http://localhost:${tomcat.port}</url>
+						 </http>
+						   <time>10000</time>
+						 </wait>
+					  </run> -->
+		            </image>
+		        </images>
+		    </configuration>
+		    <executions>
+		        <execution>
+		            <id>clean-images</id>
+		            <phase>pre-clean</phase>
+		            <goals>
+		                <goal>remove</goal>
+		            </goals>
+		            <configuration>
+		                <removeAll>true</removeAll>
+		            </configuration>
+		        </execution>
+
+		        <execution>
+		            <id>generate-images</id>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>build</goal>
+		            </goals>
+		        </execution>
+
+		        <execution>
+		            <id>push-images</id>
+		            <phase>deploy</phase>
+		            <goals>
+		                <goal>build</goal>
+		                <goal>push</goal>
+		            </goals>
+		            <configuration>
+		                <image>org.onap.dcaegen2.services.mapper.${project.artifactId}</image>
+		            </configuration>
+		        </execution>
+		     </executions>
+			
+	    </plugin> 
+			  
+
+	<!-- 
+
+	<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker.maven.version}</version>
@@ -123,13 +208,15 @@
                         <expose>8888</expose>
                     </exposes>
                     <imageTags>
-                        <!-- imageTag>${project.version}-SNAPSHOT-${maven.build.timestamp}Z</imageTag -->
+                        <imageTag>${project.version}-SNAPSHOT-${maven.build.timestamp}Z</imageTag>
                         <imageTag>${project.version}</imageTag>
                         <imageTag>latest</imageTag>
                     </imageTags>
                     <serverId>${onap.nexus.dockerregistry.daily}</serverId>
                 </configuration>
             </plugin>
+	-->
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
