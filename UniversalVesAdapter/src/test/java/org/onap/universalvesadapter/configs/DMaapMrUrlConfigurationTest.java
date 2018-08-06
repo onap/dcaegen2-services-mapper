@@ -16,7 +16,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 * ============LICENSE_END=========================================================
-*/
+
 package org.onap.universalvesadapter.configs;
 
 import static org.junit.Assert.*;
@@ -45,9 +45,10 @@ public class DMaapMrUrlConfigurationTest {
 		
 		assertEquals("../UniversalVesAdapter/src/main/resources/dme2/consumer.properties", actualdata1);
 		assertEquals("../UniversalVesAdapter/src/main/resources/dme2/publisher.properties", actualdata2);
-		assertEquals("http://localhost:8080/greeting12", actualdata3);
+		assertEquals("http://localhost:8080/greeting", actualdata3);
 		
 		
 	}
 
 }
+*/

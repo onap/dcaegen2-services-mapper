@@ -37,5 +37,6 @@ public interface ConfigFileService {
      * @throws ConfigFileReadException if unable to read config file
      */
     String readConfigFile(String fileName) throws ConfigFileReadException;
+    String fileName(String fileName);
     
 }

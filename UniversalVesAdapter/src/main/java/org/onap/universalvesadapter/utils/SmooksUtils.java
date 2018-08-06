@@ -38,6 +38,8 @@ import org.slf4j.LoggerFactory;
  * @author kmalbari
  *
  */
+
+//TO-DO Drop invalid event 
 public class SmooksUtils {
 
 	
@@ -53,23 +55,19 @@ public class SmooksUtils {
 	 */
 	public static VesEvent getTransformedObjectForInput(Smooks smooks, String incomingJsonString) {
 		
-		LOGGER.debug("Transforming json " + incomingJsonString);
+		LOGGER.info("Transforming incoming json " );
 		ExecutionContext executionContext = smooks.createExecutionContext();
-		LOGGER.debug("Context created");
+		LOGGER.info("Context created");
 		Locale defaultLocale = Locale.getDefault();
         Locale.setDefault(new Locale("en", "IE"));
 
         StringResult result = new StringResult();
 
-        // Configure the execution context to generate a report...
-//        executionContext.setEventListener(new HtmlReportGenerator("target/report/report.html"));
-
-        // Filter the input message to the outputWriter, using the execution context...
         smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(incomingJsonString.getBytes(StandardCharsets.UTF_8))), result);
-        LOGGER.debug("Transformed incoming json now");
+       
         Locale.setDefault(defaultLocale);
         VesEvent vesEvent = (VesEvent) executionContext.getBeanContext().getBean("vesEvent");
-        LOGGER.debug("Converted vesEvent from incoming json"); 
+        LOGGER.debug("consversion successful to VES Event"); 
         
 		return vesEvent;
 	}

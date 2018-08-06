@@ -41,7 +41,7 @@ public class UniversalEventConfigurationTest {
 	public void test() {
 		String actualdata = universalEventConfiguration.getConfigForEvent("default");
 		
-		assertEquals("defaultConfig.xml", actualdata);
+		assertEquals("defaultSnmpMappingFile", actualdata);
 		
 	}
 
