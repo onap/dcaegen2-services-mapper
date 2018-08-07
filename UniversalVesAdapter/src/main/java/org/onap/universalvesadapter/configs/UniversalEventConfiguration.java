@@ -33,7 +33,7 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-public class UniversalEventConfiguration extends Configuration {
+public class UniversalEventConfiguration{
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	

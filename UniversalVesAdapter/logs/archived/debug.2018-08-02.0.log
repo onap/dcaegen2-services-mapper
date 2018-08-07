@@ -1,0 +1,478 @@
+2018-08-02 17:56:24 [main] INFO  o.o.universalvesadapter.Application - Starting Application on INNAMIPC00010 with PID 19652 (started by PM00501616 in C:\Users\PM00501616\Desktop\test data\UniversalVesAdapter)
+2018-08-02 17:56:24 [main] DEBUG o.o.universalvesadapter.Application - Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-08-02 17:56:24 [main] INFO  o.o.universalvesadapter.Application - The following profiles are active: dev
+2018-08-02 17:56:27 [main] INFO  o.o.universalvesadapter.Application - Started Application in 3.475 seconds (JVM running for 4.64)
+2018-08-02 17:56:27 [main] DEBUG o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-08-02 17:56:27 [main] DEBUG o.o.u.service.VESAdapterInitializer - DB Initialization Completed...
+2018-08-02 17:56:27 [http-nio-8083-exec-1] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-08-02 17:56:27 [http-nio-8083-exec-1] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 17:56:28 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Thu Aug 02 17:56:28 IST 2018
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 17:56:28 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-08-02 17:56:28 [http-nio-8083-exec-1] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-08-02 17:56:28 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Thu Aug 02 17:56:28 IST 2018
+2018-08-02 17:56:28 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-08-02 17:56:28 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-08-02 17:56:28 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 17:56:28 [main] INFO  o.o.u.service.VESAdapterInitializer - Sending 'GET' request to URL :http://localhost:8083/start 
+2018-08-02 17:56:28 [main] INFO  o.o.u.service.VESAdapterInitializer - Response Code : 200
+2018-08-02 17:56:28 [main] INFO  o.o.u.service.VESAdapterInitializer - Application started
+2018-08-02 17:56:40 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 17:56:40 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 17:56:44 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 17:56:44 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-08-02 17:56:44 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-08-02 17:56:44 [SNMP-COLLECTOR] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-08-02 17:56:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Batch Queue capacity exceeds messages size. Flushing of all pending messages to DMaaP MR Publisher Topic.
+2018-08-02 17:56:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Force publishing messages to DMaaP MR Topic. Messages Size: 1
+2018-08-02 17:56:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Publisher Authentication is disabled as username or password is not present.
+2018-08-02 17:56:45 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Messages published successfully. DMaaP Response Code: 200. DMaaP Response Body: {
+    "serverTimeMs": 0,
+    "count": 1
+}, Number of Messages published: 1
+2018-08-02 17:56:45 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - Message successfully published to DMaaP Topic:
+2018-08-02 17:56:45 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 17:56:57 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 17:56:57 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:05:02 [main] INFO  o.o.universalvesadapter.Application - Starting Application on INNAMIPC00010 with PID 18704 (started by PM00501616 in C:\Users\PM00501616\Desktop\test data\UniversalVesAdapter)
+2018-08-02 18:05:02 [main] DEBUG o.o.universalvesadapter.Application - Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-08-02 18:05:02 [main] INFO  o.o.universalvesadapter.Application - The following profiles are active: dev
+2018-08-02 18:07:16 [main] INFO  o.o.universalvesadapter.Application - Starting Application on INNAMIPC00010 with PID 22684 (started by PM00501616 in C:\Users\PM00501616\Desktop\test data\UniversalVesAdapter)
+2018-08-02 18:07:16 [main] DEBUG o.o.universalvesadapter.Application - Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-08-02 18:07:16 [main] INFO  o.o.universalvesadapter.Application - The following profiles are active: dev
+2018-08-02 18:07:19 [main] INFO  o.o.universalvesadapter.Application - Started Application in 3.473 seconds (JVM running for 4.759)
+2018-08-02 18:07:19 [main] DEBUG o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-08-02 18:07:19 [main] DEBUG o.o.u.service.VESAdapterInitializer - DB Initialization Completed...
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-08-02 18:07:19 [http-nio-8083-exec-1] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 18:07:19 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Thu Aug 02 18:07:19 IST 2018
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 18:07:19 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-08-02 18:07:19 [http-nio-8083-exec-1] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-08-02 18:07:19 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Thu Aug 02 18:07:19 IST 2018
+2018-08-02 18:07:19 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-08-02 18:07:19 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-08-02 18:07:19 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:07:19 [main] INFO  o.o.u.service.VESAdapterInitializer - Sending 'GET' request to URL :http://localhost:8083/start 
+2018-08-02 18:07:19 [main] INFO  o.o.u.service.VESAdapterInitializer - Response Code : 200
+2018-08-02 18:07:19 [main] INFO  o.o.u.service.VESAdapterInitializer - Application started
+2018-08-02 18:07:32 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 18:07:32 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:07:32 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 18:07:32 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:07:44 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 18:07:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:08:55 [main] INFO  o.o.universalvesadapter.Application - Starting Application on INNAMIPC00010 with PID 18704 (started by PM00501616 in C:\Users\PM00501616\Desktop\test data\UniversalVesAdapter)
+2018-08-02 18:08:55 [main] DEBUG o.o.universalvesadapter.Application - Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-08-02 18:08:55 [main] INFO  o.o.universalvesadapter.Application - The following profiles are active: dev
+2018-08-02 18:08:58 [main] INFO  o.o.universalvesadapter.Application - Started Application in 3.184 seconds (JVM running for 4.356)
+2018-08-02 18:08:58 [main] DEBUG o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-08-02 18:08:58 [main] DEBUG o.o.u.service.VESAdapterInitializer - DB Initialization Completed...
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-08-02 18:08:58 [http-nio-8083-exec-1] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 18:08:58 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Thu Aug 02 18:08:58 IST 2018
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 18:08:58 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-08-02 18:08:58 [http-nio-8083-exec-1] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-08-02 18:08:58 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Thu Aug 02 18:08:58 IST 2018
+2018-08-02 18:08:58 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-08-02 18:08:58 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-08-02 18:08:58 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:08:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Sending 'GET' request to URL :http://localhost:8083/start 
+2018-08-02 18:08:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Response Code : 200
+2018-08-02 18:08:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Application started
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 18:09:06 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-08-02 18:09:06 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Batch Queue capacity exceeds messages size. Flushing of all pending messages to DMaaP MR Publisher Topic.
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Force publishing messages to DMaaP MR Topic. Messages Size: 1
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Publisher Authentication is disabled as username or password is not present.
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Messages published successfully. DMaaP Response Code: 200. DMaaP Response Body: {
+    "serverTimeMs": 0,
+    "count": 1
+}, Number of Messages published: 1
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - Message successfully published to DMaaP Topic:
+2018-08-02 18:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 18:09:19 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 18:09:19 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:05:11 [main] INFO  o.o.universalvesadapter.Application - Starting Application on INPUSCPC07276 with PID 7528 (D:\CodeToBeImport\FromPooja\2-8-2018\UniversalVesAdapter\target\classes started by AS00500801 in D:\CodeToBeImport\FromPooja\2-8-2018\UniversalVesAdapter)
+2018-08-02 19:05:11 [main] DEBUG o.o.universalvesadapter.Application - Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-08-02 19:05:11 [main] INFO  o.o.universalvesadapter.Application - No active profile set, falling back to default profiles: default
+2018-08-02 19:05:13 [main] INFO  o.o.universalvesadapter.Application - Started Application in 2.571 seconds (JVM running for 3.404)
+2018-08-02 19:05:13 [main] DEBUG o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-08-02 19:05:14 [main] DEBUG o.o.u.service.VESAdapterInitializer - DB Initialization Completed...
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-08-02 19:05:14 [http-nio-8083-exec-1] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 19:05:14 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Thu Aug 02 19:05:14 IST 2018
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 19:05:14 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-08-02 19:05:14 [http-nio-8083-exec-1] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-08-02 19:05:14 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Thu Aug 02 19:05:14 IST 2018
+2018-08-02 19:05:14 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-08-02 19:05:14 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-08-02 19:05:14 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:05:14 [main] INFO  o.o.u.service.VESAdapterInitializer - Sending 'GET' request to URL :http://localhost:8083/start 
+2018-08-02 19:05:14 [main] INFO  o.o.u.service.VESAdapterInitializer - Response Code : 200
+2018-08-02 19:05:14 [main] INFO  o.o.u.service.VESAdapterInitializer - Application started
+2018-08-02 19:05:27 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:05:27 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:05:39 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:05:39 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:05:51 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:05:51 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:06:03 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:06:03 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:06:15 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:06:15 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:06:28 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:06:28 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:06:40 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:06:40 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:06:52 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:06:52 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:07:04 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:07:04 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:07:16 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:07:16 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:07:28 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:07:28 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:07:41 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:07:41 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:07:53 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:07:53 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:08:05 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:08:05 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:08:17 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:08:17 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:08:29 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:08:29 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:08:41 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:08:41 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:08:54 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:08:54 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:09:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:09:18 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:09:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:09:30 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:09:30 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:09:42 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:09:42 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:09:54 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:09:54 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:10:07 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:10:07 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:10:19 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:10:19 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:10:31 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:10:31 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:10:43 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:10:43 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:10:55 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:10:55 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:11:07 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:11:07 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:11:20 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:11:20 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:11:32 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:11:32 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:11:44 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:11:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:11:56 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:11:56 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:12:08 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:12:08 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:12:20 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:12:20 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:12:33 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:12:33 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:12:45 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:12:45 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:12:57 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:12:57 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:13:09 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:13:09 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:13:21 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:13:21 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:13:34 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:13:34 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:13:46 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:13:46 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:13:58 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:13:58 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:14:10 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:14:10 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:14:22 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:14:22 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:14:34 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:14:34 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:14:47 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:14:47 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:14:59 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:14:59 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:15:11 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:15:11 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:15:23 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:15:23 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:15:35 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:15:35 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:15:47 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:15:47 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:16:00 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:16:00 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:16:12 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:16:12 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:16:24 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:16:24 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:16:36 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:16:36 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:16:48 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:16:48 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:17:00 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:17:00 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:17:13 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:17:13 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:17:25 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:17:25 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:17:37 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:17:37 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:17:43 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 19:17:43 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:17:55 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:17:55 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:18:07 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:18:07 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:18:19 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:18:19 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:18:31 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:18:31 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:18:44 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:18:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:18:56 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:18:56 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:19:08 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:19:08 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:19:20 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:19:20 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:19:32 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:19:32 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:19:44 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:19:44 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:19:57 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:19:57 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:20:09 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:20:09 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:20:21 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:20:21 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:20:33 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:20:33 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:20:45 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:20:45 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:20:57 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:20:57 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:21:10 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:21:10 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:21:22 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:21:22 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:21:34 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:21:34 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:21:46 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:21:46 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:21:58 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:21:58 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:22:11 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:22:11 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:22:23 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:22:23 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:22:35 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:22:35 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:22:47 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:22:47 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:22:59 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:22:59 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:23:11 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:23:11 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:23:24 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:23:24 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:23:36 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:23:36 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:23:48 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:23:48 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:24:00 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:24:00 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:24:12 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:24:12 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:24:25 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:24:25 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:24:37 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:24:37 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:24:49 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:24:49 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:25:01 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:25:01 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:25:13 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:25:13 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:25:26 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:25:26 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:25:38 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:25:38 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:25:50 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:25:50 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:26:02 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:26:02 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:26:14 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:26:14 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:26:26 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:26:26 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:26:39 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:26:39 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:26:51 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:26:51 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:27:03 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:27:03 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:27:15 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:27:15 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:27:27 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:27:27 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:27:39 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:27:39 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:27:52 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:27:52 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:28:04 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:28:04 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:28:16 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:28:16 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:28:28 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:28:28 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:28:40 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:28:40 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:28:52 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:28:52 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:29:05 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:29:05 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:29:17 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:29:17 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:29:29 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:29:29 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:29:41 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:29:41 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:29:53 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:29:53 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:30:06 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:30:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:30:18 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:30:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:30:30 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:30:30 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:30:42 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:30:42 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:30:54 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:30:54 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:31:06 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:31:06 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:31:19 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:31:19 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:31:31 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:31:31 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:34:12 [main] INFO  o.o.universalvesadapter.Application - Starting Application on INPUSCPC07276 with PID 19316 (D:\CodeToBeImport\FromPooja\2-8-2018\UniversalVesAdapter\target\classes started by AS00500801 in D:\CodeToBeImport\FromPooja\2-8-2018\UniversalVesAdapter)
+2018-08-02 19:34:12 [main] DEBUG o.o.universalvesadapter.Application - Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2018-08-02 19:34:12 [main] INFO  o.o.universalvesadapter.Application - No active profile set, falling back to default profiles: default
+2018-08-02 19:34:14 [main] INFO  o.o.universalvesadapter.Application - Started Application in 2.543 seconds (JVM running for 3.289)
+2018-08-02 19:34:14 [main] DEBUG o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-08-02 19:34:14 [main] DEBUG o.o.u.service.VESAdapterInitializer - DB Initialization Completed...
+2018-08-02 19:34:14 [http-nio-8083-exec-1] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-08-02 19:34:14 [http-nio-8083-exec-1] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 19:34:15 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Thu Aug 02 19:34:15 IST 2018
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-08-02 19:34:15 [http-nio-8083-exec-1] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-08-02 19:34:15 [http-nio-8083-exec-1] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-08-02 19:34:15 [http-nio-8083-exec-1] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Thu Aug 02 19:34:15 IST 2018
+2018-08-02 19:34:15 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-08-02 19:34:15 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-08-02 19:34:15 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:34:15 [main] INFO  o.o.u.service.VESAdapterInitializer - Sending 'GET' request to URL :http://localhost:8083/start 
+2018-08-02 19:34:15 [main] INFO  o.o.u.service.VESAdapterInitializer - Response Code : 200
+2018-08-02 19:34:15 [main] INFO  o.o.u.service.VESAdapterInitializer - Application started
+2018-08-02 19:34:16 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :2
+2018-08-02 19:34:16 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:34:26 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 19:34:26 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:34:38 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:34:38 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:34:50 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:34:50 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:35:03 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:35:03 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:35:15 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:35:15 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 19:35:18 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-08-02 19:35:18 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Batch Queue capacity exceeds messages size. Flushing of all pending messages to DMaaP MR Publisher Topic.
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Force publishing messages to DMaaP MR Topic. Messages Size: 1
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Publisher Authentication is disabled as username or password is not present.
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Messages published successfully. DMaaP Response Code: 200. DMaaP Response Body: {
+    "serverTimeMs": 1,
+    "count": 1
+}, Number of Messages published: 1
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - Message successfully published to DMaaP Topic:
+2018-08-02 19:35:18 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:35:30 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:35:30 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:35:43 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:35:43 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 19:35:49 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-08-02 19:35:49 [SNMP-COLLECTOR] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Batch Queue capacity exceeds messages size. Flushing of all pending messages to DMaaP MR Publisher Topic.
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - Force publishing messages to DMaaP MR Topic. Messages Size: 1
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Publisher Authentication is disabled as username or password is not present.
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRPublisherImpl - DMaaP MR Messages published successfully. DMaaP Response Code: 200. DMaaP Response Body: {
+    "serverTimeMs": 2,
+    "count": 1
+}, Number of Messages published: 1
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - Message successfully published to DMaaP Topic:
+2018-08-02 19:35:49 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:36:01 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:36:01 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:36:14 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:36:14 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:36:26 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:36:26 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:36:38 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :0
+2018-08-02 19:36:38 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-08-02 19:36:40 [SNMP-COLLECTOR] DEBUG o.o.u.service.DMaapService - number of messages to be converted :1
+2018-08-02 19:36:40 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
