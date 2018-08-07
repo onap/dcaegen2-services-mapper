@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
  *
  */
 
-//TO-DO Drop invalid event 
+
 public class SmooksUtils {
 
 	

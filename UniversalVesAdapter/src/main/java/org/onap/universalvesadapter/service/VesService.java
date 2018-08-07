@@ -19,23 +19,19 @@
 */
 package org.onap.universalvesadapter.service;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import javax.annotation.Resource;
+
 import org.onap.universalvesadapter.adapter.GenericAdapter;
 import org.onap.universalvesadapter.dmaap.Creator;
 import org.onap.universalvesadapter.dmaap.MRPublisher.DMaaPMRPublisher;
 import org.onap.universalvesadapter.dmaap.MRSubcriber.DMaaPMRSubscriber;
 import org.onap.universalvesadapter.exception.MapperConfigException;
-import org.onap.universalvesadapter.utils.MapperConfigUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.util.FileCopyUtils;
 
 /**
  * Service that starts the universal ves adapter module to listen for events
@@ -66,7 +62,7 @@ public class VesService {
     private GenericAdapter eventAdapter;
 
     @Value("${messagesInBatch}")
-    private int messagesInBatch; //To-DO need to map with Capacity
+    private int messagesInBatch; 
 
     @Value("${mapperConfig.file}")
     private String mapperConfigFile;
@@ -116,8 +112,6 @@ public class VesService {
      * method stops universal ves adapter module
      */
     public void stop() {
-        
-        //TO -DO stop entire application manually by hiting URL??????????
     	isRunning = false;
     }
 }

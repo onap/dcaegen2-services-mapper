@@ -59,7 +59,7 @@ public class UniversalEventAdapter implements GenericAdapter {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-	private String id;
+	private String enterpriseId;
 	@Value("${defaultMappingFileName}")
 	private String defaulMappingFileName;
 
@@ -68,9 +68,6 @@ public class UniversalEventAdapter implements GenericAdapter {
 	}
 
 	private Map<String, Smooks> eventToSmooksMapping = new ConcurrentHashMap<>();
-
-	
-	
 
 	/**
 	 *transforms JSON to VES format and
@@ -87,48 +84,29 @@ public class UniversalEventAdapter implements GenericAdapter {
 		try {
 
 			if (null == eventToSmooksMapping.get(eventType)) {
-				// LOGGER.debug("No smooks mapping for this event type :" + eventType);
-				// LOGGER.debug("So Reading default config file ");
+				LOGGER.debug("No smooks mapping for this event type :" + eventType);
+				 LOGGER.debug("So Reading default config file ");
 				Gson gson = new Gson();
 				JsonObject body = gson.fromJson(incomingJsonString, JsonObject.class);
 				JsonElement results = body.get("notify OID");
 				String notifyOid = results.getAsString();
-
-				String[] arrSplit = notifyOid.split("\\.");
-
-				id = new String();
-				for (int i = 0; i < 8; i++) {
-					if (i == 7) {
-
-						id = id + arrSplit[i];
-					} else {
-						id = id + arrSplit[i] + ".";
-					}
-
-				}
-
-				// below code for Future reference to accept multiple formats to convert to VES
-				// Event
-				// String configFileData =
-				// configFileService.readConfigFile(configuration.getConfigForEvent(eventType));
-
-				if (VESAdapterInitializer.getMappingFiles().containsKey(id)) {
-					configFileData = VESAdapterInitializer.getMappingFiles().get(id);
+				
+				//extracting enterprise id from notify OID of SNMP trap.
+				enterpriseId=notifyOid.substring(0, notifyOid.length()-4);
+				
+				if (VESAdapterInitializer.getMappingFiles().containsKey(enterpriseId)) {
+					configFileData = VESAdapterInitializer.getMappingFiles().get(enterpriseId);
 				} else {
 
 					configFileData = VESAdapterInitializer.getMappingFiles().get(defaulMappingFileName);
-					LOGGER.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",
-							id);
+					LOGGER.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",enterpriseId);
 				}
 
-				Smooks smooksTemp = new Smooks(
-						new ByteArrayInputStream(configFileData.getBytes(StandardCharsets.UTF_8)));
+				Smooks smooksTemp = new Smooks(	new ByteArrayInputStream(configFileData.getBytes(StandardCharsets.UTF_8)));
 				eventToSmooksMapping.put(eventType, smooksTemp);
-
 			}
 
-			VesEvent vesEvent = SmooksUtils.getTransformedObjectForInput(eventToSmooksMapping.get(eventType),
-					incomingJsonString);
+			VesEvent vesEvent = SmooksUtils.getTransformedObjectForInput(eventToSmooksMapping.get(eventType),incomingJsonString);
 			LOGGER.debug("Incoming json transformed to VES format successfully");
 			ObjectMapper objectMapper = new ObjectMapper();
 			result = objectMapper.writeValueAsString(vesEvent);
@@ -136,9 +114,7 @@ public class UniversalEventAdapter implements GenericAdapter {
 		} catch (JsonProcessingException exception) {
 			throw new VesException("Unable to convert pojo to VES format, Reason :{}", exception);
 		} catch (SAXException | IOException exception) {
-			LOGGER.error(
-					"Droping this trap due to Invalid Mapping file for event {} with Enterprise Id:{} \\n Reason :{}",
-					incomingJsonString, eventType, id, exception);
+			LOGGER.error("Droping this trap due to Invalid Mapping file for event {} with Enterprise Id:{} \\n Reason :{}",	incomingJsonString, eventType, enterpriseId, exception);
 
 		} catch (JsonSyntaxException exception) {
 			// Invalid format

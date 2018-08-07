@@ -41,7 +41,6 @@ import org.springframework.stereotype.Component;
 //AdapterInitializer
 @Component
 public class VESAdapterInitializer implements CommandLineRunner, Ordered {
-	// private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	private static final Logger LOGGER = LoggerFactory.getLogger(VESAdapterInitializer.class);
 	@Value("${spring.datasource.url}")
 	String dBurl;
@@ -56,7 +55,6 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	public static String retString;
 	public static String retCBSString;
 
-	// TO-DO add variables to Constant class- Confirm from Kedar?????????
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -81,38 +79,8 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 
 		} else {
 			LOGGER.info(">>>Static configuration to be used");
-			final String url = "http://localhost:8080/start";
-			final String USER_AGENT = "Mozilla/5.0";
-
-			try {
-/*				URL obj = new URL(url);
-				HttpURLConnection httpURLConnection = (HttpURLConnection) obj.openConnection();
-
-				// optional default is GET
-				httpURLConnection.setRequestMethod("GET");
-
-				// add request header
-				httpURLConnection.setRequestProperty("User-Agent", USER_AGENT);
-
-				int responseCode = httpURLConnection.getResponseCode();
-				LOGGER.info("Sending 'GET' request to URL : " + url);
-				LOGGER.info("Response Code : " + responseCode);
-				BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
-				String inputLine;
-				StringBuffer response = new StringBuffer();
-
-				while ((inputLine = in.readLine()) != null) {
-					response.append(inputLine);
-				}
-				in.close();
-
-				// print result
-				LOGGER.info("The result is :" + response.toString());*/
-
-			} catch (Exception e) {
-				LOGGER.error("Error occured due to :" + e.getMessage());
-				e.printStackTrace();
-			}
+		
+		// Call to our local docker container
 
 		}
 
@@ -174,6 +142,10 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 
 	public static Map<String, String> getMappingFiles() {
 		return mappingFiles;
+	}
+
+	public static void setMappingFiles(Map<String, String> mappingFiles) {
+		VESAdapterInitializer.mappingFiles = mappingFiles;
 	}
 
 	@Override

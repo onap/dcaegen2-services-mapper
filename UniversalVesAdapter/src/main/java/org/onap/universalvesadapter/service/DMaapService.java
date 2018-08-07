@@ -58,14 +58,13 @@ public class DMaapService {
 
 		while (true) {
 			synchronized (this) {
-				// need to handle excpetion here
 				for (String incomingJsonString : dMaaPMRSubscriber.fetchMessages().getFetchedMessages()) {
 					list.add(incomingJsonString);
 
 				}
 
 				if (list.size() == 0) {
-					Thread.sleep(2000);// This sleep time of Thread should be configurable --TO-DO
+					Thread.sleep(2000); 
 				}
 				LOGGER.debug("number of messages to be converted :{}", list.size());
 
@@ -107,13 +106,9 @@ public class DMaapService {
 
 			} catch (VesException exception) {
 				LOGGER.error("Received exception : " + exception.getMessage(), exception);
-
-				// TODO KKM : Do we wish to continue the application with same exception in
-				// every thread??
 				LOGGER.error("APPLICATION WILL BE SHUTDOWN UNTIL ABOVE ISSUE IS RESOLVED.");
 				// ctx.close();
 			} catch (DMaapException e) {
-				// TODO Auto-generated catch block
 				LOGGER.error("Received exception : ", e.getMessage());
 			}
 		}
