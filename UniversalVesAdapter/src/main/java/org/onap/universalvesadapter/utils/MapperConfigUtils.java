@@ -19,18 +19,22 @@
 */
 package org.onap.universalvesadapter.utils;
 
-import com.att.aft.dme2.internal.apache.commons.lang3.EnumUtils;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Set;
 import java.util.TreeSet;
+
 import org.onap.universalvesadapter.exception.MapperConfigException;
 import org.onap.universalvesadapter.mappingconfig.Entry;
 import org.onap.universalvesadapter.mappingconfig.Evaluation;
 import org.onap.universalvesadapter.mappingconfig.MapperConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
+ * This class will be used in Future for different telemetry data:
  * This class will be utility class to read the mapper config file and parse the
  * config to prepare the grammar to detect the incoming json's event type.
  * 
@@ -39,6 +43,7 @@ import org.onap.universalvesadapter.mappingconfig.MapperConfig;
  */
 public class MapperConfigUtils {
 
+	private final Logger LOGGER = LoggerFactory.getLogger(MapperConfigUtils.class);
     private static Set<Entry> entries = new TreeSet<>((o1, o2) -> o1.getPriority().compareTo(o2.getPriority()));
 
     private enum JoinOperator {
@@ -212,6 +217,7 @@ public class MapperConfigUtils {
                     exception);
         }
         System.out.println("Read config file content into :" + config);
+        
         if (null != config) {
             entries.addAll(config.getEntries());
         } else {

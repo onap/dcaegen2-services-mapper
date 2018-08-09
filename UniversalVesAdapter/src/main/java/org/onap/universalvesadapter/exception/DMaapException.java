@@ -19,17 +19,18 @@
 */
 package org.onap.universalvesadapter.exception;
 
+import org.slf4j.Logger;
+
+
 /**
  * Exception generated when dealing with communication to DMaap MR API
  * 
  * @author kmalbari
  *
  */
-public class DMaapException extends VesException {
+public class DMaapException extends RuntimeException {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 7045766597511192878L;
 
 	public DMaapException(String string) {
@@ -39,6 +40,26 @@ public class DMaapException extends VesException {
 	public DMaapException(String string, Exception exception) {
 		super(string, exception);
 	}
+
+	 /**
+     * @param message - Error Message for Exception
+     * @param cause   - Actual Exception which caused {@link DMaapException}
+     */
+    public DMaapException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    /**
+     * Creates and logs the DCAE Runtime Exception to given logger
+     *
+     * @param message - Error Message for Exception and logging
+     * @param logger  - Logger used for logging exception
+     * @param cause   - Actual exception which caused {@link DMaapException}
+     */
+    public DMaapException(String message, Logger logger, Throwable cause) {
+        super(message, cause);
+        logger.error(message);
+    }
 	
 	
 }

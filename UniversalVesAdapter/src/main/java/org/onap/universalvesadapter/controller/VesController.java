@@ -19,6 +19,8 @@
 */
 package org.onap.universalvesadapter.controller;
 
+import org.onap.universalvesadapter.exception.MapperConfigException;
+import org.onap.universalvesadapter.service.VESAdapterInitializer;
 import org.onap.universalvesadapter.service.VesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 
  * @author kmalbari
  */
+
 @RestController
 public class VesController {
 
@@ -40,16 +43,34 @@ public class VesController {
     @Autowired
     private VesService vesService;
     
+    @Autowired
+    private VESAdapterInitializer vESAdapterInitializer;
+    
     /**
      * @return message that application is started
      */
     @RequestMapping("/start")
     public String start() {
     	
-    	LOGGER.debug("UniversalVesAdapter Application starting...");
-    	vesService.start();
+    	LOGGER.info("UniversalVesAdapter Application starting...");
+    	
+    	try {
+			vesService.start();
+		} catch (MapperConfigException e) {
+			
+			LOGGER.error("Config error:{}",e.getMessage(),e.getCause());
+		}
         return "Application started";
     }
+    
+    @RequestMapping("/reload")
+    public void reloadMappingFileFromDB() {
+    	LOGGER.debug("Reload of Mapping File is started");
+    	vESAdapterInitializer.fetchMappingFile();
+    	LOGGER.debug("Reload of Mapping File is completed");
+    }
+    
+    
     
     /**
      * @return message that application stop process is triggered

@@ -28,9 +28,6 @@ package org.onap.universalvesadapter.exception;
  */
 public class ConfigFileSmooksConversionException extends VesException {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7128340575013771888L;	
 	
 	public ConfigFileSmooksConversionException(String string) {

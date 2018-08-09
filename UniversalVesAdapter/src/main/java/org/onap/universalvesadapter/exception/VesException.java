@@ -28,10 +28,6 @@ package org.onap.universalvesadapter.exception;
  */
 public class VesException extends Exception {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8549819066568432382L;
 
 	public VesException(String string) {

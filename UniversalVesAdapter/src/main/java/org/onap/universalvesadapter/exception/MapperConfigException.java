@@ -27,9 +27,6 @@ package org.onap.universalvesadapter.exception;
  */
 public class MapperConfigException extends VesException {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7876042513908918292L;
 
 	public MapperConfigException(String string) {

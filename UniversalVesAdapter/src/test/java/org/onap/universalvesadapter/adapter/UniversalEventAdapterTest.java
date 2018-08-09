@@ -19,48 +19,26 @@
 */
 package org.onap.universalvesadapter.adapter;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import javax.annotation.Resource;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.milyn.Smooks;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.onap.dcaegen2.ves.domain.VesEvent;
 import org.onap.universalvesadapter.Application;
-import org.onap.universalvesadapter.adapter.UniversalEventAdapter;
-import org.onap.universalvesadapter.exception.ConfigFileReadException;
-import org.onap.universalvesadapter.exception.ConfigFileSmooksConversionException;
-import org.onap.universalvesadapter.exception.MapperConfigException;
 import org.onap.universalvesadapter.exception.VesException;
-import org.onap.universalvesadapter.service.ConfigFileService;
-import org.onap.universalvesadapter.utils.MapperConfigUtils;
-import org.onap.universalvesadapter.utils.SmooksUtils;
+import org.onap.universalvesadapter.service.VESAdapterInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.util.FileCopyUtils;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=Application.class)
@@ -69,10 +47,9 @@ public class UniversalEventAdapterTest  {
     private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());
     
     @Mock
-    private ConfigFileService configFileService;    
+    private VESAdapterInitializer vESAdapterInitializer;  
     
     @InjectMocks
-    @Autowired
     private UniversalEventAdapter universalVesAdapter;
     
     
@@ -86,7 +63,7 @@ public class UniversalEventAdapterTest  {
 	public void testtransform()  {
         StringBuffer incomingJsonString = new StringBuffer("{ ")
                 .append("\"protocol version\":\"v2c\", ")
-                .append("\"notify OID\":\".1.3.6.1.4.1.74.2.46.12.1.1AAA\", ")
+                .append("\"notify OID\":\".1.3.6.1.4.1.1751.2.46.12.1.1\", ")
                 .append("\"cambria.partition\":\"dcae-snmp.client.research.att.com\", ")
                 .append("\"trap category\":\"UCSNMP-HEARTBEAT\", ")
                 .append("\"epoch_serno\": 15161177410000, ")
@@ -107,48 +84,140 @@ public class UniversalEventAdapterTest  {
                 .append(" }] ")
                 .append("}");
         
-        StringBuffer configFileData = new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\"?> ")
-                .append("<smooks-resource-list    xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\"   ")
-                .append("xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\"    ")
-                .append(" xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.2.xsd\">     ")
-                .append(" <json:reader rootName=\"simple\"  keyWhitspaceReplacement=\"-\">    ")
-                .append(" </json:reader>     ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.VesEvent\" beanId=\"vesEvent\" ")
-                .append(" createOnElement=\"simple\">")
-                .append("        <jb:wiring property=\"event\" beanIdRef=\"event\"/>")
-                .append(" </jb:bean>       ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.Event\" beanId=\"event\" ")
-                .append(" createOnElement=\"simple\">         ")
-                .append("     <jb:wiring property=\"commonEventHeader\" beanIdRef=\"commonEventHeader\"/>")
-                .append("     <jb:wiring property=\"faultFields\" beanIdRef=\"faultFields\"/>             ")
-                .append(" </jb:bean>       ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.CommonEventHeader\" ")
-                .append(" beanId=\"commonEventHeader\" createOnElement=\"simple\">         ")
-                .append("     <jb:value property=\"eventId\" data=\"#/community\" />      ")
-                .append("     <jb:value property=\"eventName\" data=\"#/protocol-version\" />             ")
-                .append("     <jb:value property=\"domain\" data=\"#/trap-category\" />       ")
-                .append("     <jb:value property=\"sequence\" data=\"#/time-received\" decoder=\"Long\"/>        ")
-                .append("     <jb:value property=\"lastEpochMicrosec\" data=\"#/community-len\"  decoder=\"Double\" />       ")
-                .append("     <jb:value property=\"startEpochMicrosec\" data=\"#/notify-OID-len\"   />    ")
-                .append(" </jb:bean>           ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.FaultFields\" beanId=\"faultFields\"")
-                .append(" createOnElement=\"simple\">        <jb:value property=\"alarmCondition\" data=\"#/cambria.partition\" />  ")
-                .append("     <jb:value property=\"eventSeverity\" data=\"#/notify-OID\" />    ")
-                .append("     <jb:value property=\"eventSourceType\" data=\"#/agent-name\" />       ")
-                .append("     <jb:value property=\"specificProblem\" data=\"#/agent-address\" />       ")
-                .append("     <jb:value property=\"faultFieldsVersion\" data=\"#/epoch_serno\" decoder=\"Double\" /> ")
-                .append(" </jb:bean>                   ")
-                .append("</smooks-resource-list>");           
+        Map<String,String> testMap=new HashMap<String,String>();
+        testMap.put("defaultSnmpMappingFile", "<?xml version=\"1.0\"?>\r\n" + 
+        		"<smooks-resource-list\r\n" + 
+        		"	 xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\"\r\n" + 
+        		"	 xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\"\r\n" + 
+        		"	 xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.4.xsd\">\r\n" + 
+        		"    <json:reader rootName=\"vesevent\"  keyWhitspaceReplacement=\"-\">\r\n" + 
+        		"    <json:keyMap>\r\n" + 
+        		"	    	<json:key from=\"date&amp;time\" to=\"date-and-time\" />\r\n" + 
+        		"	    </json:keyMap>\r\n" + 
+        		"	</json:reader>\r\n" + 
+        		"   \r\n" + 
+        		"     <jb:bean class=\"org.onap.dcaegen2.ves.domain.VesEvent\" beanId=\"vesEvent\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:wiring property=\"event\" beanIdRef=\"event\"/>\r\n" + 
+        		"    </jb:bean>\r\n" + 
+        		" \r\n" + 
+        		"     <jb:bean class=\"org.onap.dcaegen2.ves.domain.Event\" beanId=\"event\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:wiring property=\"commonEventHeader\" beanIdRef=\"commonEventHeader\"/>\r\n" + 
+        		"    	<jb:wiring property=\"faultFields\" beanIdRef=\"faultFields\"/>    	\r\n" + 
+        		"    	<!--<jb:wiring property=\"measurementsForVfScalingFields\" beanIdRef=\"measurementsForVfScalingFields\"/> -->   	\r\n" + 
+        		"    </jb:bean>   \r\n" + 
+        		"    <!--<jb:bean class=\"org.onap.dcaegen2.ves.domain.MeasurementsForVfScalingFields\" beanId=\"measurementsForVfScalingFields\" createOnElement=\"simple\">\r\n" + 
+        		"    	<jb:wiring property=\"additionalMeasurements\" beanIdRef=\"additionalMeasurements\"/>\r\n" + 
+        		"    </jb:bean>-->\r\n" + 
+        		"    \r\n" + 
+        		"    <jb:bean class=\"org.onap.dcaegen2.ves.domain.CommonEventHeader\" beanId=\"commonEventHeader\" createOnElement=\"vesevent\">\r\n" + 
+        		"		<jb:expression property=\"version\">\"3.0\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"eventId\">\"XXXX\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"reportingEntityName\">\"VesAdapter\"</jb:expression>\r\n" + 
+        		"	 	<jb:expression property=\"domain\">\"fault\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"eventName\" execOnElement=\"vesevent\" >commonEventHeader.domain+\"_\"+commonEventHeader.reportingEntityName +\"_\"+ faultFields.alarmCondition;</jb:expression>\r\n" + 
+        		"    	<jb:value property=\"sequence\" data=\"0\" default=\"0\" decoder=\"Long\"/>\r\n" + 
+        		"    	<jb:value property=\"lastEpochMicrosec\" data=\"#/time-received\"  decoder=\"Double\" />\r\n" + 
+        		"    	<jb:value property=\"startEpochMicrosec\" data=\"#/time-received\"  decoder=\"Double\"/>\r\n" + 
+        		"		<jb:expression property=\"priority\">\"Medium\"</jb:expression>\r\n" + 
+        		"    	<jb:expression property=\"sourceName\">\"VesAdapter\"</jb:expression>\r\n" + 
+        		"    </jb:bean>   \r\n" + 
+        		"    \r\n" + 
+        		"    <jb:bean class=\"org.onap.dcaegen2.ves.domain.FaultFields\" beanId=\"faultFields\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:value property=\"alarmCondition\" data=\"#/trap-category\" />\r\n" + 
+        		"		<jb:expression property=\"eventSeverity\">\"MINOR\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"eventSourceType\">\"SNMP Agent\"</jb:expression>\r\n" + 
+        		"    	<jb:expression property=\"specificProblem\">\"SNMP Fault\"</jb:expression>\r\n" + 
+        		"    	<jb:value property=\"faultFieldsVersion\" data=\"2.0\" default=\"2.0\" decoder=\"Double\" />\r\n" + 
+        		"    	<jb:wiring property=\"alarmAdditionalInformation\" beanIdRef=\"alarmAdditionalInformationroot\"/>   \r\n" + 
+        		"		<jb:expression property=\"vfStatus\">\"Active\"</jb:expression>\r\n" + 
+        		"    	\r\n" + 
+        		"    </jb:bean>  \r\n" + 
+        		"     <jb:bean class=\"java.util.ArrayList\" beanId=\"alarmAdditionalInformationroot\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:wiring beanIdRef=\"alarmAdditionalInformation\"/>\r\n" + 
+        		"    </jb:bean>\r\n" + 
+        		"    \r\n" + 
+        		"      <jb:bean class=\"org.onap.dcaegen2.ves.domain.AlarmAdditionalInformation\" beanId=\"alarmAdditionalInformation\" createOnElement=\"varbinds/element\">\r\n" + 
+        		"    	<jb:value property=\"name\" data=\"#/varbind_oid\"/>\r\n" + 
+        		"        <jb:value property=\"value\" data=\"#/varbind_value\" />\r\n" + 
+        		"    </jb:bean>\r\n" + 
+        		"	<!--<jb:bean class=\"java.util.ArrayList\" beanId=\"additionalMeasurements\" createOnElement=\"simple\">\r\n" + 
+        		"    	<jb:wiring beanIdRef=\"additionalMeasurement\"/>\r\n" + 
+        		"    </jb:bean>    \r\n" + 
+        		"    \r\n" + 
+        		"    <jb:bean class=\"org.onap.dcaegen2.ves.domain.AdditionalMeasurement\" beanId=\"additionalMeasurement\" createOnElement=\"varbinds/element\">\r\n" + 
+        		"    	<jb:value property=\"name\" data=\"#/varbind_value\" />\r\n" + 
+        		"    </jb:bean>  -->  \r\n" + 
+        		"    \r\n" + 
+        		"</smooks-resource-list>");
+        testMap.put(".1.3.6.1.4.1.1751.2.46.12", "<?xml version=\"1.0\"?>\r\n" + 
+        		"<smooks-resource-list\r\n" + 
+        		"	 xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\"\r\n" + 
+        		"	 xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\"\r\n" + 
+        		"	 xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.4.xsd\">\r\n" + 
+        		"    <json:reader rootName=\"vesevent\"  keyWhitspaceReplacement=\"-\">\r\n" + 
+        		"    <json:keyMap>\r\n" + 
+        		"	    	<json:key from=\"date&amp;time\" to=\"date-and-time\" />\r\n" + 
+        		"	    </json:keyMap>\r\n" + 
+        		"	</json:reader>\r\n" + 
+        		"   \r\n" + 
+        		"     <jb:bean class=\"org.onap.dcaegen2.ves.domain.VesEvent\" beanId=\"vesEvent\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:wiring property=\"event\" beanIdRef=\"event\"/>\r\n" + 
+        		"    </jb:bean>\r\n" + 
+        		" \r\n" + 
+        		"     <jb:bean class=\"org.onap.dcaegen2.ves.domain.Event\" beanId=\"event\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:wiring property=\"commonEventHeader\" beanIdRef=\"commonEventHeader\"/>\r\n" + 
+        		"    	<jb:wiring property=\"faultFields\" beanIdRef=\"faultFields\"/>    	\r\n" + 
+        		"    	<!--<jb:wiring property=\"measurementsForVfScalingFields\" beanIdRef=\"measurementsForVfScalingFields\"/> -->   	\r\n" + 
+        		"    </jb:bean>   \r\n" + 
+        		"    <!--<jb:bean class=\"org.onap.dcaegen2.ves.domain.MeasurementsForVfScalingFields\" beanId=\"measurementsForVfScalingFields\" createOnElement=\"simple\">\r\n" + 
+        		"    	<jb:wiring property=\"additionalMeasurements\" beanIdRef=\"additionalMeasurements\"/>\r\n" + 
+        		"    </jb:bean>-->\r\n" + 
+        		"    \r\n" + 
+        		"    <jb:bean class=\"org.onap.dcaegen2.ves.domain.CommonEventHeader\" beanId=\"commonEventHeader\" createOnElement=\"vesevent\">\r\n" + 
+        		"		<jb:expression property=\"version\">\"3.0\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"eventId\">\"XXXX\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"reportingEntityName\">\"VesAdapter\"</jb:expression>\r\n" + 
+        		"	 	<jb:expression property=\"domain\">\"fault\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"eventName\" execOnElement=\"vesevent\" >commonEventHeader.domain+\"_\"+commonEventHeader.reportingEntityName +\"_\"+ faultFields.alarmCondition;</jb:expression>\r\n" + 
+        		"    	<jb:value property=\"sequence\" data=\"0\" default=\"0\" decoder=\"Long\"/>\r\n" + 
+        		"    	<jb:value property=\"lastEpochMicrosec\" data=\"#/time-received\"  decoder=\"Double\" />\r\n" + 
+        		"    	<jb:value property=\"startEpochMicrosec\" data=\"#/time-received\"  decoder=\"Double\"/>\r\n" + 
+        		"		<jb:expression property=\"priority\">\"Medium\"</jb:expression>\r\n" + 
+        		"    	<jb:expression property=\"sourceName\">\"VesAdapter\"</jb:expression>\r\n" + 
+        		"    </jb:bean>   \r\n" + 
+        		"    \r\n" + 
+        		"    <jb:bean class=\"org.onap.dcaegen2.ves.domain.FaultFields\" beanId=\"faultFields\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:value property=\"alarmCondition\" data=\"#/trap-category\" />\r\n" + 
+        		"		<jb:expression property=\"eventSeverity\">\"MINOR\"</jb:expression>\r\n" + 
+        		"		<jb:expression property=\"eventSourceType\">\"SNMP Agent\"</jb:expression>\r\n" + 
+        		"    	<jb:expression property=\"specificProblem\">\"SNMP Fault\"</jb:expression>\r\n" + 
+        		"    	<jb:value property=\"faultFieldsVersion\" data=\"2.0\" default=\"2.0\" decoder=\"Double\" />\r\n" + 
+        		"    	<jb:wiring property=\"alarmAdditionalInformation\" beanIdRef=\"alarmAdditionalInformationroot\"/>   \r\n" + 
+        		"		<jb:expression property=\"vfStatus\">\"Active\"</jb:expression>\r\n" + 
+        		"    	\r\n" + 
+        		"    </jb:bean>  \r\n" + 
+        		"     <jb:bean class=\"java.util.ArrayList\" beanId=\"alarmAdditionalInformationroot\" createOnElement=\"vesevent\">\r\n" + 
+        		"    	<jb:wiring beanIdRef=\"alarmAdditionalInformation\"/>\r\n" + 
+        		"    </jb:bean>\r\n" + 
+        		"    \r\n" + 
+        		"      <jb:bean class=\"org.onap.dcaegen2.ves.domain.AlarmAdditionalInformation\" beanId=\"alarmAdditionalInformation\" createOnElement=\"varbinds/element\">\r\n" + 
+        		"    	<jb:value property=\"name\" data=\"#/varbind_oid\"/>\r\n" + 
+        		"        <jb:value property=\"value\" data=\"#/varbind_value\" />\r\n" + 
+        		"    </jb:bean>\r\n" + 
+        		"	<!--<jb:bean class=\"java.util.ArrayList\" beanId=\"additionalMeasurements\" createOnElement=\"simple\">\r\n" + 
+        		"    	<jb:wiring beanIdRef=\"additionalMeasurement\"/>\r\n" + 
+        		"    </jb:bean>    \r\n" + 
+        		"    \r\n" + 
+        		"    <jb:bean class=\"org.onap.dcaegen2.ves.domain.AdditionalMeasurement\" beanId=\"additionalMeasurement\" createOnElement=\"varbinds/element\">\r\n" + 
+        		"    	<jb:value property=\"name\" data=\"#/varbind_value\" />\r\n" + 
+        		"    </jb:bean>  -->  \r\n" + 
+        		"    \r\n" + 
+        		"</smooks-resource-list>");
         
         try {
-            Mockito.when(configFileService.readConfigFile(Mockito.anyString())).thenReturn(configFileData.toString());
-        } catch (Exception e) {
-            eLOGGER.error("Error occurred : " + e.getMessage());
-        }
-        
-        
-        try {
-            String actualResult = universalVesAdapter.transform(incomingJsonString.toString(), "snmp");
+        	
+            VESAdapterInitializer.setMappingFiles(testMap);
+        	String actualResult = universalVesAdapter.transform(incomingJsonString.toString(), "snmp");
             assertNotNull(actualResult);
             assertNotEquals("", actualResult);
         } catch (VesException exception) {

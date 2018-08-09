@@ -21,7 +21,7 @@ package org.onap.dcaegen2.ves.domain;
 
 import java.util.List;
 import java.util.Map;
-import org.onap.dcaegen2.ves.domain.AdditionalMeasurement;
+
 import org.junit.Test;
 
 public class AdditionalMeasurementTest {

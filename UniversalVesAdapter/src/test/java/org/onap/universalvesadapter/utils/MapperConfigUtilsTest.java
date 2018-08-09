@@ -19,23 +19,12 @@
 */
 package org.onap.universalvesadapter.utils;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-
-import java.util.Set;
-import java.util.TreeSet;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.onap.universalvesadapter.exception.MapperConfigException;
-import org.onap.universalvesadapter.mappingconfig.Entry;
-import org.onap.universalvesadapter.mappingconfig.Evaluation;
-import org.onap.universalvesadapter.mappingconfig.MapperConfig;
-import org.onap.universalvesadapter.utils.MapperConfigUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.fasterxml.jackson.databind.JsonNode;
 
 public class MapperConfigUtilsTest {
 

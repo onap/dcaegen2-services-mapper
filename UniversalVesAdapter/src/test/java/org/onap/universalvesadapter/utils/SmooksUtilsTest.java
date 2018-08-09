@@ -19,34 +19,17 @@
 */
 package org.onap.universalvesadapter.utils;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
 
-import java.beans.beancontext.BeanContext;
 import java.io.ByteArrayInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.milyn.Smooks;
-import org.milyn.container.ExecutionContext;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.onap.dcaegen2.ves.domain.VesEvent;
-import org.onap.universalvesadapter.exception.MapperConfigException;
-import org.onap.universalvesadapter.utils.SmooksUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.util.FileCopyUtils;
 import org.xml.sax.SAXException;
 
 public class SmooksUtilsTest {

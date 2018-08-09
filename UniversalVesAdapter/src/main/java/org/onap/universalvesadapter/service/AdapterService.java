@@ -35,11 +35,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class AdapterService {
 
-    /*
-     * @Autowired private UniversalEventAdapter snmpTrapEventAdapter; public
-     * GenericAdapter identifyIncomingJsonFormatAndReturnAdapter() { return
-     * snmpTrapEventAdapter; }
-     */
 
     /**
      * Identifies eventype by parsing the incoming json file.
@@ -52,7 +47,6 @@ public class AdapterService {
      */
     public String identifyEventTypeFromIncomingJson(String incomingJsonString) throws MapperConfigException {
 
-        // TODO A proper logic to identify diffeent events is needed here
         return MapperConfigUtils.checkIncomingJsonForMatchingDomain(incomingJsonString);
     }
 

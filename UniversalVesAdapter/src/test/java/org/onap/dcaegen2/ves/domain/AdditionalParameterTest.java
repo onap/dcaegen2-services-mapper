@@ -19,6 +19,8 @@
 */
 package org.onap.dcaegen2.ves.domain;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Map;
 
 import org.junit.Test;
@@ -37,6 +39,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.getCriticality();
+		
 	}
 
 	@Test
@@ -57,6 +60,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.getName();
+		
 	}
 
 	@Test
@@ -77,6 +81,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.getThresholdCrossed();
+		
 	}
 
 	@Test
@@ -97,6 +102,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.getValue();
+		
 	}
 
 	@Test
@@ -117,6 +123,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.getAdditionalProperties();
+		
 	}
 
 	@Test
@@ -138,6 +145,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.toString();
+		
 	}
 
 	@Test
@@ -148,6 +156,7 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.hashCode();
+		
 	}
 
 	@Test
@@ -159,5 +168,6 @@ public class AdditionalParameterTest {
 		// default test
 		testSubject = createTestSubject();
 		result = testSubject.equals(other);
+		
 	}
 }

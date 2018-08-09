@@ -130,24 +130,7 @@ public class Evaluation {
     public String toString() {
         return new ToStringBuilder(this).append("operand", operand).append("field", field).append("value", value).append("datatype", datatype).append("lhs", lhs).append("rhs", rhs).append("additionalProperties", additionalProperties).toString();
     }
-    /* 
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(field).append(additionalProperties).append(value).append(rhs).append(datatype).append(operand).append(lhs).toHashCode();
-    }
-
-   @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        if ((other instanceof Evaluation) == false) {
-            return false;
-        }
-        Evaluation rhs = ((Evaluation) other);
-        return new EqualsBuilder().append(field, rhs.field).append(additionalProperties, rhs.additionalProperties).append(value, rhs.value).append(rhs, rhs.rhs).append(datatype, rhs.datatype).append(operand, rhs.operand).append(lhs, rhs.lhs).isEquals();
-    }
-*/
+   
     
     @Override
 	public int hashCode() {

@@ -19,11 +19,6 @@
 */
 package org.onap.dcaegen2.ves.domain;
 
-import static org.junit.Assert.*;
-
-import java.util.HashMap;
-import java.util.Map;
-import org.onap.dcaegen2.ves.domain.AdditionalField;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

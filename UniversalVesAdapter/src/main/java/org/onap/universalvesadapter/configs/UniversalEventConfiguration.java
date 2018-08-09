@@ -33,12 +33,9 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-public class UniversalEventConfiguration extends Configuration {
+public class UniversalEventConfiguration{
 
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-	
-	@Value("${snmpTrap.configFile}")
-	private String configFile;
 
 	@Value("${universal.configFiles}")
 	private String configFiles;
@@ -67,7 +64,5 @@ public class UniversalEventConfiguration extends Configuration {
 		
 	}
 	
-	
-	//think about adding mapping files on runtime as well
 	
 }
