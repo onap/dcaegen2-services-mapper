@@ -1,52 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-* ============LICENSE_START=======================================================
-* ONAP : DCAEGEN2/services/mapper
-* ================================================================================
-* Copyright 2018 TechMahindra
-*=================================================================================
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* ============LICENSE_END=========================================================
- -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- <groupId>org.springframework</groupId>
+	<groupId>com.onap.dcae.upload</groupId>
 	<artifactId>snmpmapper</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
- -->
-	<name>snmpmapper</name>
-	<description>snmpmapper demo</description>
 
-	<!-- <parent>
+	<name>snmpmapper</name>
+	<description>saves mapping file to potsgresql database</description>
+
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
-		<relativePath /> lookup parent from repository
-	</parent> -->
-	    <groupId>org.onap.dcaegen2.services.mapper.vesadapter</groupId> 
-        <artifactId>snmpmapper</artifactId> 
-        <version>0.0.1</version> 
-        
-        <parent> 
-                <groupId>org.onap.dcaegen2.services.mapper</groupId> 
-                <artifactId>mapper</artifactId> 
-                <version>0.0.1-SNAPSHOT</version> 
-        </parent>
-	
-
+		<version>2.0.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -57,33 +27,53 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.0.0.RELEASE</version>
-			
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>2.0.3.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<version>2.0.0.RELEASE</version>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.0.3.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<version>2.0.0.RELEASE</version>
+			<version>2.0.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<version>2.0.0.RELEASE</version>
-			<optional>true</optional>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>2.0.3.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>24.0-jre</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.3.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>3.0-alpha-1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.3.3</version>
+</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -91,78 +81,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-                                <version>2.0.0.RELEASE</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<mainClass>org.onap.dcae.mapper.SnmpmapperApplication</mainClass>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
-			<plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.maven.version}</version>
-                <configuration>
-                    <skipDockerBuild>false</skipDockerBuild>
-                    <imageName>${onap.nexus.dockerregistry.daily}/onap/${project.groupId}.${project.artifactId}</imageName>
-                    <baseImage>openjdk:8-jre</baseImage>
-                    <entryPoint>["java", "-jar", "/opt/${project.build.finalName}.jar", "server"]</entryPoint>
-                    <resources>
-                        <resource>
-                            <targetPath>/opt</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                    <exposes>
-                        <expose>8888</expose>
-                    </exposes>
-                    <imageTags>
-                        <!-- imageTag>${project.version}-SNAPSHOT-${maven.build.timestamp}Z</imageTag -->
-                        <imageTag>${project.version}</imageTag>
-                        <imageTag>latest</imageTag>
-                    </imageTags>
-                    <serverId>${onap.nexus.dockerregistry.daily}</serverId>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.9.1</version>
-                <executions>
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/gen/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>regex-property</id>
-                        <goals>
-                            <goal>regex-property</goal>
-                        </goals>
-                        <configuration>
-                            <name>docker.version</name>
-                            <value>${project.version}</value>
-                            <regex>(^[0-9]+.[0-9]+.[0-9]+$)</regex>
-                            <replacement>$1-STAGING</replacement>
-                            <failIfNoMatch>false</failIfNoMatch>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+	
 		</plugins>
+		<finalName>snmpmapper</finalName>
 	</build>
 
 
