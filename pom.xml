@@ -36,7 +36,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>dcae-services-mapper</name>
+    <name>dcaegen2-services-mapper</name>
     <description>Universal VES mapper for DCAE Analytics Service</description>
 
     <licenses>
