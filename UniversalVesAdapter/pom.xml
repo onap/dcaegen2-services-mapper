@@ -210,8 +210,7 @@
 					<skipDockerBuild>false</skipDockerBuild>
 					<imageName>${onap.nexus.dockerregistry.daily}/onap/${project.groupId}.universalvesadaptor</imageName>
 					<baseImage>openjdk:8-jre</baseImage>
-					<entryPoint>["java", "-jar", "/opt/${project.build.finalName}.jar",
-						"server"]</entryPoint>
+					<entryPoint>["java", "-jar", "/opt/${project.build.finalName}.jar", "server"]</entryPoint>
 					<resources>
 						<resource>
 							<targetPath>/opt</targetPath>
