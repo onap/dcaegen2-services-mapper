@@ -84,7 +84,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.0.3.RELEASE</version>
+			<version>2.0.4.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -95,9 +95,13 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons</artifactId>
-			<version>2.0.6.RELEASE</version>
+			<version>2.0.8.RELEASE</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>org.codehaus.groovy</groupId>
+		    <artifactId>groovy-all</artifactId>
+		    <version>2.4.14</version>
+		</dependency>
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
@@ -108,7 +112,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.5</version>
+			<version>2.9.6</version>
 		</dependency>
 
 
@@ -130,7 +134,7 @@
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
-			<version>2.11.0-atlassian-01</version>
+			<version>2.12.0</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->

@@ -79,11 +79,40 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 
 		} else {
 		
-		 
-
 			LOGGER.info(">>>Static configuration to be used");
-			
+			final String url = "http://localhost:8085/start";
+			final String USER_AGENT = "Mozilla/5.0";
 
+			try {
+				URL obj = new URL(url);
+				HttpURLConnection httpURLConnection = (HttpURLConnection) obj.openConnection();
+
+				// optional default is GET
+				httpURLConnection.setRequestMethod("GET");
+
+				// add request header
+				httpURLConnection.setRequestProperty("User-Agent", USER_AGENT);
+
+				int responseCode = httpURLConnection.getResponseCode();
+				LOGGER.info("Sending 'GET' request to URL : " + url);
+				LOGGER.info("Response Code : " + responseCode);
+				BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+				String inputLine;
+				StringBuffer response = new StringBuffer();
+
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
+				in.close();
+
+				// print result
+				LOGGER.info("The result is :" + response.toString());
+
+			} catch (Exception e) {
+				LOGGER.error("Error occured due to :" + e.getMessage());
+				e.printStackTrace();
+			}
+			
 		}
 
 	}
