@@ -147,10 +147,9 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	}
 
 	public void fetchMappingFile() {
-		try (Connection con = DriverManager.getConnection(dBurl, user, pwd)) {
+		String query = "SELECT * FROM mapping_file";
+		try (Connection con = DriverManager.getConnection(dBurl, user, pwd);PreparedStatement pstmt = con.prepareStatement(query);ResultSet rs = pstmt.executeQuery();) {
 			LOGGER.info("Retrieving data from DB");
-			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM mapping_file");
-			ResultSet rs = pstmt.executeQuery();
 			// parsing the column each time is a linear search
 			int column1Pos = rs.findColumn("enterpriseid");
 			int column2Pos = rs.findColumn("mappingfilecontents");
@@ -183,5 +182,4 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	public int getOrder() {
 		return 1;
 	}
-
 }
