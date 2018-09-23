@@ -57,8 +57,8 @@ public class UniversalEventAdapter implements GenericAdapter {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	private String enterpriseId;
-	@Value("${defaultMappingFileName}")
-	private String defaulMappingFileName;
+	@Value("${defaultEnterpriseId}")
+	private String defaultEnterpriseId;
 	private Map<String, Smooks> eventToSmooksMapping = new ConcurrentHashMap<>();
 
 	public UniversalEventAdapter() {
@@ -88,10 +88,10 @@ public class UniversalEventAdapter implements GenericAdapter {
 
 				if (VESAdapterInitializer.getMappingFiles().containsKey(enterpriseId)) {
 					configFileData = VESAdapterInitializer.getMappingFiles().get(enterpriseId);
-					LOGGER.debug("Using Mapping file as Mapping file is not available for Enterprise Id:{}",enterpriseId);
+					LOGGER.debug("Using Mapping file as Mapping file is available for Enterprise Id:{}",enterpriseId);
 				} else {
 
-					configFileData = VESAdapterInitializer.getMappingFiles().get(defaulMappingFileName);
+					configFileData = VESAdapterInitializer.getMappingFiles().get(defaultEnterpriseId);
 					LOGGER.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",enterpriseId);
 				}
 
