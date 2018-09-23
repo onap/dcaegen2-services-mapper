@@ -30,14 +30,18 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties
 public class DmaapConfig {
 	
-	@Value("${mr.hostname}")
+	@Value("${mr.dmaaphost}")
     @NotEmpty
-	private String hostname;
+	private String dmaaphost;
 	
 	 // default port number
 	@Value("${mr.DEFAULT_PORT_NUMBER}")
     @NotEmpty
 	private int DEFAULT_PORT_NUMBER;
+	
+	@Value("${mr.POLLING_INTERVAL}")
+    @NotEmpty
+	private int pollingInterval;
 	
 	// default to no username
 	@Value("${mr.DEFAULT_USER_NAME}")
@@ -124,12 +128,12 @@ public class DmaapConfig {
     @NotEmpty
 	private String subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
 
-	public void setHostname(String hostname) {
-		this.hostname = hostname;
+	 public void setDmaaphost(String dmaaphost) {
+		this.dmaaphost = dmaaphost;
 	}
-
-	public String getHostname() {
-		return hostname;
+ 
+	 public String getDmaaphost() {
+		return dmaaphost;
 	}
 
 	public int getDEFAULT_PORT_NUMBER() {
@@ -284,5 +288,14 @@ public class DmaapConfig {
 	public void setSubcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME(String subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME) {
 		this.subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME = subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
 	}
+
+	public int getPollingInterval() {
+		return pollingInterval;
+	}
+
+	public void setPollingInterval(int pollingInterval) {
+		this.pollingInterval = pollingInterval;
+	}
+	
 
 }
