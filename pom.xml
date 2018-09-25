@@ -70,7 +70,7 @@
         <httpclient.version>4.5.6</httpclient.version>
         <commons.lang3.version>3.5</commons.lang3.version>
 
-        <docker.maven.version>1.0.0</docker.maven.version>
+        <docker.maven.version>1.1.1</docker.maven.version>
 
         <!--TESTING DEPENDENCIES -->
         <junit.version>4.12</junit.version>
@@ -82,14 +82,14 @@
 
         <!-- PLUGINS VERSIONS -->
         <compiler.plugin.version>3.3</compiler.plugin.version>
-        <surefire.plugin.version>2.19.1</surefire.plugin.version>
+        <!--  <surefire.plugin.version>2.19.1</surefire.plugin.version> -->
         <failsafe.plugin.version>2.19.1</failsafe.plugin.version>
         <bundle.plugin.version>2.5.4</bundle.plugin.version>
         <autorun.plugin.version>1.7</autorun.plugin.version>
         <eclipe.plugin.version>2.10</eclipe.plugin.version>
         <findbugs.plugin.version>3.0.2</findbugs.plugin.version>
         <pmd.plugin.version>3.5</pmd.plugin.version>
-        <surefire.report.plugin.version>2.19.1</surefire.report.plugin.version>
+        <!--  <surefire.report.plugin.version>2.19.1</surefire.report.plugin.version> -->
         <checkstyle.plugin.version>2.16</checkstyle.plugin.version>
         <javadoc.plugin.version>2.10.4</javadoc.plugin.version>
         <source.plugin.version>2.4</source.plugin.version>
@@ -129,12 +129,12 @@
         <dependencies>
 
             <!-- LOGGING -->
-            <dependency>
+         <!--    <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
                 <scope>provided</scope>
-            </dependency>
+            </dependency> -->
 
 
             <!-- UTILITIES -->
@@ -562,7 +562,7 @@
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker.maven.version}</version>
                     <configuration>
-                        <skipDockerBuild>true</skipDockerBuild>
+                        <skipDockerBuild>false</skipDockerBuild>
                     </configuration>
                 </plugin>
             </plugins>
