@@ -1,0 +1,1590 @@
+2018-09-23 13:48:23 [main] INFO  o.o.u.a.UniversalEventAdapterTest - Starting UniversalEventAdapterTest on INPUSCPC07276 with PID 14672 (started by AS00500801 in C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter)
+2018-09-23 13:48:23 [main] DEBUG o.o.u.a.UniversalEventAdapterTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-23 13:48:23 [main] INFO  o.o.u.a.UniversalEventAdapterTest - No active profile set, falling back to default profiles: default
+2018-09-23 13:48:29 [main] INFO  o.o.u.a.UniversalEventAdapterTest - Started UniversalEventAdapterTest in 6.441 seconds (JVM running for 8.663)
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed...2
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 13:48:29 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 13:48:30 [main] ERROR o.o.u.service.VESAdapterInitializer - Error occured due to :Connection refused: connect
+2018-09-23 13:48:31 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Using Mapping file as Mapping file is not available for Enterprise Id:.1.3.6.1.4.1.1751.2.46.12
+2018-09-23 13:48:32 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 13:48:33 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 13:48:33 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 13:48:33 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Incoming json transformed to VES format successfully
+2018-09-23 13:48:33 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Serialized VES json
+2018-09-23 13:48:33 [Thread-3] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 13:48:36 [main] INFO  o.o.u.controller.VesControllerTest - Starting VesControllerTest on INPUSCPC07276 with PID 1792 (started by AS00500801 in C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter)
+2018-09-23 13:48:36 [main] DEBUG o.o.u.controller.VesControllerTest - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-23 13:48:36 [main] INFO  o.o.u.controller.VesControllerTest - No active profile set, falling back to default profiles: default
+2018-09-23 13:48:42 [main] INFO  o.o.u.controller.VesControllerTest - Started VesControllerTest in 6.004 seconds (JVM running for 8.293)
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed...2
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 13:48:42 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 13:48:43 [main] ERROR o.o.u.service.VESAdapterInitializer - Error occured due to :Connection refused: connect
+2018-09-23 13:48:44 [main] DEBUG o.o.u.controller.VesController - UniversalVesAdapter Application is stopping...
+2018-09-23 13:48:44 [main] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-09-23 13:48:44 [main] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 13:48:45 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Sun Sep 23 13:48:45 IST 2018
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 13:48:45 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-09-23 13:48:45 [main] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-09-23 13:48:45 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Sun Sep 23 13:48:45 IST 2018
+2018-09-23 13:48:45 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-09-23 13:48:45 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-09-23 13:48:45 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-09-23 13:48:45 [Thread-4] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 13:48:58 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 13:48:59 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 13:48:59 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:11:34 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:/opt/app/VESAdapter/conf/defaultSnmpMappingFile.xml
+2018-09-23 14:11:34 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file C:\opt\app\VESAdapter\conf\defaultSnmpMappingFile.xml is missing
+2018-09-23 14:11:34 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:11:34 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:11:43 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:/opt/app/VESAdapter/conf/defaultSnmpMappingFile.xml
+2018-09-23 14:11:43 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file C:\opt\app\VESAdapter\conf\defaultSnmpMappingFile.xml is missing
+2018-09-23 14:11:43 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:11:43 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:11:57 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 14:11:57 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 14:11:57 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:14:43 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:/opt/app/VESAdapter/conf/defaultSnmpMappingFile.xml
+2018-09-23 14:14:43 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file C:\opt\app\VESAdapter\conf\defaultSnmpMappingFile.xml is missing
+2018-09-23 14:14:43 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:14:43 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:14:52 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:/opt/app/VESAdapter/conf/defaultSnmpMappingFile.xml
+2018-09-23 14:14:52 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file C:\opt\app\VESAdapter\conf\defaultSnmpMappingFile.xml is missing
+2018-09-23 14:14:52 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:14:52 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:15:06 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 14:15:06 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 14:15:07 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:21:15 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:/opt/app/VESAdapter/conf/defaultSnmpMappingFile.xml
+2018-09-23 14:21:15 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file C:\opt\app\VESAdapter\conf\defaultSnmpMappingFile.xml is missing
+2018-09-23 14:21:15 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:21:15 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:49:29 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:49:29 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:49:31 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:49:31 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:49:32 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:49:32 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:49:33 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 14:49:33 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 14:49:33 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:53:27 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:53:27 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file conf/defaultSnmpMappingFile.xml is missing
+2018-09-23 14:53:27 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:53:27 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:54:42 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:54:42 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file conf/defaultSnmpMappingFile.xml is missing
+2018-09-23 14:54:42 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:54:42 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:56:58 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:56:58 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file conf/defaultSnmpMappingFile.xml is missing
+2018-09-23 14:56:58 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:56:58 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:57:59 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:57:59 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file conf/defaultSnmpMappingFile.xml is missing
+2018-09-23 14:57:59 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:57:59 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 14:58:56 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 14:58:56 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file conf/defaultSnmpMappingFile.xml is missing
+2018-09-23 14:58:56 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 14:58:56 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:04:28 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:conf/defaultSnmpMappingFile.xml
+2018-09-23 15:04:28 [main] ERROR o.o.u.service.VESAdapterInitializer - Default mapping file conf/defaultSnmpMappingFile.xml is missing
+2018-09-23 15:04:28 [main] ERROR o.o.u.service.VESAdapterInitializer - Application stoped due to missing default mapping file
+2018-09-23 15:04:28 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:08:35 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:defaultSnmpMappingFile.xml
+2018-09-23 15:08:36 [main] INFO  o.o.u.service.VESAdapterInitializer - Postgresql Connection successful...
+2018-09-23 15:08:36 [main] DEBUG o.o.u.service.VESAdapterInitializer - 1Connection object:org.postgresql.jdbc.PgConnection@7f973a14
+2018-09-23 15:08:36 [main] INFO  o.o.u.service.VESAdapterInitializer - CREATE TABLE IF NOT EXISTS executed successfully....
+2018-09-23 15:08:36 [main] DEBUG o.o.u.service.VESAdapterInitializer - 2Connection object:org.postgresql.jdbc.PgConnection@7f973a14
+2018-09-23 15:08:38 [main] INFO  o.o.u.service.VESAdapterInitializer - Made sure that default mapping file is present in table
+2018-09-23 15:08:38 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 15:08:38 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed, Total # Mappingfiles are2
+2018-09-23 15:08:38 [main] INFO  o.o.u.service.VESAdapterInitializer - Triggering controller's start url 
+2018-09-23 15:08:38 [main] INFO  o.o.u.service.VESAdapterInitializer - Running curl command for url:http://localhost:-1/start
+2018-09-23 15:08:38 [main] ERROR o.o.u.service.VESAdapterInitializer - error
+java.io.IOException: Cannot run program "curl": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.executecurl(VESAdapterInitializer.java:155)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.run(VESAdapterInitializer.java:126)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:784)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:139)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:386)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:137)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 33 common frames omitted
+2018-09-23 15:08:39 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Using Mapping file as Mapping file is available for Enterprise Id:.1.3.6.1.4.1.1751.2.46.12
+2018-09-23 15:08:39 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 15:08:39 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 15:08:39 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 15:08:39 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Incoming json transformed to VES format successfully
+2018-09-23 15:08:39 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Serialized VES json
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:defaultSnmpMappingFile.xml
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - Postgresql Connection successful...
+2018-09-23 15:08:41 [main] DEBUG o.o.u.service.VESAdapterInitializer - 1Connection object:org.postgresql.jdbc.PgConnection@59933644
+2018-09-23 15:08:41 [main] INFO  o.o.u.service.VESAdapterInitializer - CREATE TABLE IF NOT EXISTS executed successfully....
+2018-09-23 15:08:41 [main] DEBUG o.o.u.service.VESAdapterInitializer - 2Connection object:org.postgresql.jdbc.PgConnection@59933644
+2018-09-23 15:08:43 [main] INFO  o.o.u.service.VESAdapterInitializer - Made sure that default mapping file is present in table
+2018-09-23 15:08:44 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 15:08:44 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed, Total # Mappingfiles are3
+2018-09-23 15:08:44 [main] INFO  o.o.u.service.VESAdapterInitializer - Triggering controller's start url 
+2018-09-23 15:08:44 [main] INFO  o.o.u.service.VESAdapterInitializer - Running curl command for url:http://localhost:-1/start
+2018-09-23 15:08:44 [main] ERROR o.o.u.service.VESAdapterInitializer - error
+java.io.IOException: Cannot run program "curl": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.executecurl(VESAdapterInitializer.java:155)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.run(VESAdapterInitializer.java:126)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:784)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:139)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:386)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:137)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 33 common frames omitted
+2018-09-23 15:08:44 [main] DEBUG o.o.u.controller.VesController - UniversalVesAdapter Application is stopping...
+2018-09-23 15:08:44 [main] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-09-23 15:08:44 [main] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 15:08:44 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Sun Sep 23 15:08:44 IST 2018
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 15:08:44 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-09-23 15:08:44 [main] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-09-23 15:08:44 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Sun Sep 23 15:08:44 IST 2018
+2018-09-23 15:08:44 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-09-23 15:08:44 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-09-23 15:08:44 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - The Polling Interval in Milli Second is :10000
+2018-09-23 15:08:45 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-09-23 15:08:45 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 15:08:45 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 15:08:45 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 15:08:45 [Thread-2] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:08:45 [Thread-5] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:defaultSnmpMappingFile.xml
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - Postgresql Connection successful...
+2018-09-23 15:10:55 [main] DEBUG o.o.u.service.VESAdapterInitializer - 1Connection object:org.postgresql.jdbc.PgConnection@72503b19
+2018-09-23 15:10:55 [main] INFO  o.o.u.service.VESAdapterInitializer - CREATE TABLE IF NOT EXISTS executed successfully....
+2018-09-23 15:10:55 [main] DEBUG o.o.u.service.VESAdapterInitializer - 2Connection object:org.postgresql.jdbc.PgConnection@72503b19
+2018-09-23 15:10:57 [main] INFO  o.o.u.service.VESAdapterInitializer - Made sure that default mapping file is present in table
+2018-09-23 15:10:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 15:10:58 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed, Total # Mappingfiles are2
+2018-09-23 15:10:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Triggering controller's start url 
+2018-09-23 15:10:58 [main] INFO  o.o.u.service.VESAdapterInitializer - Running curl command for url:http://localhost:-1/start
+2018-09-23 15:10:58 [main] ERROR o.o.u.service.VESAdapterInitializer - error
+java.io.IOException: Cannot run program "curl": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.executecurl(VESAdapterInitializer.java:155)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.run(VESAdapterInitializer.java:126)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:784)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:139)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:386)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:137)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 33 common frames omitted
+2018-09-23 15:10:58 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Using Mapping file as Mapping file is available for Enterprise Id:.1.3.6.1.4.1.1751.2.46.12
+2018-09-23 15:10:59 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 15:10:59 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 15:10:59 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 15:10:59 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Incoming json transformed to VES format successfully
+2018-09-23 15:10:59 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Serialized VES json
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PSModulePath:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemDrive:C:
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - OneDrive:C:\Users\AS00500801\OneDrive
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles(x86):C:\Program Files (x86)
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles:C:\Program Files\Common Files
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - Path:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramW6432:C:\Program Files\Common Files
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - ComSpec:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramData:C:\ProgramData
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramW6432:C:\Program Files
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - SystemRoot:C:\WINDOWS
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - CommonProgramFiles(x86):C:\Program Files (x86)\Common Files
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - ProgramFiles:C:\Program Files
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - windir:C:\WINDOWS
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:defaultSnmpMappingFile.xml
+2018-09-23 15:11:00 [main] INFO  o.o.u.service.VESAdapterInitializer - Postgresql Connection successful...
+2018-09-23 15:11:00 [main] DEBUG o.o.u.service.VESAdapterInitializer - 1Connection object:org.postgresql.jdbc.PgConnection@1a345298
+2018-09-23 15:11:01 [main] INFO  o.o.u.service.VESAdapterInitializer - CREATE TABLE IF NOT EXISTS executed successfully....
+2018-09-23 15:11:01 [main] DEBUG o.o.u.service.VESAdapterInitializer - 2Connection object:org.postgresql.jdbc.PgConnection@1a345298
+2018-09-23 15:11:01 [main] INFO  o.o.u.service.VESAdapterInitializer - Made sure that default mapping file is present in table
+2018-09-23 15:11:01 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 15:11:01 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed, Total # Mappingfiles are3
+2018-09-23 15:11:01 [main] INFO  o.o.u.service.VESAdapterInitializer - Triggering controller's start url 
+2018-09-23 15:11:01 [main] INFO  o.o.u.service.VESAdapterInitializer - Running curl command for url:http://localhost:-1/start
+2018-09-23 15:11:01 [main] ERROR o.o.u.service.VESAdapterInitializer - error
+java.io.IOException: Cannot run program "curl": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.executecurl(VESAdapterInitializer.java:155)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.run(VESAdapterInitializer.java:126)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:784)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:139)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:386)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:137)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 33 common frames omitted
+2018-09-23 15:11:01 [main] DEBUG o.o.u.controller.VesController - UniversalVesAdapter Application is stopping...
+2018-09-23 15:11:01 [main] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-09-23 15:11:01 [main] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 15:11:02 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Sun Sep 23 15:11:02 IST 2018
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 15:11:02 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-09-23 15:11:02 [main] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-09-23 15:11:02 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Sun Sep 23 15:11:02 IST 2018
+2018-09-23 15:11:02 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-09-23 15:11:02 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-09-23 15:11:02 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - The Polling Interval in Milli Second is :10000
+2018-09-23 15:11:02 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-09-23 15:11:02 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 15:11:02 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 15:11:02 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 15:11:02 [Thread-5] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:11:02 [Thread-2] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:27:25 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:defaultSnmpMappingFile.xml
+2018-09-23 15:27:26 [main] INFO  o.o.u.service.VESAdapterInitializer - Postgresql Connection successful...
+2018-09-23 15:27:26 [main] DEBUG o.o.u.service.VESAdapterInitializer - 1Connection object:org.postgresql.jdbc.PgConnection@60b6702e
+2018-09-23 15:27:26 [main] INFO  o.o.u.service.VESAdapterInitializer - CREATE TABLE IF NOT EXISTS executed successfully....
+2018-09-23 15:27:26 [main] DEBUG o.o.u.service.VESAdapterInitializer - 2Connection object:org.postgresql.jdbc.PgConnection@60b6702e
+2018-09-23 15:27:26 [main] INFO  o.o.u.service.VESAdapterInitializer - Made sure that default mapping file is present in table
+2018-09-23 15:27:27 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 15:27:27 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed, Total # Mappingfiles are2
+2018-09-23 15:27:27 [main] INFO  o.o.u.service.VESAdapterInitializer - Triggering controller's start url 
+2018-09-23 15:27:27 [main] INFO  o.o.u.service.VESAdapterInitializer - Running curl command for url:http://localhost:-1/start
+2018-09-23 15:27:27 [main] ERROR o.o.u.service.VESAdapterInitializer - error
+java.io.IOException: Cannot run program "curl": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.executecurl(VESAdapterInitializer.java:155)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.run(VESAdapterInitializer.java:126)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:784)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:139)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:386)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:137)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 35 common frames omitted
+2018-09-23 15:27:28 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Using Mapping file as Mapping file is available for Enterprise Id:.1.3.6.1.4.1.1751.2.46.12
+2018-09-23 15:27:28 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 15:27:29 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 15:27:29 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
+2018-09-23 15:27:29 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Incoming json transformed to VES format successfully
+2018-09-23 15:27:29 [main] DEBUG o.o.u.adapter.UniversalEventAdapter - Serialized VES json
+2018-09-23 15:27:29 [Thread-3] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PATH:C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\CCM;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\SW\apache-maven-3.3.9\bin;D:\SW\SW_In_Installation\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\lib;C:\Users\AS00500801\AppData\Local\Microsoft\WindowsApps;;D:\SW\STS\sts-bundle\sts-3.9.3.RELEASE;
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN_ROAMINGPROFILE:TECHMAHINDRA
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_LEVEL:6
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMDRIVE:C:
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - SESSIONNAME:Console
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - ALLUSERSPROFILE:C:\ProgramData
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_ARCHITECTURE:AMD64
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - DEFLOGDIR:C:\ProgramData\McAfee\Endpoint Security\Logs
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - MAVEN_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES:C:\Program Files
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PSMODULEPATH:C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMDATA:C:\ProgramData
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - USERNAME:AS00500801
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDNSDOMAIN:TECHMAHINDRA.COM
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_USER_PROFILE_STRING:Default
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - ONEDRIVE:C:\Users\AS00500801\OneDrive
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PATHEXT:.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - WINDIR:C:\WINDOWS
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEPATH:\Users\AS00500801
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_IDENTIFIER:Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - M2_HOME:D:\SW\apache-maven-3.3.9
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PUBLIC:C:\Users\Public
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - =:::::\
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - LOCALAPPDATA:C:\Users\AS00500801\AppData\Local
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES(X86):C:\Program Files (x86)\Common Files
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - USERDOMAIN:TECHMAHINDRA
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - FPS_BROWSER_APP_PROFILE_STRING:Internet Explorer
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - LOGONSERVER:\\INPUSCSVDC004
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - JAVA_HOME:C:\Program Files\Java\jdk1.8.0_171
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROMPT:$P$G
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMFILES(X86):C:\Program Files (x86)
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - =C::C:\Users\AS00500801\git\mapper_merged_5\UniversalVesAdapter
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - APPDATA:C:\Users\AS00500801\AppData\Roaming
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROGRAMW6432:C:\Program Files
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - SYSTEMROOT:C:\WINDOWS
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - VBOX_MSI_INSTALL_PATH:C:\Program Files\Oracle\VirtualBox\
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - NEXTHINK:C:\Program Files\Nexthink
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - OS:Windows_NT
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMW6432:C:\Program Files\Common Files
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - COMPUTERNAME:INPUSCPC07276
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - COMMONPROGRAMFILES:C:\Program Files\Common Files
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - COMSPEC:C:\WINDOWS\system32\cmd.exe
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - PROCESSOR_REVISION:5e03
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - UATDATA:C:\WINDOWS\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - TEMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - HOMEDRIVE:C:
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - USERPROFILE:C:\Users\AS00500801
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - TMP:C:\Users\AS0050~1\AppData\Local\Temp
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - NUMBER_OF_PROCESSORS:4
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - >>>Static configuration to be used
+2018-09-23 15:27:38 [main] INFO  o.o.u.service.VESAdapterInitializer - The Default Mapping file Location:defaultSnmpMappingFile.xml
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - Postgresql Connection successful...
+2018-09-23 15:27:39 [main] DEBUG o.o.u.service.VESAdapterInitializer - 1Connection object:org.postgresql.jdbc.PgConnection@1b54b2ef
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - CREATE TABLE IF NOT EXISTS executed successfully....
+2018-09-23 15:27:39 [main] DEBUG o.o.u.service.VESAdapterInitializer - 2Connection object:org.postgresql.jdbc.PgConnection@1b54b2ef
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - Made sure that default mapping file is present in table
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - Retrieving data from DB
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - DB Initialization Completed, Total # Mappingfiles are2
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - Triggering controller's start url 
+2018-09-23 15:27:39 [main] INFO  o.o.u.service.VESAdapterInitializer - Running curl command for url:http://localhost:-1/start
+2018-09-23 15:27:39 [main] ERROR o.o.u.service.VESAdapterInitializer - error
+java.io.IOException: Cannot run program "curl": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.executecurl(VESAdapterInitializer.java:155)
+	at org.onap.universalvesadapter.service.VESAdapterInitializer.run(VESAdapterInitializer.java:126)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:784)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:139)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:383)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:344)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:417)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:386)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:137)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 35 common frames omitted
+2018-09-23 15:27:39 [main] DEBUG o.o.u.controller.VesController - UniversalVesAdapter Application is stopping...
+2018-09-23 15:27:39 [main] INFO  o.o.u.controller.VesController - UniversalVesAdapter Application starting...
+2018-09-23 15:27:39 [main] DEBUG o.o.u.service.VesService - Creating Subcriber and Publisher with creator.............
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 15:27:40 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Subscriber Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRSubscriberConfig@57b636f3
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Subscriber URI: http://10.53.172.156:3904/events/ONAP-COLLECTOR-SNMPTRAP/grp2/con2
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Subscriber Instance. Subscriber creation time: Sun Sep 23 15:27:40 IST 2018
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new instance of DMaaP MR Factory
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.Creator - The Hostname of DMaap is :10.53.172.156
+2018-09-23 15:27:40 [main] DEBUG o.o.u.dmaap.DMaaPMRFactory - Creating new DMaaP MR Publisher Instance with configuration: org.onap.universalvesadapter.configs.DMaaPMRPublisherConfig@74946b4f
+2018-09-23 15:27:40 [main] DEBUG o.o.u.d.M.DMaaPMRPublisherQueueImpl - Creating Instance of DMaaP Publisher Queue. BatchQueueSize: 1, RecoveryQueueSize: 100000
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.BaseDMaaPMRComponent - Created DMaaP MR Publisher URI: http://10.53.172.156:3904/events/unauthenticated.SEC_FAULT_OUTPUT
+2018-09-23 15:27:40 [main] INFO  o.o.u.dmaap.DMaaPMRFactory - Created new DMaaP MR Publisher Instance. Publisher creation time: Sun Sep 23 15:27:40 IST 2018
+2018-09-23 15:27:40 [SNMP-COLLECTOR] DEBUG o.o.u.service.VesService - starting subscriber & publisher thread:SNMP-COLLECTOR
+2018-09-23 15:27:40 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - fetch and publish from and to Dmaap started
+2018-09-23 15:27:40 [SNMP-COLLECTOR] INFO  o.o.u.service.DMaapService - The Polling Interval in Milli Second is :10000
+2018-09-23 15:27:40 [SNMP-COLLECTOR] DEBUG o.o.u.d.M.DMaaPMRSubscriberImpl - DMaaP MR Subscriber Authentication is disabled as username or password is not present.
+2018-09-23 15:27:40 [Thread-4] DEBUG o.o.u.adapter.UniversalEventAdapter - All Smooks objects closed
+2018-09-23 15:27:55 [main] INFO  o.o.u.utils.SmooksUtils - Transforming incoming json 
+2018-09-23 15:27:55 [main] INFO  o.o.u.utils.SmooksUtils - Context created
+2018-09-23 15:27:55 [main] DEBUG o.o.u.utils.SmooksUtils - consversion successful to VES Event
