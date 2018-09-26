@@ -29,9 +29,11 @@ import org.onap.universalvesadapter.dmaap.MRPublisher.DMaaPMRPublisher;
 import org.onap.universalvesadapter.dmaap.MRSubcriber.DMaaPMRSubscriber;
 import org.onap.universalvesadapter.exception.DMaapException;
 import org.onap.universalvesadapter.exception.VesException;
+import org.onap.universalvesadapter.utils.DmaapConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -41,6 +43,8 @@ public class DMaapService {
 	private static List<String> list = new LinkedList<String>();
 	@Autowired
 	private UniversalEventAdapter eventAdapter;
+	@Autowired
+	private DmaapConfig dmaapConfig;
 
 	/**
 	 * It fetches events from DMaap in JSON, transforms JSON to VES format and
@@ -53,6 +57,8 @@ public class DMaapService {
 			throws InterruptedException {
 		LOGGER.info("fetch and publish from and to Dmaap started");
 
+		int pollingInternalInt=dmaapConfig.getPollingInterval();
+		LOGGER.info("The Polling Interval in Milli Second is :" +pollingInternalInt);
 		while (true) {
 			synchronized (this) {
 				for (String incomingJsonString : dMaaPMRSubscriber.fetchMessages().getFetchedMessages()) {
@@ -61,7 +67,7 @@ public class DMaapService {
 				}
 
 				if (list.size() == 0) {
-					Thread.sleep(2000); 
+					Thread.sleep(pollingInternalInt); 
 				}
 				LOGGER.debug("number of messages to be converted :{}", list.size());
 
