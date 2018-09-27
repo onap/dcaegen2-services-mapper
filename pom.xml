@@ -82,14 +82,14 @@
 
         <!-- PLUGINS VERSIONS -->
         <compiler.plugin.version>3.3</compiler.plugin.version>
-        <surefire.plugin.version>2.19.1</surefire.plugin.version>
+        <!--  <surefire.plugin.version>2.19.1</surefire.plugin.version> -->
         <failsafe.plugin.version>2.19.1</failsafe.plugin.version>
         <bundle.plugin.version>2.5.4</bundle.plugin.version>
         <autorun.plugin.version>1.7</autorun.plugin.version>
         <eclipe.plugin.version>2.10</eclipe.plugin.version>
         <findbugs.plugin.version>3.0.2</findbugs.plugin.version>
         <pmd.plugin.version>3.5</pmd.plugin.version>
-        <surefire.report.plugin.version>2.19.1</surefire.report.plugin.version>
+        <!--  <surefire.report.plugin.version>2.19.1</surefire.report.plugin.version> -->
         <checkstyle.plugin.version>2.16</checkstyle.plugin.version>
         <javadoc.plugin.version>2.10.4</javadoc.plugin.version>
         <source.plugin.version>2.4</source.plugin.version>
