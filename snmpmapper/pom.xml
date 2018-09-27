@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- * ============LICENSE_START======================================================= 
+	* ONAP : DCAEGEN2/services/mapper * ================================================================================ 
+	* Copyright 2018 TechMahindra *================================================================================= 
+	* Licensed under the Apache License, Version 2.0 (the "License"); * you may 
+	not use this file except in compliance with the License. * You may obtain 
+	a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 * 
+	* Unless required by applicable law or agreed to in writing, software * distributed 
+	under the License is distributed on an "AS IS" BASIS, * WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. * See the License for 
+	the specific language governing permissions and * limitations under the License. 
+	* ============LICENSE_END========================================================= -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -20,9 +31,26 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
+		<java.version>8</java.version>
+	
 
+ <docker.image.name>onap/org.onap.dcaegen2.services.mapper.snmpmapper</docker.image.name>
+ 
+        <!-- TEST SETTINGS -->
+        <surefire.redirectTestOutputToFile>true</surefire.redirectTestOutputToFile>
+ 
+        <!-- PLUGIN SETTINGS -->
+        <dependency.locations.enabled>false</dependency.locations.enabled>
+ 
+        <!-- NEXUS RELATED SETTINGS -->
+        <nexusproxy>https://nexus.onap.org</nexusproxy>
+        <snapshots.path>content/repositories/snapshots/</snapshots.path>
+        <releases.path>content/repositories/releases/</releases.path>
+        <site.path>
+            content/sites/site/org/onap/dcaegen2/collectors/ves/${project.artifactId}/${project.version}
+        </site.path>
+        <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+	</properties>
 	<dependencies>
 	<dependency>
     	<groupId>org.springframework.webflow</groupId>
@@ -93,16 +121,225 @@
 	</dependencies>
 
 	<build>
+		
+			<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<plugin>
+					<groupId>com.spotify</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>1.1.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.0.0.RELEASE</version>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.0.0.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<mainClass>org.onap.dcaegen2.services.mapper.snmpmapper.SnmpmapperApplication</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Build-Version>${project.version}</Implementation-Build-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+ 
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/dep.xml</descriptor>
+                    </descriptors>
+                    <attach>false</attach>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <updateOnly>true</updateOnly>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+			<!-- Spotify plugin to build and push docker image -->
+
+			<plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <configuration>
+                    <serverId>${onap.nexus.dockerregistry.daily}</serverId>
+                    <imageName>${docker.image.name}</imageName>
+                    <imageTags>
+                        <tag>latest</tag>
+                    </imageTags>
+                    <baseImage>ubuntu:16.04</baseImage>
+                    <env>
+                        <HOSTALIASES>/etc/host.aliases</HOSTALIASES>
+			<HOME>/opt/app/SnmpMapper</HOME>
+                    </env>
+                    <workdir>/opt/app/SnmpMapper</workdir>
+                    <resources>
+                        <resource>
+                            <targetPath>.</targetPath>
+ 
+                            <directory>${project.build.directory}/${project.artifactId}-${project.version}</directory>
+                        </resource>
+                    </resources>
+                    <runs>
+                        <run>chmod +x bin/run.sh</run>
+                        <run>
+                            <![CDATA[apt-get update && apt-get install -y curl && apt-get install -y openjdk-8-jdk  && apt-get install -y vim && apt-get clean all]]>
+                        </run>
+                    </runs>
+                    <exposes>
+                        <expose>8080</expose>
+                    </exposes>
+                    <entryPoint>bin/run.sh</entryPoint>
+ 
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>tag-and-push-image-latest</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>tag</goal>
+                        </goals>
+                        <configuration>
+                            <image>${docker.image.name}:latest</image>
+                            <newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:latest</newName>
+                            <pushImage>true</pushImage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>tag-and-push-image-with-version</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>tag</goal>
+                        </goals>
+                        <configuration>
+                            <image>${docker.image.name}:latest</image>
+                            <newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}
+                            </newName>
+                            <pushImage>true</pushImage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>tag-and-push-image-with-version-and-date</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>tag</goal>
+                        </goals>
+                        <configuration>
+                            <image>${docker.image.name}:latest</image>
+                            <newName>
+                                ${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}-${maven.build.timestamp}Z
+                            </newName>
+                            <pushImage>true</pushImage>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.9.1</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/gen/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <!-- <execution> <id>regex-property</id> <goals> <goal>regex-property</goal> 
+                        </goals> <configuration> <name>docker.version</name> <value>${project.version}</value> 
+                        <regex>(^[0-9]+.[0-9]+.[0-9]+$)</regex> <replacement>$1-STAGING</replacement> 
+                        <failIfNoMatch>false</failIfNoMatch> </configuration> </execution> -->
+                </executions>
+            </plugin>
 	
 		</plugins>
-		<finalName>snmpmapper</finalName>
+		<!-- <finalName>snmpmapper</finalName> -->
 	</build>
+	
+	
+    <profiles>
+        <profile>
+            <id>with-system-proxy</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.spotify</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <configuration>
+                            <buildArgs>
+                                <http_proxy>${env.http_proxy}</http_proxy>
+                            </buildArgs>
+                        </configuration>
+                    </plugin>
+ 
+                </plugins>
+ 
+            </build>
+        </profile>
+    </profiles>
+ 
+ 
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 
 </project>
