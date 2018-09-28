@@ -42,8 +42,8 @@
 		<snapshots.path>content/repositories/snapshots/</snapshots.path>
 		<releases.path>content/repositories/releases/</releases.path>
 		<site.path>
-			content/sites/site/org/onap/dcaegen2/collectors/ves/${project.artifactId}/${project.version}
-		</site.path>
+            content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
+        </site.path>
 		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
 
 	</properties>
@@ -244,9 +244,11 @@
 				<version>1.1.1</version>
 				<configuration>
 					<serverId>${onap.nexus.dockerregistry.daily}</serverId>
-					<imageName>${docker.image.name}</imageName>
+					<imageName>${onap.nexus.dockerregistry.daily}/${docker.image.name}</imageName>
 					<imageTags>
 						<tag>latest</tag>
+						<tag>${project.version}-${maven.build.timestamp}Z</tag>
+						<tag>${project.version}</tag>
 					</imageTags>
 					<baseImage>ubuntu:16.04</baseImage>
 					<env>
@@ -272,7 +274,7 @@
 					<entryPoint>bin/run.sh</entryPoint>
 
 				</configuration>
-				<executions>
+				<!--<executions>
 					<execution>
 						<id>build-image</id>
 						<phase>package</phase>
@@ -319,7 +321,7 @@
 							<pushImage>true</pushImage>
 						</configuration>
 					</execution>
-				</executions>
+				</executions>-->
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
