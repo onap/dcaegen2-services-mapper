@@ -205,7 +205,7 @@
 				<plugin>
 					<groupId>com.spotify</groupId>
 					<artifactId>docker-maven-plugin</artifactId>
-					<version>1.1.1</version>
+					<version>1.0.0</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -241,7 +241,7 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.1.1</version>
+				<version>1.0.0</version>
 				<configuration>
 					<serverId>${onap.nexus.dockerregistry.daily}</serverId>
 					<imageName>${onap.nexus.dockerregistry.daily}/${docker.image.name}</imageName>
