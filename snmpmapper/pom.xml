@@ -196,19 +196,19 @@
 			<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>1.1.1</version>
+                <version>1.0.0</version>
                 <configuration>
-                     <skipDockerBuild>false</skipDockerBuild> 
+                    <skipDockerBuild>false</skipDockerBuild> 
                     <serverId>${onap.nexus.dockerregistry.daily}</serverId>
                     <imageName>${onap.nexus.dockerregistry.daily}/${docker.image.name}</imageName>
                     <imageTags>
-                        <tag>latest</tag>
+                    <tag>latest</tag>
 						<tag>${project.version}-${maven.build.timestamp}Z</tag>
 						<tag>${project.version}</tag>
                     </imageTags>
                     <baseImage>ubuntu:16.04</baseImage>
                     <env>
-                        <HOSTALIASES>/etc/host.aliases</HOSTALIASES>
+                    <HOSTALIASES>/etc/host.aliases</HOSTALIASES>
 			<HOME>/opt/app/SnmpMapper</HOME>
                     </env>
                     <workdir>/opt/app/SnmpMapper</workdir>
