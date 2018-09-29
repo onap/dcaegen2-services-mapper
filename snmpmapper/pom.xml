@@ -198,6 +198,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.1.1</version>
                 <configuration>
+                     <skipDockerBuild>false</skipDockerBuild> 
                     <serverId>${onap.nexus.dockerregistry.daily}</serverId>
                     <imageName>${onap.nexus.dockerregistry.daily}/${docker.image.name}</imageName>
                     <imageTags>
