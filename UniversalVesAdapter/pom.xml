@@ -16,7 +16,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.onap.dcaegen2.services.mapper.vesadapter</groupId>
-	<artifactId>UniversalVesAdapter</artifactId>
+	<artifactId>universalvesadapter</artifactId><!-- changing to lower case as required by spotify 1.0.0 -->
 	<version>0.0.1-SNAPSHOT</version>
 
 
@@ -38,13 +38,11 @@
 		<dependency.locations.enabled>false</dependency.locations.enabled>
 
 		<!-- NEXUS RELATED SETTINGS -->
-		<nexusproxy>https://nexus.onap.org</nexusproxy>
-		<snapshots.path>content/repositories/snapshots/</snapshots.path>
-		<releases.path>content/repositories/releases/</releases.path>
-		<site.path>
-            content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
-        </site.path>
-		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
+        <nexusproxy>https://nexus.onap.org</nexusproxy>
+        <snapshots.path>content/repositories/snapshots/</snapshots.path>
+        <releases.path>content/repositories/releases/</releases.path>
+        <site.path>content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}</site.path>
 
 	</properties>
 	<dependencies>
@@ -202,22 +200,26 @@
 					<artifactId>maven-assembly-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
-				<plugin>
-					<groupId>com.spotify</groupId>
-					<artifactId>docker-maven-plugin</artifactId>
-					<version>1.0.0</version>
-				</plugin>
+				<!-- JAR PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${jar.plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Implementation-Build-Version>${project.version}</Implementation-Build-Version>
+                                <Class-Path>conf/</Class-Path>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<reuseForks>false</reuseForks>
-					<forkCount>1</forkCount>
-				</configuration>
-			</plugin> -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
@@ -239,91 +241,38 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<configuration>
-					 <skipDockerBuild>false</skipDockerBuild>
-					<serverId>${onap.nexus.dockerregistry.daily}</serverId>
-					<imageName>${onap.nexus.dockerregistry.daily}/${docker.image.name}</imageName>
-					<imageTags>
-						<tag>latest</tag>
-						<tag>${project.version}-${maven.build.timestamp}Z</tag>
-						<tag>${project.version}</tag>
-					</imageTags>
-					<baseImage>ubuntu:16.04</baseImage>
-					<env>
-						<HOSTALIASES>/etc/host.aliases</HOSTALIASES>
-					</env>
-					<workdir>/opt/app/VESAdapter</workdir>
-					<resources>
-						<resource>
-							<targetPath>.</targetPath>
-							<directory>${project.build.directory}/${project.artifactId}-${project.version}</directory>
-						</resource>
-					</resources>
-					<runs>
-						<run>chmod +x bin/run.sh</run>
-						<run>
-                            <![CDATA[apt-get update && apt-get install -y curl && apt-get install -y openjdk-8-jdk  && apt-get install -y vim && apt-get clean all]]>
-						</run>
-					</runs>
-					<exposes>
-						<expose>8080</expose>
-						<expose>8443</expose>
-					</exposes>
-					<entryPoint>bin/run.sh</entryPoint>
-
-				</configuration>
-				<!--<executions>
-					<execution>
-						<id>build-image</id>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>tag-and-push-image-latest</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>tag</goal>
-						</goals>
-						<configuration>
-							<image>${docker.image.name}:latest</image>
-							<newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:latest</newName>
-							<pushImage>true</pushImage>
-						</configuration>
-					</execution>
-					<execution>
-						<id>tag-and-push-image-with-version</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>tag</goal>
-						</goals>
-						<configuration>
-							<image>${docker.image.name}:latest</image>
-							<newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}
-							</newName>
-							<pushImage>true</pushImage>
-						</configuration>
-					</execution>
-					<execution>
-						<id>tag-and-push-image-with-version-and-date</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>tag</goal>
-						</goals>
-						<configuration>
-							<image>${docker.image.name}:latest</image>
-							<newName>
-								${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}-${maven.build.timestamp}Z
-							</newName>
-							<pushImage>true</pushImage>
-						</configuration>
-					</execution>
-				</executions>-->
-			</plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <imageName>${onap.nexus.dockerregistry.daily}/onap/${project.groupId}.${project.artifactId}</imageName>
+                    <baseImage>openjdk:8-jre</baseImage>
+                    <entryPoint>["java", "-jar", "/opt/app/VESAdapter/${project.build.finalName}.jar"]</entryPoint>
+                    <resources>
+                        <resource>
+                            <targetPath>/opt/app/VESAdapter</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <includes>
+                            	<include>${project.build.finalName}.jar</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <targetPath>/opt/app/VESAdapter</targetPath>
+                            <directory>${project.build.directory}/${project.build.finalName}</directory>
+                        </resource>
+                    </resources>
+                    <exposes>
+                        <expose>8085</expose>
+                    </exposes>
+                    <imageTags>
+                        <imageTag>${project.version}-SNAPSHOT-${maven.build.timestamp}Z</imageTag>
+                        <imageTag>${project.version}</imageTag>
+                        <imageTag>latest</imageTag>
+                    </imageTags>
+                    <serverId>${onap.nexus.dockerregistry.daily}</serverId>
+                </configuration>
+            </plugin>
+			
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -337,7 +286,8 @@
 							<mainClass>org.onap.universalvesadapter.Application</mainClass>
 						</configuration>
 					</execution>
-				</executions>
+				</executions>			 
+				 
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -365,27 +315,6 @@
 		</plugins>
 		<!-- <finalName>UniversalVesAdapter</finalName> -->
 	</build>
-
-	<profiles>
-		<profile>
-			<id>with-system-proxy</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.spotify</groupId>
-						<artifactId>docker-maven-plugin</artifactId>
-						<configuration>
-							<buildArgs>
-								<http_proxy>${env.http_proxy}</http_proxy>
-							</buildArgs>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
-
 	<repositories>
 		<repository>
 			<id>spring-releases</id>

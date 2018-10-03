@@ -1,0 +1,11 @@
+2018-10-03 11:23:50 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - Starting SnmpmapperApplication on INPUSCPC07276 with PID 2352 (C:\Users\AS00500801\git\mapper_merged_8\snmpmapper\target\classes started by AS00500801 in C:\Users\AS00500801\git\mapper_merged_8\snmpmapper)
+2018-10-03 11:23:50 [main] DEBUG o.o.d.s.m.s.SnmpmapperApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.3.RELEASE
+2018-10-03 11:23:50 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - No active profile set, falling back to default profiles: default
+2018-10-03 11:24:53 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - Starting SnmpmapperApplication on INPUSCPC07276 with PID 8156 (C:\Users\AS00500801\git\mapper_merged_8\snmpmapper\target\classes started by AS00500801 in C:\Users\AS00500801\git\mapper_merged_8\snmpmapper)
+2018-10-03 11:24:53 [main] DEBUG o.o.d.s.m.s.SnmpmapperApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.3.RELEASE
+2018-10-03 11:24:53 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - No active profile set, falling back to default profiles: default
+2018-10-03 11:25:29 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - Started SnmpmapperApplication in 35.862 seconds (JVM running for 36.497)
+2018-10-03 11:26:31 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - Starting SnmpmapperApplication on INPUSCPC07276 with PID 11160 (C:\Users\AS00500801\git\mapper_merged_8\snmpmapper\target\classes started by AS00500801 in C:\Users\AS00500801\git\mapper_merged_8\snmpmapper)
+2018-10-03 11:26:31 [main] DEBUG o.o.d.s.m.s.SnmpmapperApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.3.RELEASE
+2018-10-03 11:26:31 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - No active profile set, falling back to default profiles: default
+2018-10-03 11:27:06 [main] INFO  o.o.d.s.m.s.SnmpmapperApplication - Started SnmpmapperApplication in 35.772 seconds (JVM running for 36.379)

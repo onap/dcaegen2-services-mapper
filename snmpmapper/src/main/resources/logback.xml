@@ -62,12 +62,9 @@
 	<logger name="org.onap.dcaegen2.services.mapper.snmpmapper" level="debug" additivity="false">
 		<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="STDOUT" />
-	</logger>
-	 <logger name="org.onap.dcaegen2.services.mapper.snmpmapper" level="debug" additivity="false">
-		<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="FILE-ERROR" />
-		<appender-ref ref="STDOUT" />
-	</logger> -
+	</logger>
+	
 	 <!-- <logger name="org.onap.universalvesadapter.adapter" level="error" additivity="false">
 		<appender-ref ref="FILE-ERROR" />
 	</logger> -->

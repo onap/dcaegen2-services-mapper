@@ -68,9 +68,6 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	String defaultEnterpriseId;
 	@Value("${server.port}")
 	String serverPort;
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
-	
 
 	private static Map<String, String> mappingFiles = new HashMap<String, String>();
 	private static Map<String, String> env;
@@ -206,7 +203,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	
 	 private void prepareDatabase() throws IOException {       
 		 
-     
+		 
          LOGGER.info("The Default Mapping file Location:"+defaultMappingFileLocation.trim());
 		 
 		 if(ClassLoader.getSystemResource(defaultMappingFileLocation.trim())==null){
