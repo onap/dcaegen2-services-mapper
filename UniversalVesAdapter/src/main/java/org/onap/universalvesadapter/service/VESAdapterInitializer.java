@@ -42,7 +42,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.Ordered;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 //AdapterInitializer
@@ -68,9 +67,6 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	String defaultEnterpriseId;
 	@Value("${server.port}")
 	String serverPort;
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
-	
 
 	private static Map<String, String> mappingFiles = new HashMap<String, String>();
 	private static Map<String, String> env;
@@ -93,12 +89,11 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 			
 			LOGGER.info(">>>Dynamic configuration to be used");
 			
-			if( (env.get("MR_DMAAPHOST")==null || 
-					(env.get("MR_DMAAPHOST")==null || 
+			if( (env.get("DMAAPHOST")==null || 
 					(env.get("MR_DEFAULT_PORT_NUMBER")==null || 
 					(env.get("URL_JDBC")==null || 
 					(env.get("JDBC_USERNAME")==null || 
-					(env.get("JDBC_PASSWORD")==null ))))))) {
+					(env.get("JDBC_PASSWORD")==null )))))) {
 				
 				
 				LOGGER.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env URL_JDBC=jdbc:postgresql://10.53.172.129:5432/dummy --env JDBC_USERNAME=ngpuser --env JDBC_PASSWORD=root --env MR_DMAAPHOST=10.10.10.10 --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-collectors-ves --env CONFIG_BINDING_SERVICE=config_binding_service -e DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
@@ -108,7 +103,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 				
 				
 				
-				dmaapConfig.setDmaaphost(env.get("MR_DMAAPHOST"));
+				dmaapConfig.setDmaaphost(env.get("DMAAPHOST"));
 				dmaapConfig.setDEFAULT_PORT_NUMBER(Integer.parseInt(env.get("MR_DEFAULT_PORT_NUMBER")));
 				creator.setDmaapConfig(dmaapConfig);
 				

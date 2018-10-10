@@ -70,7 +70,12 @@ public class VesController {
     	LOGGER.debug("Reload of Mapping File is completed");
     }
     
-    
+    @RequestMapping("/healthcheck")
+    public String healthcheck() {
+    	
+    	LOGGER.debug("UniversalVesAdapter Application is up & running...");
+    	return "UniversalVesAdapter Application is up & running...";
+    }   
     
     /**
      * @return message that application stop process is triggered
