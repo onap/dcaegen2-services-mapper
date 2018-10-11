@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bada0100_2203d3b9",
+        "filename": "UniversalVesAdapter/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-11T20:39:44Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 7
+      },
+      "revId": "8db67259b2b682c403da0cfda8875037e94c60f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bada0100_826f1f92",
+        "filename": "UniversalVesAdapter/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-11T20:39:44Z",
+      "side": 1,
+      "message": "Is the log path under vescollector?",
+      "range": {
+        "startLine": 98,
+        "startChar": 3,
+        "endLine": 98,
+        "endChar": 72
+      },
+      "revId": "8db67259b2b682c403da0cfda8875037e94c60f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bada0100_82f63fd6",
+        "filename": "snmpmapper/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-11T20:39:44Z",
+      "side": 1,
+      "message": "shld be R3 or remove this text",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 8
+      },
+      "revId": "8db67259b2b682c403da0cfda8875037e94c60f5",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
