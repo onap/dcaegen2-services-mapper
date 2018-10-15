@@ -232,7 +232,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 		 
                try (Connection con = DriverManager.getConnection(dBurl, user, pwd)) {
                      LOGGER.info("Postgresql Connection successful...");
-                     LOGGER.debug("1Connection object:"+con.toString());
+                     LOGGER.debug("Connection object:"+con.toString());
               //creating table if not exist
              PreparedStatement pstmt11=con.prepareStatement("CREATE TABLE IF NOT EXISTS public."+MappingFileTableName+"\r\n" + 
                      "(\r\n" + 

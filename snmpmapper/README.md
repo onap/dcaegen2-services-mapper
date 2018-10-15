@@ -60,9 +60,5 @@ Dockerfile  bin  lib  logs
 - lib contains all libraries that are pulled into the app during maven build
 - logs contains application logs
 
-
-### Release images
-For R1 - image/version  pushed to nexus3 
-
 ```nexus3.onap.org:10003/snapshots/onap/org.onap.dcaegen2.services.mapper.vesadapter.snmpmapper:latest
 ```

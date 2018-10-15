@@ -72,8 +72,6 @@ General flow goes like this
 - Here entry point will be depending on the deployment type, Getting configuration from docker env var or from CBS
   configures a bunch of things and starts the application in a separate process
 
-### Release images
-For R1 - image/version  pushed to nexus3 
 
 ```
 nexus3.onap.org:10003/snapshots/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor latest
@@ -95,7 +93,7 @@ STEPS FOR SETUP/TEST
 		
  sudo docker run -d -p 8085:8085/tcp -e URL_JDBC=jdbc:postgresql://10.53.172.138:5432/postgres -e JDBC_USERNAME=postgres -e JDBC_PASSWORD=root -e DMAAPHOST=10.53.172.156 -e CONSUL_HOST=10.53.172.109 -e HOSTNAME=static-dcaegen2-services-mua -e MR_DEFAULT_PORT_NUMBER=3904 -e CONFIG_BINDING_SERVICE=config_binding_service nexus3.onap.org:10003/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest
 
-3)	Go inside container and tail /opt/app/VESCollector/logs/vesadaper.log
+3)	Go inside container and tail /opt/app/VESAdapter/logs/vesadaper.log
 4)	Post SNMP event JSON to DMaaP Topic ONAP-COLLECTOR-SNMPTRAP  
 5) Subscribe to DMaaP topic unauthenticated.SEC_FAULT_OUTPUT you will get process VES JSON to this topic.		 
 ```
