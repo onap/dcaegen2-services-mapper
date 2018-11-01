@@ -102,6 +102,7 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 
 		}catch (Exception e) {
 			LOGGER.error("Error occured due to :" + e.getMessage());
+			throw e;
 		}
 		return "Uploaded successfully";
 

@@ -75,9 +75,11 @@ public class MappingFileServiceImpl implements MappingFileService {
                         	LOGGER.error(snmpMapperException.getMessage());
 						} catch (IOException e) {
 							LOGGER.error("IOException occured:{}",e.getCause());
+        						return "failed";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
 							LOGGER.error("SQLException occured:{}",e.getCause());
+        						return "failed";
 						}
                
                     }
