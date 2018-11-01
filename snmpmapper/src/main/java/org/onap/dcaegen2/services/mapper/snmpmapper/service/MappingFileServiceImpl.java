@@ -51,7 +51,7 @@ public class MappingFileServiceImpl implements MappingFileService {
         
         LOGGER.debug("EnterPrise ID recieved:{}",enterpriseid);
          
-        
+        String uploadMessageFromDb="";
         if ((mappingfile != null) && (mappingfile.length > 0) && (!mappingfile.equals(""))) {
             for (MultipartFile aFile : mappingfile) {
                 if(aFile.isEmpty()) {
@@ -67,17 +67,20 @@ public class MappingFileServiceImpl implements MappingFileService {
 						
                         mapping.setMimetype(aFile.getContentType());
                         mapping.setName(aFile.getOriginalFilename());
-                        
-                        
-                       
+
+
+
                         mappingFileDAO.uploadMappingFile(aFile,enterpriseid);
                         } catch (SnmpMapperException snmpMapperException) {
                         	LOGGER.error(snmpMapperException.getMessage());
+                            return "failed";
 						} catch (IOException e) {
 							LOGGER.error("IOException occured:{}",e.getCause());
+                            return "failed";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
 							LOGGER.error("SQLException occured:{}",e.getCause());
+                            return "failed";
 						}
                
                     }
