@@ -151,22 +151,19 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 		String result = null;
 		try {
 			p = process.start();
-			InputStreamReader ipr = new InputStreamReader(p.getInputStream());
-			BufferedReader reader = new BufferedReader(ipr);
-			StringBuilder builder = new StringBuilder();
-			String line;
+			try(InputStreamReader ipr = new InputStreamReader(p.getInputStream());
+			        BufferedReader reader = new BufferedReader(ipr)){
+				StringBuilder builder = new StringBuilder();
+				String line;
 
-			while ((line = reader.readLine()) != null) {
-				builder.append(line);
+				while ((line = reader.readLine()) != null) {
+				    builder.append(line);
+				}
+				result = builder.toString();
+				LOGGER.info(result);
 			}
-			result = builder.toString();
-			LOGGER.info(result);
-
-			reader.close();
-			ipr.close();
 		} catch (IOException e) {
 			LOGGER.error("error", e);
-			e.printStackTrace();
 		}
 		return result;
 
@@ -191,7 +188,6 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 			LOGGER.info("DB Initialization Completed, Total # Mappingfiles are" + mappingFiles.size());
 		} catch (Exception e) {
 			LOGGER.error("Error occured due to :" + e.getMessage());
-			e.printStackTrace();
 		}
 
 	}
@@ -204,73 +200,72 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 		 
 		 if(ClassLoader.getSystemResource(defaultMappingFileLocation.trim())==null){
 			 LOGGER.error("Default mapping file " + defaultMappingFileLocation.trim() + " is missing");
-	    	  System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application stoped due to missing default mapping file");return-1;}));
+			 System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application stoped due to missing default mapping file");return-1;}));
 		 }
 		 
 		 File file = new File(ClassLoader.getSystemResource(defaultMappingFileLocation.trim()).getFile());
-	      FileInputStream fileInputStream=null;
-	      
-		 try 
+
+		 try(FileInputStream fileInputStream= new FileInputStream(file))
 		 {
-	         bytesArray = new byte[(int) file.length()];
-	         fileInputStream = new FileInputStream(file);
-             fileInputStream.read(bytesArray);
-                     
-          } catch (IOException e1) {
-           LOGGER.error("Exception Occured while reading the default mapping file ,Cause: " + e1.getMessage(), e1);                    
-            //exit on missing default mapping file 
-            System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application stoped due to missing default mapping file");return-1;}));      
-           }finally {
-            	   try {
-					fileInputStream.close();
-				}catch (IOException e) {
-					LOGGER.error("Exception while closing file inputstream" + e.getMessage(), e);
-				}
-            }
+		     bytesArray = new byte[(int) file.length()];
+		     fileInputStream.read(bytesArray);
+
+         } catch (IOException e1) {
+             LOGGER.error("Exception Occured while reading the default mapping file ,Cause: " + e1.getMessage(), e1);
+             //exit on missing default mapping file
+             System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application stoped due to missing default mapping file");return-1;}));
+         }
 		 
-               try (Connection con = DriverManager.getConnection(dBurl, user, pwd)) {
-                     LOGGER.info("Postgresql Connection successful...");
-                     LOGGER.debug("Connection object:"+con.toString());
-              //creating table if not exist
-             PreparedStatement pstmt11=con.prepareStatement("CREATE TABLE IF NOT EXISTS public."+MappingFileTableName+"\r\n" + 
-                     "(\r\n" + 
-                     "    enterpriseid character varying COLLATE pg_catalog.\"default\" NOT NULL,\r\n" + 
-                     "    mappingfilecontents bytea,\r\n" + 
-                     "    mimetype character varying COLLATE pg_catalog.\"default\",\r\n" + 
-                     "    file_name character varying COLLATE pg_catalog.\"default\",\r\n" + 
-                     "    CONSTRAINT mapping_file_pkey5 PRIMARY KEY (enterpriseid)\r\n" + 
-                     ")\r\n" + 
-                     "WITH (\r\n" + 
-                     "    OIDS = FALSE\r\n" + 
-                     ")\r\n" + 
-                     "TABLESPACE pg_default;");
-             pstmt11.executeUpdate();
-             LOGGER.info("CREATE TABLE IF NOT EXISTS executed successfully....");
-             
-             if((bytesArray.length>0)&&(!bytesArray.toString().equals(""))) {
-            	LOGGER.debug("2Connection object:"+con.toString());
-            	 PreparedStatement pstmt=con.prepareStatement("INSERT INTO "+MappingFileTableName+"(enterpriseid, mappingfilecontents, mimetype,  File_Name) VALUES (?, ?, ?, ?) ON CONFLICT (enterpriseid) DO NOTHING;");
-                 pstmt.setString(1,defaultEnterpriseId);
-                 pstmt.setBytes(2,bytesArray );
-                 pstmt.setString(3,"text/xml");
-                 pstmt.setString(4, file.getName());
-       
-                 pstmt.executeUpdate();
-                 LOGGER.info("Made sure that default mapping file is present in table");
-             }
-             else {
-            	 LOGGER.error(file.getName()+" is empty");
-            	  //exit on empty mapping file
-            	  System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application stoped beacuase default mapping file is empty..");return-1;}));
-             }
-              
-              
-              
-               } catch (SQLException e) {
-                     LOGGER.error("Received exception : " + e.getMessage(), e);
-                     //exit on SqlException
-                     System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application Stoped due to ",e.getCause());return-1;}));
-               }
+         try (Connection con = DriverManager.getConnection(dBurl, user, pwd);
+                // creating table if not exist
+                PreparedStatement pstmt11 =
+                        con.prepareStatement("CREATE TABLE IF NOT EXISTS public."
+                                + MappingFileTableName + "\r\n" + "(\r\n"
+                                + "    enterpriseid character varying COLLATE pg_catalog.\"default\" NOT NULL,\r\n"
+                                + "    mappingfilecontents bytea,\r\n"
+                                + "    mimetype character varying COLLATE pg_catalog.\"default\",\r\n"
+                                + "    file_name character varying COLLATE pg_catalog.\"default\",\r\n"
+                                + "    CONSTRAINT mapping_file_pkey5 PRIMARY KEY (enterpriseid)\r\n"
+                                + ")\r\n" + "WITH (\r\n" + "    OIDS = FALSE\r\n" + ")\r\n"
+                                + "TABLESPACE pg_default;"))
+         {
+
+            LOGGER.info("Postgresql Connection successful...");
+            LOGGER.debug("Connection object:" + con.toString());
+
+            pstmt11.executeUpdate();
+            LOGGER.info("CREATE TABLE IF NOT EXISTS executed successfully....");
+
+            if ((bytesArray.length > 0) && (!bytesArray.toString().equals(""))) {
+                LOGGER.debug("2Connection object:" + con.toString());
+                try (PreparedStatement pstmt = con.prepareStatement("INSERT INTO "
+                        + MappingFileTableName
+                        + "(enterpriseid, mappingfilecontents, mimetype,  File_Name) VALUES (?, ?, ?, ?) ON CONFLICT (enterpriseid) DO NOTHING;")) {
+                    pstmt.setString(1, defaultEnterpriseId);
+                    pstmt.setBytes(2, bytesArray);
+                    pstmt.setString(3, "text/xml");
+                    pstmt.setString(4, file.getName());
+
+                    pstmt.executeUpdate();
+                    LOGGER.info("Made sure that default mapping file is present in table");
+                }
+            } else {
+                LOGGER.error(file.getName() + " is empty");
+                // exit on empty mapping file
+                System.exit(SpringApplication.exit(applicationContext, () -> {
+                    LOGGER.error("Application stoped beacuase default mapping file is empty..");
+                    return -1;
+                }));
+            }
+
+        } catch (SQLException e) {
+            LOGGER.error("Received exception : " + e.getMessage(), e);
+            // exit on SqlException
+            System.exit(SpringApplication.exit(applicationContext, () -> {
+                LOGGER.error("Application Stoped due to ", e.getCause());
+                return -1;
+            }));
+        }
           
 	 }
 	public static Map<String, String> getMappingFiles() {
