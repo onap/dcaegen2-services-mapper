@@ -59,7 +59,7 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 			LOGGER.info(entry.getKey() + ":" + entry.getValue());
 		}
 
-			if (env.containsKey("CONSUL_HOST") && env.containsKey("CONFIG_BINDING_SERVICE") && env.containsKey("HOSTNAME")) {
+		if (env.containsKey("CONSUL_HOST") && env.containsKey("CONFIG_BINDING_SERVICE") && env.containsKey("HOSTNAME")) {
 				//TODO - Add logic to talk to Consul and CBS to get the configuration. For now, we will refer to configuration coming from docker env parameters
 				
 				LOGGER.info(">>>Dynamic configuration to be used");
@@ -88,10 +88,10 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 		
 		
 		
-		try (Connection con = DriverManager.getConnection(url, user, pwd)) {
+		try (Connection con = DriverManager.getConnection(url, user, pwd);
+		        PreparedStatement pstmt = con.prepareStatement(
+	                    "INSERT INTO mapping_file(enterpriseid, mappingfilecontents, mimetype,  File_Name) VALUES (?, ?, ?, ?)")) {
 			LOGGER.debug("Connection established successfully");
-			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO mapping_file(enterpriseid, mappingfilecontents, mimetype,  File_Name) VALUES (?, ?, ?, ?)");
 
 			pstmt.setString(1, enterpriseid);
 			pstmt.setBytes(2, mappingFile.getBytes());
@@ -102,7 +102,6 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 
 		}catch (Exception e) {
 			LOGGER.error("Error occured due to :" + e.getMessage());
-			e.printStackTrace();
 		}
 		return "Uploaded successfully";
 
