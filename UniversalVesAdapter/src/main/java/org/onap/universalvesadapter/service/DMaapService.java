@@ -66,16 +66,16 @@ public class DMaapService {
 
 				}
 
-				if (list.size() == 0) {
+				if (list.isEmpty()) {
 					Thread.sleep(pollingInternalInt); 
 				}
 				LOGGER.debug("number of messages to be converted :{}", list.size());
 
-				if (list.size() != 0) {
+				if (!list.isEmpty()) {
 					String val = ((LinkedList<String>) list).removeFirst();
 					List<String> messages = new ArrayList<>();
 					String vesEvent = processReceivedJson(val);
-					if (!(vesEvent.isEmpty() || vesEvent.equals(null) || vesEvent.equals(""))) {
+					if (vesEvent!=null && (!(vesEvent.isEmpty() || vesEvent.equals("")))) {
 						messages.add(vesEvent);
 						publisher.publish(messages);
 						LOGGER.info("Message successfully published to DMaaP Topic");

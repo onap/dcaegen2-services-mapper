@@ -52,7 +52,7 @@ public class MappingFileServiceImpl implements MappingFileService {
         LOGGER.debug("EnterPrise ID recieved:{}",enterpriseid);
          
         
-        if ((mappingfile != null) && (mappingfile.length > 0) && (!mappingfile.equals(""))) {
+        if ((mappingfile != null) && (mappingfile.length > 0)) {
             for (MultipartFile aFile : mappingfile) {
                 if(aFile.isEmpty()) {
                     continue;
@@ -77,7 +77,6 @@ public class MappingFileServiceImpl implements MappingFileService {
 							LOGGER.error("IOException occured:{}",e.getCause());
         						return "failed";
 						} catch (SQLException e) {
-							// TODO Auto-generated catch block
 							LOGGER.error("SQLException occured:{}",e.getCause());
         						return "failed";
 						}

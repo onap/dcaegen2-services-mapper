@@ -29,6 +29,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.codec.binary.Hex;
@@ -243,7 +244,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
             pstmt11.executeUpdate();
             LOGGER.info("CREATE TABLE IF NOT EXISTS executed successfully....");
 
-            if ((bytesArray.length > 0) && (!bytesArray.toString().equals(""))) {
+            if ((bytesArray.length > 0) && (!Arrays.toString(bytesArray).equals(""))) {
                 LOGGER.debug("2Connection object:" + con.toString());
                 try (PreparedStatement pstmt = con.prepareStatement("INSERT INTO "
                         + MappingFileTableName

@@ -65,7 +65,8 @@ public class VesService {
 					LOGGER.debug("starting subscriber & publisher thread:{}", Thread.currentThread().getName());
 					dmaapService.fetchAndPublishInDMaaP(subcriber, publisher, creator);
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+				    LOGGER.error("Exception in starting of subscriber & publisher thread:{}",e);
+				    Thread.currentThread().interrupt();
 				}
 			}
 		});

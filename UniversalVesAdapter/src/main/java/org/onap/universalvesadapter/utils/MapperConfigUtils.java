@@ -43,7 +43,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class MapperConfigUtils {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(MapperConfigUtils.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(MapperConfigUtils.class);
     private static Set<Entry> entries = new TreeSet<>((o1, o2) -> o1.getPriority().compareTo(o2.getPriority()));
 
     private enum JoinOperator {
@@ -163,8 +163,7 @@ public class MapperConfigUtils {
             readMapperConfigFile(mappingFile);
             checkIncomingJsonForMatchingDomain(incomingJsonString);
         } catch (MapperConfigException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            LOGGER.error("Exception in mapperConfigFile reading:{}",e);
         }
 
     }
@@ -216,7 +215,7 @@ public class MapperConfigUtils {
             throw new MapperConfigException("Unable to read config file for reason...\n " + exception.getMessage(),
                     exception);
         }
-        System.out.println("Read config file content into :" + config);
+        LOGGER.debug("Read config file content into :{}",config);
         
         if (null != config) {
             entries.addAll(config.getEntries());
@@ -272,48 +271,57 @@ public class MapperConfigUtils {
                                     case STRING:
                                         if (null != actualObj.get(field))
                                             return actualObj.get(field).asText().equals(evaluation.getValue());
+                                        break;
                                     case DOUBLE:
                                         if (null != actualObj.get(field))
                                             return actualObj.get(field).asDouble() == Double
                                                     .valueOf(evaluation.getValue());
+                                        break;
                                     default:
                                         return false;
                                 }
                             } else
                                 return false;
+                            break;
                         case STARTSWITH:
                             if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
                                             return actualObj.get(field).asText().startsWith(evaluation.getValue());
+                                        break;
                                     default:
                                         return false;
                                 }
                             } else
                                 return false;
+                            break;
                         case ENDSWITH:
                             if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
                                             return actualObj.get(field).asText().endsWith(evaluation.getValue());
+                                        break;
                                     default:
                                         return false;
                                 }
                             } else
                                 return false;
+                            break;
                         case CONTAINS:
                             if (MapperConfigUtils.isValidEnum(DataType.class, evaluation.getDatatype())) {
                                 switch (DataType.valueOf(evaluation.getDatatype())) {
                                     case STRING:
                                         if (null != actualObj.get(field))
                                             return actualObj.get(field).asText().contains(evaluation.getValue());
+                                        break;
                                     default:
                                         return false;
                                 }
                             } else
                                 return false;
+                            break;
                         default:
                             return false;
                     }
