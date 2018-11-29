@@ -42,7 +42,8 @@ import com.google.common.base.Objects;
 @Component 
 public abstract class DMaaPMRBaseConfig  {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(DMaaPMRBaseConfig.class);
+	
+	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
     protected String hostName;
     protected Integer portNumber;
@@ -133,7 +134,7 @@ public abstract class DMaaPMRBaseConfig  {
             final String errorMessage =
                     "Unsupported protocol selection. Only HTTPS and HTTPS are currently supported for DMaaP MR";
 
-            throw new DMaapException(errorMessage, LOG, new IllegalArgumentException(errorMessage));
+            throw new DMaapException(errorMessage, errorLogger, new IllegalArgumentException(errorMessage));
         }
         return normalizedProtocolString;
     }
@@ -155,7 +156,7 @@ public abstract class DMaaPMRBaseConfig  {
             final String errorMessage =
                     "Unsupported content type selection. Only application/json is currently supported for DMaaP MR";
 
-            throw new DMaapException(errorMessage, LOG, new IllegalArgumentException(errorMessage));
+            throw new DMaapException(errorMessage, errorLogger, new IllegalArgumentException(errorMessage));
         }
         return normalizedContentType;
     }

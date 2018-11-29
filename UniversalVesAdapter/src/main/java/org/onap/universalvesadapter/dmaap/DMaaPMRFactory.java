@@ -62,8 +62,9 @@ import com.google.inject.Key;
 
 public class DMaaPMRFactory {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DMaaPMRFactory.class);
-
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger"); 
+	
     private final Injector injector;
 
     public DMaaPMRFactory(AbstractModule guiceModule) {
@@ -78,10 +79,10 @@ public class DMaaPMRFactory {
      */
     public DMaaPMRPublisher createPublisher(@Nonnull DMaaPMRPublisherConfig publisherConfig) {
         final DMaaPMRPublisherFactory publisherFactory = injector.getInstance(Key.get(DMaaPMRPublisherFactory.class));
-        LOG.debug("Creating new DMaaP MR Publisher Instance with configuration: {}", publisherConfig);
+        debugLogger.debug("Creating new DMaaP MR Publisher Instance with configuration: {}", publisherConfig);
         final DMaaPMRPublisher dMaaPMRPublisher = publisherFactory.create(publisherConfig);
        
-        LOG.info("Created new DMaaP MR Publisher Instance. Publisher creation time: {}",
+        debugLogger.info("Created new DMaaP MR Publisher Instance. Publisher creation time: {}",
                 dMaaPMRPublisher.getPublisherCreationTime());
         return dMaaPMRPublisher;
     }
@@ -94,9 +95,9 @@ public class DMaaPMRFactory {
      */
     public DMaaPMRSubscriber createSubscriber(@Nonnull DMaaPMRSubscriberConfig subscriberConfig) {
         final DMaaPMRSubscriberFactory subscriberFactory = injector.getInstance(DMaaPMRSubscriberFactory.class);
-        LOG.debug("Creating new DMaaP MR Subscriber Instance with configuration: {}", subscriberConfig);
+        debugLogger.debug("Creating new DMaaP MR Subscriber Instance with configuration: {}", subscriberConfig);
         final DMaaPMRSubscriber dMaaPMRSubscriber = subscriberFactory.create(subscriberConfig);
-        LOG.info("Created new DMaaP MR Subscriber Instance. Subscriber creation time: {}",
+        debugLogger.info("Created new DMaaP MR Subscriber Instance. Subscriber creation time: {}",
                 dMaaPMRSubscriber.getSubscriberCreationTime());
         return dMaaPMRSubscriber;
     }
@@ -108,7 +109,7 @@ public class DMaaPMRFactory {
      */
     public static DMaaPMRFactory create() {
         final DMaaPMRFactory dMaaPMRFactory = new DMaaPMRFactory(new AnalyticsDMaaPModule());
-        LOG.info("Created new instance of DMaaP MR Factory");
+        debugLogger.info("Created new instance of DMaaP MR Factory");
         return dMaaPMRFactory;
     }
 

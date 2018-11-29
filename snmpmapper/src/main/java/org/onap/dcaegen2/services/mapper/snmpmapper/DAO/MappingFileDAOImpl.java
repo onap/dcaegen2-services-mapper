@@ -40,7 +40,9 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Repository
 public class MappingFileDAOImpl implements MappingFileDAO {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+	 private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
 
 	@Value("${spring.datasource.url}")
 	String url;
@@ -53,16 +55,16 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 	private static Map<String, String> env;
 	@Override
 	public String uploadMappingFile(MultipartFile mappingFile, String enterpriseid) throws SQLException, IOException {
-		
+		metricsLogger.info("Uploading mapping file");
 		env = System.getenv();
 		for (Map.Entry<String, String> entry : env.entrySet()) {
-			LOGGER.info(entry.getKey() + ":" + entry.getValue());
+			debugLogger.info(entry.getKey() + ":" + entry.getValue());
 		}
 
 		if (env.containsKey("CONSUL_HOST") && env.containsKey("CONFIG_BINDING_SERVICE") && env.containsKey("HOSTNAME")) {
 				//TODO - Add logic to talk to Consul and CBS to get the configuration. For now, we will refer to configuration coming from docker env parameters
 				
-				LOGGER.info(">>>Dynamic configuration to be used");
+			debugLogger.info(">>>Dynamic configuration to be used");
 				
 				if( (env.get("MR_DMAAPHOST")==null || 
 						(env.get("MR_DMAAPHOST")==null || 
@@ -72,8 +74,8 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 						(env.get("JDBC_PASSWORD")==null ))))))) {
 					
 					
-					LOGGER.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env URL_JDBC=jdbc:postgresql://10.53.172.129:5432/dummy --env JDBC_USERNAME=ngpuser --env JDBC_PASSWORD=root --env MR_DMAAPHOST=10.10.10.10 --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-collectors-ves --env CONFIG_BINDING_SERVICE=config_binding_service -e DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
-					System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application is stoped please provide the above environment parameter during docker run");return-1;}));
+					errorLogger.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env URL_JDBC=jdbc:postgresql://10.53.172.129:5432/dummy --env JDBC_USERNAME=ngpuser --env JDBC_PASSWORD=root --env MR_DMAAPHOST=10.10.10.10 --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-collectors-ves --env CONFIG_BINDING_SERVICE=config_binding_service -e DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
+					System.exit(SpringApplication.exit(applicationContext, () -> {errorLogger.error("Application is stoped please provide the above environment parameter during docker run");return-1;}));
 					
 				}else {
 					
@@ -83,7 +85,7 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 				}
 			
 		} else {
-			LOGGER.info(">>>Static configuration to be used");
+			debugLogger.info(">>>Static configuration to be used");
 		}
 		
 		
@@ -91,7 +93,7 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 		try (Connection con = DriverManager.getConnection(url, user, pwd);
 		        PreparedStatement pstmt = con.prepareStatement(
 	                    "INSERT INTO mapping_file(enterpriseid, mappingfilecontents, mimetype,  File_Name) VALUES (?, ?, ?, ?)")) {
-			LOGGER.debug("Connection established successfully");
+			metricsLogger.info("Connection established successfully");
 
 			pstmt.setString(1, enterpriseid);
 			pstmt.setBytes(2, mappingFile.getBytes());
@@ -101,7 +103,7 @@ public class MappingFileDAOImpl implements MappingFileDAO {
 			pstmt.executeUpdate();
 
 		}catch (Exception e) {
-			LOGGER.error("Error occured due to :" + e.getMessage());
+			errorLogger.error("Error occured due to :{}" , e.getMessage());
 			throw e;
 		}
 		return "Uploaded successfully";

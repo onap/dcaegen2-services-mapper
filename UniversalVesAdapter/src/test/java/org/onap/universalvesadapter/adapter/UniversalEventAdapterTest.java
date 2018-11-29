@@ -45,7 +45,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Ignore
 public class UniversalEventAdapterTest  {
 		
-    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
     
     @Mock
     private VESAdapterInitializer vESAdapterInitializer;  
@@ -223,7 +223,7 @@ public class UniversalEventAdapterTest  {
             assertNotNull(actualResult);
             assertNotEquals("", actualResult);
         } catch (VesException exception) {
-            eLOGGER.error("Error occurred : ", exception );
+        	errorLogger.error("Error occurred : {}", exception );
         }
 	}
 

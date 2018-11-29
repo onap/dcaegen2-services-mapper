@@ -51,7 +51,8 @@ import static java.lang.String.format;
  */
 public class DMaaPMRSubscriberImpl extends BaseDMaaPMRComponent implements DMaaPMRSubscriber {
 
-	private static final Logger LOG = LoggerFactory.getLogger(DMaaPMRSubscriberImpl.class);
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
 	private final DMaaPMRSubscriberConfig subscriberConfig;
 	private final CloseableHttpClient closeableHttpClient;
@@ -80,7 +81,7 @@ public class DMaaPMRSubscriberImpl extends BaseDMaaPMRComponent implements DMaaP
 		if (authHeader.isPresent()) {
 			getRequest.addHeader(HttpHeaders.AUTHORIZATION, authHeader.get());
 		} else {
-			LOG.debug("DMaaP MR Subscriber Authentication is disabled as username or password is not present.");
+			debugLogger.debug("DMaaP MR Subscriber Authentication is disabled as username or password is not present.");
 		}
 
 		try {
@@ -101,7 +102,7 @@ public class DMaaPMRSubscriberImpl extends BaseDMaaPMRComponent implements DMaaP
 					responseMessage = "DMaaP Response Body had no messages";
 				}
 			} else {
-				LOG.error("Unable to fetch messages to DMaaP MR Topic. DMaaP MR unsuccessful Response Code: {}, "
+				errorLogger.error("Unable to fetch messages to DMaaP MR Topic. DMaaP MR unsuccessful Response Code: {}, "
 						+ "DMaaP Response Body: {}", responseCode, responseBody);
 			}
 
@@ -111,7 +112,7 @@ public class DMaaPMRSubscriberImpl extends BaseDMaaPMRComponent implements DMaaP
 
 			final String errorMessage = format("IO Exception while fetching messages from DMaaP Topic. Exception %s",
 					e);
-			throw new DMaapException(errorMessage, LOG, e);
+			throw new DMaapException(errorMessage, errorLogger, e);
 		}
 
 	}

@@ -34,7 +34,7 @@ import org.xml.sax.SAXException;
 
 public class SmooksUtilsTest {
 
-    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());    
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");  
     
     @Test
     public void testGetTransformedObjectForInput() {
@@ -106,7 +106,7 @@ public class SmooksUtilsTest {
             vesEvent = SmooksUtils.getTransformedObjectForInput(smooks,
                     incomingJsonString.toString());
         } catch (IOException | SAXException exception) {
-            eLOGGER.error("Error occurred : ", exception );
+        	errorLogger.error("Error occurred : ", exception );
         }
         
         assertEquals(vesEvent.getEvent().getCommonEventHeader().getDomain(), "UCSNMP-HEARTBEAT");

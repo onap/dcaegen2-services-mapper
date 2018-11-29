@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 public class MapperConfigUtilsTest {
 
-    private final Logger eLOGGER = LoggerFactory.getLogger(this.getClass());
+     private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
     
     String mappingFileContent = "{" + "  \"entries\" : [" 
             + "      {" 
@@ -74,7 +74,7 @@ public class MapperConfigUtilsTest {
                     .checkIncomingJsonForMatchingDomain(inputJsonString);
             assertEquals("snmp", checkIncomingJsonForMatchingDomain);
         } catch (MapperConfigException exception) {
-            eLOGGER.error("Error occurred : ", exception );
+        	errorLogger.error("Error occurred : ", exception );
         }
 
     }

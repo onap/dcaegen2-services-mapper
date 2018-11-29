@@ -64,7 +64,9 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
     private int publisherMaxFlushRetries;
   
 
-    private static final Logger LOG = LoggerFactory.getLogger(DMaaPMRPublisherImpl.class);
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+	 static
 
     public int a =2;
     private final DMaaPMRPublisherConfig publisherConfig;
@@ -95,7 +97,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
 
         // if messages size is less than batch queue size - just queue them for batch publishing
         if (batchQueueRemainingSize > messages.size()) {
-            LOG.debug("Adding messages to batch Queue. No flushing required. Messages Size:{}. Batch Queue Size:{}",
+        	debugLogger.debug("Adding messages to batch Queue. No flushing required. Messages Size:{}. Batch Queue Size:{}",
                     messages.size(), batchQueueRemainingSize);
             final int batchQueueSize = publisherQueue.addBatchMessages(messages);
             return createPublisherAcceptedResponse(batchQueueSize);
@@ -104,7 +106,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
 
             // grab all already queued messages, append current messages and force publish them to DMaaP MR topic
             final List<String> queueMessages = publisherQueue.getMessageForPublishing();
-            LOG.debug("Batch Queue capacity exceeds messages size. Flushing of all pending messages to DMaaP MR " +
+            debugLogger.debug("Batch Queue capacity exceeds messages size. Flushing of all pending messages to DMaaP MR " +
                     "Publisher Topic.");
             return forcePublish(Lists.newLinkedList(Iterables.concat(queueMessages, messages)));
         }
@@ -114,7 +116,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
     @Override
     public DMaaPMRPublisherResponse forcePublish(List<String> messages) {
 
-        LOG.debug("Force publishing messages to DMaaP MR Topic. Messages Size: {}", messages.size());
+    	debugLogger.debug("Force publishing messages to DMaaP MR Topic. Messages Size: {}", messages.size());
 
         final String contentType = publisherConfig.getContentType();
         final String userName =(publisherConfig.getUserName().equals("null")) ? null : publisherConfig.getUserName();
@@ -126,7 +128,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
         if (authHeader.isPresent()) {
             postRequest.addHeader(HttpHeaders.AUTHORIZATION, authHeader.get());
         } else {
-            LOG.debug("DMaaP MR Publisher Authentication is disabled as username or password is not present.");
+        	debugLogger.debug("DMaaP MR Publisher Authentication is disabled as username or password is not present.");
         }
 
         // Create post string entity
@@ -141,12 +143,12 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
             final String responseBody = responsePair.getRight();
             // if messages were published successfully, return successful response
             if (HTTPUtils.isSuccessfulResponseCode(responseCode)) {
-                LOG.debug("DMaaP MR Messages published successfully. DMaaP Response Code: {}. DMaaP Response " +
+            	debugLogger.debug("DMaaP MR Messages published successfully. DMaaP Response Code: {}. DMaaP Response " +
                                 "Body: {}, Number of Messages published: {}",
                         responseCode, responseBody, messages.size());
 
             } else {
-                LOG.warn("Unable to publish messages to DMaaP MR Topic. DMaaP Response Code: {}, DMaaP Response " +
+            	debugLogger.warn("Unable to publish messages to DMaaP MR Topic. DMaaP Response Code: {}, DMaaP Response " +
                         "Body: {}. Messages will be queued in recovery queue", responseCode, responseBody);
                 addMessagesToRecoveryQueue(publisherQueue, messages);
             }
@@ -160,7 +162,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
             final String errorMessage = format("IO Exception while publishing messages to DMaaP Topic. " +
                     "Messages will be queued in recovery queue. Messages Size: %d", messages.size());
 
-            throw new DMaapException(errorMessage, LOG, e);
+            throw new DMaapException(errorMessage, errorLogger, e);
         }
 
     }
@@ -171,7 +173,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
         final List<String> queueMessages = publisherQueue.getMessageForPublishing();
         // If there are no message return 204 (No Content) response code
         if (queueMessages.isEmpty()) {
-            LOG.debug("No messages to publish to batch queue. Returning 204 status code");
+        	debugLogger.debug("No messages to publish to batch queue. Returning 204 status code");
             return createPublisherNoContentResponse();
         } else {
             // force publish messages in queue
@@ -198,7 +200,7 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
             flushResponseCode = flushResponse.getResponseCode();
 
             if (!HTTPUtils.isSuccessfulResponseCode(flushResponseCode)) {
-                LOG.warn("Unable to flush batch messages to publisher due to DMaaP MR invalid Response: {}. " +
+            	debugLogger.warn("Unable to flush batch messages to publisher due to DMaaP MR invalid Response: {}. " +
                                 "Retrial No: {} of Max {} Retries", flushResponseCode, retrialNumber,
                                 publisherMaxFlushRetries);
 
@@ -208,9 +210,9 @@ public class DMaaPMRPublisherImpl extends BaseDMaaPMRComponent implements DMaaPM
                 !HTTPUtils.isSuccessfulResponseCode(flushResponseCode));
 
         if (!HTTPUtils.isSuccessfulResponseCode(flushResponseCode)) {
-            LOG.error("Unable to flush batch messages to publisher. Messages loss cannot be prevented");
+        	errorLogger.error("Unable to flush batch messages to publisher. Messages loss cannot be prevented");
         } else {
-            LOG.info("Successfully published all batched messages to publisher.");
+        	debugLogger.info("Successfully published all batched messages to publisher.");
         }
 
         // close http client

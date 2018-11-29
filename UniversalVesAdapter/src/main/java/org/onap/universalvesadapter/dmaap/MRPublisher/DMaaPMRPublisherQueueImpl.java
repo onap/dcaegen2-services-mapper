@@ -44,7 +44,8 @@ import static java.util.Collections.unmodifiableList;
  */
 public class DMaaPMRPublisherQueueImpl implements DMaaPMRPublisherQueue {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DMaaPMRPublisherQueueImpl.class);
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 
 
     private final LinkedBlockingDeque<String> batchQueue;
     private final LinkedBlockingDeque<String> recoveryQueue;
@@ -54,7 +55,7 @@ public class DMaaPMRPublisherQueueImpl implements DMaaPMRPublisherQueue {
                                      @Assisted("recoveryQueueSize") int recoveryQueueSize) {
         batchQueue = new LinkedBlockingDeque<>(batchQueueSize);
         recoveryQueue = new LinkedBlockingDeque<>(recoveryQueueSize);
-        LOG.debug("Creating Instance of DMaaP Publisher Queue. BatchQueueSize: {}, RecoveryQueueSize: {}",
+        debugLogger.debug("Creating Instance of DMaaP Publisher Queue. BatchQueueSize: {}, RecoveryQueueSize: {}",
                 batchQueueSize, recoveryQueueSize);
     }
 
@@ -101,13 +102,13 @@ public class DMaaPMRPublisherQueueImpl implements DMaaPMRPublisherQueue {
         // get messages from recovery queue if present
         if (!recoveryQueue.isEmpty()) {
             final int recoveryQueueSize = recoveryQueue.drainTo(recoveryMessageList);
-            LOG.debug("Drained Recovery Queue elements for flushing: {}", recoveryQueueSize);
+            debugLogger.debug("Drained Recovery Queue elements for flushing: {}", recoveryQueueSize);
         }
 
         // get messages from batch queue if present
         if (!batchQueue.isEmpty()) {
             final int batchQueueSize = batchQueue.drainTo(batchMessagesList);
-            LOG.debug("Drained Batch Queue elements for flushing: {}", batchQueueSize);
+            debugLogger.debug("Drained Batch Queue elements for flushing: {}", batchQueueSize);
         }
 
         // concat recovery and batch queue elements

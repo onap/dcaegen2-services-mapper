@@ -64,7 +64,8 @@ import com.google.common.base.Optional;
 @ComponentScan
 public abstract class BaseDMaaPMRComponent  {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BaseDMaaPMRComponent.class);
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
     private static final ObjectMapper objectMapper = new ObjectMapper(); 
     public  BaseDMaaPMRComponent() {}
 
@@ -109,9 +110,9 @@ public abstract class BaseDMaaPMRComponent  {
                     .setPath(dmaapUriPathPrefix + topicName).build();
         } catch (URISyntaxException e) {
             final String errorMessage = format("Error while creating publisher URI: %s", e);
-            throw new DMaapException(errorMessage, LOG, e);
+            throw new DMaapException(errorMessage, errorLogger, e);
         }
-        LOG.info("Created DMaaP MR Publisher URI: {}", publisherURI);
+        debugLogger.info("Created DMaaP MR Publisher URI: {}", publisherURI);
         return publisherURI;
     }
 
@@ -152,10 +153,10 @@ public abstract class BaseDMaaPMRComponent  {
 
         } catch (URISyntaxException e) {
             final String errorMessage = format("Error while creating subscriber URI: %s", e);
-            throw new DMaapException(errorMessage, LOG, e);
+            throw new DMaapException(errorMessage, errorLogger, e);
         }
 
-        LOG.info("Created DMaaP MR Subscriber URI: {}", subscriberURI);
+        debugLogger.info("Created DMaaP MR Subscriber URI: {}", subscriberURI);
         return subscriberURI;
     }
 
@@ -267,14 +268,14 @@ public abstract class BaseDMaaPMRComponent  {
         try {
             publisherQueue.addRecoverableMessages(messages);
 
-            LOG.debug("Messages Added to Recovery Queue. Messages Size: {}, Recovery Queue Remaining Size: {}",
+            debugLogger.debug("Messages Added to Recovery Queue. Messages Size: {}, Recovery Queue Remaining Size: {}",
                     messages.size(), publisherQueue.getBatchQueueRemainingSize());
 
         } catch (IllegalStateException e) {
             final String errorMessage = format("Unable to put messages in recovery queue. Messages will be lost. " +
                             "Recovery Queue might be full. Message Size: %d, Recovery Queue Remaining Capacity: %d",
                     messages.size(), publisherQueue.getRecoveryQueueRemainingSize());
-            throw new DMaapException(errorMessage, LOG, e);
+            throw new DMaapException(errorMessage, errorLogger, e);
         }
     }
 
@@ -307,13 +308,13 @@ public abstract class BaseDMaaPMRComponent  {
             final String errorMessage =
                     format("Unable to convert publisher messages to Json. Messages: %s, Json Error: %s",
                             messages, e);
-            throw new DMaapException(errorMessage, LOG, e);
+            throw new DMaapException(errorMessage, errorLogger, e);
 
         } catch (IOException e) {
             final String errorMessage =
                     format("IO Exception while converting publisher messages to Json. Messages: %s, Json Error: %s",
                             messages, e);
-            throw new DMaapException(errorMessage, LOG, e);
+            throw new DMaapException(errorMessage, errorLogger, e);
         }
     }
 
@@ -357,7 +358,7 @@ public abstract class BaseDMaaPMRComponent  {
                 final String errorMessage =
                         format("Unable to convert subscriber Json String to Messages. Subscriber Response String: %s," +
                                 " Json Error: %s", messagesJsonString, e);
-                throw new DMaapException(errorMessage, LOG, e);
+                throw new DMaapException(errorMessage, errorLogger, e);
             }
 
         }
