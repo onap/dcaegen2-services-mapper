@@ -35,6 +35,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.onap.dcaegen2.services.mapper.snmpmapper.entity.MappingFile;
 import org.onap.dcaegen2.services.mapper.snmpmapper.service.MappingFileService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -50,6 +52,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SnmpmapperController {
     
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 	@Autowired
 	MappingFileService mappingFileService;
 	
@@ -71,6 +74,7 @@ public class SnmpmapperController {
     @RequestMapping(value = "uploadFile", method = RequestMethod.POST)
     public String saveUploadedFileInDatabase(HttpServletRequest request, final @RequestParam MultipartFile[] mapper){
     String	result=mappingFileService.saveUploadedFileInDatabase(request, mapper);
+    debugLogger.debug("result of the mapping file upload:{}",result);
     if(result.equals("success")) {
     	 return  "success.html";
     }else

@@ -37,7 +37,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class VesService {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(VesService.class);
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
 	private boolean isRunning = true;
 
@@ -52,7 +54,7 @@ public class VesService {
 	 * method triggers universal VES adapter module.
 	 */
 	public void start() throws MapperConfigException {
-		LOGGER.debug("Creating Subcriber and Publisher with creator.............");
+		debugLogger.info("Creating Subcriber and Publisher with creator.............");
 		DMaaPMRSubscriber subcriber = creator.getDMaaPMRSubscriber();
 
 		DMaaPMRPublisher publisher = creator.getDMaaPMRPublisher();
@@ -62,10 +64,10 @@ public class VesService {
 			@Override
 			public void run() {
 				try {
-					LOGGER.debug("starting subscriber & publisher thread:{}", Thread.currentThread().getName());
+					debugLogger.info("starting subscriber & publisher thread:{}", Thread.currentThread().getName());
 					dmaapService.fetchAndPublishInDMaaP(subcriber, publisher, creator);
 				} catch (InterruptedException e) {
-				    LOGGER.error("Exception in starting of subscriber & publisher thread:{}",e);
+					errorLogger.error("Exception in starting of subscriber & publisher thread:{}",e);
 				    Thread.currentThread().interrupt();
 				}
 			}

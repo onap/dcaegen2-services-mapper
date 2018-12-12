@@ -38,7 +38,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class VesController {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	
     @Autowired
     private VesService vesService;
@@ -52,28 +54,28 @@ public class VesController {
     @RequestMapping("/start")
     public String start() {
     	
-    	LOGGER.info("UniversalVesAdapter Application starting...");
+    	metricsLogger.info("UniversalVesAdapter Application starting...");
     	
     	try {
 			vesService.start();
 		} catch (MapperConfigException e) {
 			
-			LOGGER.error("Config error:{}",e.getMessage(),e.getCause());
+			errorLogger.error("Config error:{}",e.getMessage(),e.getCause());
 		}
         return "Application started";
     }
     
     @RequestMapping("/reload")
     public void reloadMappingFileFromDB() {
-    	LOGGER.debug("Reload of Mapping File is started");
+    	debugLogger.debug("Reload of Mapping File is started");
     	vESAdapterInitializer.fetchMappingFile();
-    	LOGGER.debug("Reload of Mapping File is completed");
+    	debugLogger.debug("Reload of Mapping File is completed");
     }
     
     @RequestMapping("/healthcheck")
     public String healthcheck() {
     	
-    	LOGGER.debug("UniversalVesAdapter Application is up & running...");
+    	metricsLogger.info("UniversalVesAdapter Application is up & running...");
     	return "UniversalVesAdapter Application is up & running...";
     }   
     
@@ -84,7 +86,7 @@ public class VesController {
     public String stop() {
     	
     	vesService.stop();
-    	LOGGER.debug("UniversalVesAdapter Application is stopping...");
+    	metricsLogger.info("UniversalVesAdapter Application is stopping...");
     	return "Application will be stopped soon";
     }    
 }

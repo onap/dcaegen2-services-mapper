@@ -43,7 +43,8 @@ import org.slf4j.LoggerFactory;
 public class SmooksUtils {
 
 	
-	private final static Logger LOGGER = LoggerFactory.getLogger(SmooksUtils.class);	
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");	
 	
 	/**
 	 * converts the incoming json using passed smooks instance and return the pojo representation of VES event
@@ -55,9 +56,9 @@ public class SmooksUtils {
 	 */
 	public static VesEvent getTransformedObjectForInput(Smooks smooks, String incomingJsonString) {
 		
-		LOGGER.info("Transforming incoming json " );
+		debugLogger.info("Transforming incoming json " );
 		ExecutionContext executionContext = smooks.createExecutionContext();
-		LOGGER.info("Context created");
+		debugLogger.info("Context created");
 		Locale defaultLocale = Locale.getDefault();
         Locale.setDefault(new Locale("en", "IE"));
 
@@ -67,7 +68,7 @@ public class SmooksUtils {
        
         Locale.setDefault(defaultLocale);
         VesEvent vesEvent = (VesEvent) executionContext.getBeanContext().getBean("vesEvent");
-        LOGGER.debug("consversion successful to VES Event"); 
+        debugLogger.debug("consversion successful to VES Event"); 
         
 		return vesEvent;
 	}

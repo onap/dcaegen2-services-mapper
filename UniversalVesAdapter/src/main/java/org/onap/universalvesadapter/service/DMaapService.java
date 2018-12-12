@@ -33,13 +33,14 @@ import org.onap.universalvesadapter.utils.DmaapConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DMaapService {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	private static List<String> list = new LinkedList<String>();
 	@Autowired
 	private UniversalEventAdapter eventAdapter;
@@ -55,10 +56,9 @@ public class DMaapService {
 	 */
 	public void fetchAndPublishInDMaaP(DMaaPMRSubscriber dMaaPMRSubscriber, DMaaPMRPublisher publisher, Creator creater)
 			throws InterruptedException {
-		LOGGER.info("fetch and publish from and to Dmaap started");
-
+		metricsLogger.info("fetch and publish from and to Dmaap started");
 		int pollingInternalInt=dmaapConfig.getPollingInterval();
-		LOGGER.info("The Polling Interval in Milli Second is :" +pollingInternalInt);
+		debugLogger.info("The Polling Interval in Milli Second is :{}" +pollingInternalInt);
 		while (true) {
 			synchronized (this) {
 				for (String incomingJsonString : dMaaPMRSubscriber.fetchMessages().getFetchedMessages()) {
@@ -69,7 +69,7 @@ public class DMaapService {
 				if (list.isEmpty()) {
 					Thread.sleep(pollingInternalInt); 
 				}
-				LOGGER.debug("number of messages to be converted :{}", list.size());
+				debugLogger.debug("number of messages to be converted :{}", list.size());
 
 				if (!list.isEmpty()) {
 					String val = ((LinkedList<String>) list).removeFirst();
@@ -78,7 +78,7 @@ public class DMaapService {
 					if (vesEvent!=null && (!(vesEvent.isEmpty() || vesEvent.equals("")))) {
 						messages.add(vesEvent);
 						publisher.publish(messages);
-						LOGGER.info("Message successfully published to DMaaP Topic");
+						metricsLogger.info("Message successfully published to DMaaP Topic");
 					}
 
 				}
@@ -108,10 +108,10 @@ public class DMaapService {
 				outgoingJsonString = eventAdapter.transform(incomingJsonString, "snmp");
 
 			} catch (VesException exception) {
-				LOGGER.error("Received exception : " + exception.getMessage(), exception);
-				LOGGER.error("APPLICATION WILL BE SHUTDOWN UNTIL ABOVE ISSUE IS RESOLVED.");
+				errorLogger.error("Received exception : {},{}" + exception.getMessage(), exception);
+				debugLogger.warn("APPLICATION WILL BE SHUTDOWN UNTIL ABOVE ISSUE IS RESOLVED.");
 			} catch (DMaapException e) {
-				LOGGER.error("Received exception : ", e.getMessage());
+				errorLogger.error("Received exception : {}", e.getMessage());
 			}
 		}
 		return outgoingJsonString;

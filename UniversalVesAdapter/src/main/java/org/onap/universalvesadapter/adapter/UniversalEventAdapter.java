@@ -54,7 +54,9 @@ import com.google.gson.JsonSyntaxException;
 @Component
 public class UniversalEventAdapter implements GenericAdapter {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
 	private String enterpriseId;
 	@Value("${defaultEnterpriseId}")
@@ -88,37 +90,37 @@ public class UniversalEventAdapter implements GenericAdapter {
 
 				if (VESAdapterInitializer.getMappingFiles().containsKey(enterpriseId)) {
 					configFileData = VESAdapterInitializer.getMappingFiles().get(enterpriseId);
-					LOGGER.debug("Using Mapping file as Mapping file is available for Enterprise Id:{}",enterpriseId);
+					debugLogger.debug("Using Mapping file as Mapping file is available for Enterprise Id:{}",enterpriseId);
 				} else {
 
 					configFileData = VESAdapterInitializer.getMappingFiles().get(defaultEnterpriseId);
-					LOGGER.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",enterpriseId);
+					debugLogger.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",enterpriseId);
 				}
 
 				Smooks smooksTemp = new Smooks(new ByteArrayInputStream(configFileData.getBytes(StandardCharsets.UTF_8)));
 				eventToSmooksMapping.put(eventType, smooksTemp);
 
 			VesEvent vesEvent = SmooksUtils.getTransformedObjectForInput(smooksTemp,incomingJsonString);
-			LOGGER.debug("Incoming json transformed to VES format successfully");
+			debugLogger.info("Incoming json transformed to VES format successfully");
 			ObjectMapper objectMapper = new ObjectMapper();
 			result = objectMapper.writeValueAsString(vesEvent);
-			LOGGER.debug("Serialized VES json");
+			debugLogger.info("Serialized VES json");
 		} catch (JsonProcessingException exception) {
 			throw new VesException("Unable to convert pojo to VES format, Reason :{}", exception);
 		} catch (SAXException | IOException exception) {
 			//Invalid Mapping file
-			LOGGER.error("Dropping this Trap :{},due to error Occured  :Reason:", incomingJsonString, exception); 
+			errorLogger.error("Dropping this Trap :{},Reason:{}", incomingJsonString, exception); 
 
 		} catch (JsonSyntaxException exception) {
 			// Invalid Trap
-			LOGGER.error("Dropping this Invalid json Trap :{},  Reason:", incomingJsonString, exception);
+			errorLogger.error("Dropping this Invalid json Trap :{},  Reason:{}", incomingJsonString, exception);
 		}catch (JsonParseException exception) {
 			// Invalid Trap
-			LOGGER.error("Dropping this Invalid json Trap :{},  Reason:", incomingJsonString, exception);
+			errorLogger.error("Dropping this Invalid json Trap :{},  Reason:{}", incomingJsonString, exception);
 		} 
 		catch (RuntimeException exception) {
 
-			LOGGER.error("Dropping this Trap :{},Reason:", incomingJsonString, exception);
+			errorLogger.error("Dropping this Trap :{},Reason:{}", incomingJsonString, exception);
 
 		}
 		return result;
@@ -131,7 +133,7 @@ public class UniversalEventAdapter implements GenericAdapter {
 	public void destroy() {
 		for (Smooks smooks : eventToSmooksMapping.values())
 			smooks.close();
-		LOGGER.debug("All Smooks objects closed");
+		debugLogger.warn("All Smooks objects closed");
 	}
 
 }

@@ -48,7 +48,9 @@ import org.springframework.stereotype.Component;
 //AdapterInitializer
 @Component
 public class VESAdapterInitializer implements CommandLineRunner, Ordered {
-	private static final Logger LOGGER = LoggerFactory.getLogger(VESAdapterInitializer.class);
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	
 	@Autowired
 	private Creator creator;
@@ -82,13 +84,13 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	public void run(String... args) throws Exception {
 		env = System.getenv();
 		for (Map.Entry<String, String> entry : env.entrySet()) {
-			LOGGER.info(entry.getKey() + ":" + entry.getValue());
+			debugLogger.debug(entry.getKey() + ":" + entry.getValue());
 		}
 
 		if (env.containsKey("CONSUL_HOST") && env.containsKey("CONFIG_BINDING_SERVICE") && env.containsKey("HOSTNAME")) {
 			//TODO - Add logic to talk to Consul and CBS to get the configuration. For now, we will refer to configuration coming from docker env parameters
 			
-			LOGGER.info(">>>Dynamic configuration to be used");
+			debugLogger.info(">>>Dynamic configuration to be used");
 			
 			if( (env.get("DMAAPHOST")==null || 
 					(env.get("MR_DEFAULT_PORT_NUMBER")==null || 
@@ -97,8 +99,8 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 					(env.get("JDBC_PASSWORD")==null )))))) {
 				
 				
-				LOGGER.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env URL_JDBC=jdbc:postgresql://10.53.172.129:5432/dummy --env JDBC_USERNAME=ngpuser --env JDBC_PASSWORD=root --env MR_DMAAPHOST=10.10.10.10 --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-collectors-ves --env CONFIG_BINDING_SERVICE=config_binding_service -e DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
-				System.exit(SpringApplication.exit(applicationContext, () -> {LOGGER.error("Application stoped due to missing default mapping file");return-1;}));
+				errorLogger.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env URL_JDBC=jdbc:postgresql://10.53.172.129:5432/dummy --env JDBC_USERNAME=ngpuser --env JDBC_PASSWORD=root --env MR_DMAAPHOST=10.10.10.10 --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-collectors-ves --env CONFIG_BINDING_SERVICE=config_binding_service -e DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
+				System.exit(SpringApplication.exit(applicationContext, () -> {errorLogger.error("Application stoped due to missing default mapping file");return-1;}));
 				
 			}else {
 				
@@ -116,12 +118,12 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 			
 	
 		} else {
-			LOGGER.info(">>>Static configuration to be used");
+			debugLogger.info(">>>Static configuration to be used");
 		}
 		prepareDatabase();
 		fetchMappingFile();
 		
-		LOGGER.info("Triggering controller's start url ");
+		debugLogger.info("Triggering controller's start url ");
 		executecurl("http://localhost:"+serverPort+"/start");
 	}
 
@@ -145,7 +147,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 
 	private static String executecurl(String url) {
 
-		LOGGER.info("Running curl command for url:"+url);
+		debugLogger.info("Running curl command for url:{}",url);
 		String[] command = { "curl", "-v", url };
 		ProcessBuilder process = new ProcessBuilder(command);
 		Process p;
@@ -161,10 +163,10 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 				    builder.append(line);
 				}
 				result = builder.toString();
-				LOGGER.info(result);
+				debugLogger.debug(result);
 			}
 		} catch (IOException e) {
-			LOGGER.error("error", e);
+			errorLogger.error("error", e);
 		}
 		return result;
 
@@ -173,7 +175,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	public void fetchMappingFile() {
 
 		try (Connection con = DriverManager.getConnection(dBurl, user, pwd);PreparedStatement pstmt = con.prepareStatement("SELECT * FROM mapping_file");ResultSet rs = pstmt.executeQuery()) {
-			LOGGER.info("Retrieving data from DB");
+			debugLogger.info("Retrieving data from DB");
 			// parsing the column each time is a linear search
 			int column1Pos = rs.findColumn("enterpriseid");
 			int column2Pos = rs.findColumn("mappingfilecontents");
@@ -186,9 +188,9 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 				String data = new String(bytes, "UTF-8");
 				mappingFiles.put(column1, data);
 			}
-			LOGGER.info("DB Initialization Completed, Total # Mappingfiles are" + mappingFiles.size());
+			debugLogger.info("DB Initialization Completed, Total # Mappingfiles are:{}" , mappingFiles.size());
 		} catch (Exception e) {
-			LOGGER.error("Error occured due to :" + e.getMessage());
+			errorLogger.error("Error occured due to :{}", e.getMessage());
 		}
 
 	}
@@ -197,13 +199,13 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
     private void prepareDatabase() throws IOException {
 
 
-        LOGGER.info("The Default Mapping file Location:" + defaultMappingFileLocation.trim());
+    	debugLogger.info("The Default Mapping file Location:" + defaultMappingFileLocation.trim());
 
         if (ClassLoader.getSystemResource(defaultMappingFileLocation.trim()) == null) {
-            LOGGER.error(
+        	errorLogger.error(
                     "Default mapping file " + defaultMappingFileLocation.trim() + " is missing");
             System.exit(SpringApplication.exit(applicationContext, () -> {
-                LOGGER.error("Application stoped due to missing default mapping file");
+            	errorLogger.error("Application stoped due to missing default mapping file");
                 return -1;
             }));
         }
@@ -216,11 +218,11 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
             fileInputStream.read(bytesArray);
 
         } catch (IOException e1) {
-            LOGGER.error("Exception Occured while reading the default mapping file ,Cause: "
+        	errorLogger.error("Exception Occured while reading the default mapping file ,Cause: "
                     + e1.getMessage(), e1);
             // exit on missing default mapping file
             System.exit(SpringApplication.exit(applicationContext, () -> {
-                LOGGER.error("Application stoped due to missing default mapping file");
+            	errorLogger.error("Application stoped due to missing default mapping file");
                 return -1;
             }));
         }
@@ -238,14 +240,14 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
                                 + ")\r\n" + "WITH (\r\n" + "    OIDS = FALSE\r\n" + ")\r\n"
                                 + "TABLESPACE pg_default;")) {
 
-            LOGGER.info("Postgresql Connection successful...");
-            LOGGER.debug("Connection object:" + con.toString());
+        	metricsLogger.info("Postgresql Connection successful...");
+        	debugLogger.debug("Connection object:{}" , con.toString());
 
             pstmt11.executeUpdate();
-            LOGGER.info("CREATE TABLE IF NOT EXISTS executed successfully....");
+            debugLogger.info("CREATE TABLE IF NOT EXISTS executed successfully....");
 
             if ((bytesArray.length > 0) && (!Arrays.toString(bytesArray).equals(""))) {
-                LOGGER.debug("2Connection object:" + con.toString());
+            	
                 try (PreparedStatement pstmt = con.prepareStatement("INSERT INTO "
                         + MappingFileTableName
                         + "(enterpriseid, mappingfilecontents, mimetype,  File_Name) VALUES (?, ?, ?, ?) ON CONFLICT (enterpriseid) DO NOTHING;")) {
@@ -255,22 +257,22 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
                     pstmt.setString(4, file.getName());
 
                     pstmt.executeUpdate();
-                    LOGGER.info("Made sure that default mapping file is present in table");
+                    debugLogger.info("Made sure that default mapping file is present in table");
                 }
             } else {
-                LOGGER.error(file.getName() + " is empty");
+            	errorLogger.error(file.getName() + " is empty");
                 // exit on empty mapping file
                 System.exit(SpringApplication.exit(applicationContext, () -> {
-                    LOGGER.error("Application stoped beacuase default mapping file is empty..");
+                	errorLogger.error("Application stoped beacuase default mapping file is empty..");
                     return -1;
                 }));
             }
 
         } catch (SQLException e) {
-            LOGGER.error("Received exception : " + e.getMessage(), e);
+        	errorLogger.error("Received exception : " + e.getMessage(), e);
             // exit on SqlException
             System.exit(SpringApplication.exit(applicationContext, () -> {
-                LOGGER.error("Application Stoped due to ", e.getCause());
+            	errorLogger.error("Application Stoped due to ", e.getCause());
                 return -1;
             }));
         }

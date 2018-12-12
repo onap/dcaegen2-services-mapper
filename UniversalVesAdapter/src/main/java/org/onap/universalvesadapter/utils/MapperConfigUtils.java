@@ -43,7 +43,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class MapperConfigUtils {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MapperConfigUtils.class);
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
     private static Set<Entry> entries = new TreeSet<>((o1, o2) -> o1.getPriority().compareTo(o2.getPriority()));
 
     private enum JoinOperator {
@@ -163,7 +164,7 @@ public class MapperConfigUtils {
             readMapperConfigFile(mappingFile);
             checkIncomingJsonForMatchingDomain(incomingJsonString);
         } catch (MapperConfigException e) {
-            LOGGER.error("Exception in mapperConfigFile reading:{}",e);
+        	errorLogger.error("Exception in mapperConfigFile reading:{}",e);
         }
 
     }
@@ -215,7 +216,7 @@ public class MapperConfigUtils {
             throw new MapperConfigException("Unable to read config file for reason...\n " + exception.getMessage(),
                     exception);
         }
-        LOGGER.debug("Read config file content into :{}",config);
+        debugLogger.debug("Read config file content into :{}",config);
         
         if (null != config) {
             entries.addAll(config.getEntries());

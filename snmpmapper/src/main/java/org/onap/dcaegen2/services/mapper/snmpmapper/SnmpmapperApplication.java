@@ -19,13 +19,16 @@
 */
 package org.onap.dcaegen2.services.mapper.snmpmapper;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SnmpmapperApplication {
-
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
 	public static void main(String[] args) {
+		metricsLogger.info("Snmp Mapper main Startup");
 		SpringApplication.run(SnmpmapperApplication.class, args);
 	}
 }

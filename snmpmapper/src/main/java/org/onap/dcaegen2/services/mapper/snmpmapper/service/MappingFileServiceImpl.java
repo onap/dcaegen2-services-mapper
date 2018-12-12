@@ -35,8 +35,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class MappingFileServiceImpl implements MappingFileService {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	static String enterpriseid;
     static MappingFile mapping;
     
@@ -49,7 +49,7 @@ public class MappingFileServiceImpl implements MappingFileService {
 		// Reading File Upload Form Input Parameters        
         enterpriseid = request.getParameter("eid");
         
-        LOGGER.debug("EnterPrise ID recieved:{}",enterpriseid);
+        debugLogger.info("EnterPrise ID recieved:{}",enterpriseid);
          
         
         if ((mappingfile != null) && (mappingfile.length > 0)) {
@@ -57,7 +57,7 @@ public class MappingFileServiceImpl implements MappingFileService {
                 if(aFile.isEmpty()) {
                     continue;
                 } else {
-                	LOGGER.debug("MappingFile Name = {} with enterprise id:{}", aFile.getOriginalFilename(),enterpriseid);
+                	debugLogger.debug("MappingFile Name = {} with enterprise id:{}", aFile.getOriginalFilename(),enterpriseid);
                     if (!aFile.getOriginalFilename().equals("")) {
                     	try {
                     	mapping = new MappingFile();
@@ -72,18 +72,18 @@ public class MappingFileServiceImpl implements MappingFileService {
                        
                         mappingFileDAO.uploadMappingFile(aFile,enterpriseid);
                         } catch (SnmpMapperException snmpMapperException) {
-                        	LOGGER.error(snmpMapperException.getMessage());
+                        	errorLogger.error(snmpMapperException.getMessage());
 						} catch (IOException e) {
-							LOGGER.error("IOException occured:{}",e.getCause());
+							errorLogger.error("IOException occured:{}",e.getCause());
         						return "failed";
 						} catch (SQLException e) {
-							LOGGER.error("SQLException occured:{}",e.getCause());
+							errorLogger.error("SQLException occured:{}",e.getCause());
         						return "failed";
 						}
                
                     }
                 }
-                LOGGER.debug("File Is Successfully Uploaded & Saved In The Database\n");
+                debugLogger.info("File Is Successfully Uploaded & Saved In The Database\n");
             }
         } else {
         	return "failed";

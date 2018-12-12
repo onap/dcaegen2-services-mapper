@@ -34,7 +34,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Creator {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(Creator.class);
+	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	private DMaaPMRFactory dMaaPMRFactoryInstance;
 	private String dmaaphost;
 	private String publisherTopic;
@@ -63,7 +64,7 @@ public class Creator {
 			this.publisherTopic = dmaapConfig.getPublisherTopic();
 			this.subcriberTopic = dmaapConfig.getSubscriberTopic();
 			this.dMaaPMRFactoryInstance = DMaaPMRFactory.create();
-			LOGGER.info("The Hostname of DMaap is :" + dmaaphost);
+			debugLogger.info("The Hostname of DMaap is :" + dmaaphost);
 		
 
 	}
@@ -75,7 +76,7 @@ public class Creator {
 		try {
 			dMaaPMRPublisherConfig = new DMaaPMRPublisherConfig.Builder(dmaaphost, publisherTopic,dmaapConfig).build();
 		} catch (IOException e) {
-			LOGGER.error("failed or interrupted I/O operations while creating publisher config:{}",e.getCause());
+			errorLogger.error("failed or interrupted I/O operations while creating publisher config:{}",e.getCause());
 		}
 		return dMaaPMRFactoryInstance.createPublisher(dMaaPMRPublisherConfig);
 	}
@@ -88,7 +89,7 @@ public class Creator {
 			dMaaPMRSubscriberConfig = new DMaaPMRSubscriberConfig.Builder(dmaaphost, subcriberTopic,	dmaapConfig).build();
 		} catch (IOException e) {
 			
-			LOGGER.error("failed or interrupted I/O operations while creating subcriber config:{}",e.getCause());
+			errorLogger.error("failed or interrupted I/O operations while creating subcriber config:{}",e.getCause());
 		}
 		
 		return dMaaPMRFactoryInstance.createSubscriber(dMaaPMRSubscriberConfig);
