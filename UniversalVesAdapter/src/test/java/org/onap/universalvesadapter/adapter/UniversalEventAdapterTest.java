@@ -219,7 +219,7 @@ public class UniversalEventAdapterTest  {
         try {
         	
             VESAdapterInitializer.setMappingFiles(testMap);
-        	String actualResult = universalVesAdapter.transform(incomingJsonString.toString(), "snmp");
+        	String actualResult = universalVesAdapter.transform(incomingJsonString.toString());
             assertNotNull(actualResult);
             assertNotEquals("", actualResult);
         } catch (VesException exception) {

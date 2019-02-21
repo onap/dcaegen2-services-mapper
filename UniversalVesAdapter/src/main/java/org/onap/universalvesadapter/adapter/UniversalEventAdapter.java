@@ -24,18 +24,21 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 import javax.annotation.PreDestroy;
+
 import org.milyn.Smooks;
 import org.onap.dcaegen2.ves.domain.VesEvent;
 import org.onap.universalvesadapter.exception.ConfigFileSmooksConversionException;
 import org.onap.universalvesadapter.exception.VesException;
 import org.onap.universalvesadapter.service.VESAdapterInitializer;
+import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrival;
 import org.onap.universalvesadapter.utils.SmooksUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -53,14 +56,11 @@ import com.google.gson.JsonSyntaxException;
 
 @Component
 public class UniversalEventAdapter implements GenericAdapter {
-
-	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
 	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
-	private String enterpriseId;
-	@Value("${defaultEnterpriseId}")
-	private String defaultEnterpriseId;
+	private String collectorIdentifierValue;
+	private String collectorIdentifierKey;
 	private Map<String, Smooks> eventToSmooksMapping = new ConcurrentHashMap<>();
 
 	public UniversalEventAdapter() {
@@ -74,34 +74,53 @@ public class UniversalEventAdapter implements GenericAdapter {
 	 * @return ves Event
 	 */
 	@Override
-	public String transform(String incomingJsonString, String eventType)
+	public String transform(String incomingJsonString)
 			throws  ConfigFileSmooksConversionException, VesException {
 		String result = "";
 		String configFileData;
+		
+		String identifier[]= CollectorConfigPropertyRetrival.getProperyArray("identifier");
+		String defaultMappingFile="defaultMappingFile-"+Thread.currentThread().getName();
 		try {
 
 				Gson gson = new Gson();
 				JsonObject body = gson.fromJson(incomingJsonString, JsonObject.class);
-				JsonElement results = body.get("notify OID");
-				String notifyOid = results.getAsString();
+				
+				JsonElement results;
+				for(int i=0;i<identifier.length;i++)
+				{
+				if(body.has(identifier[i]))
+				{
+					collectorIdentifierKey=identifier[i];
+					 results=body.get(identifier[i]);
+					 collectorIdentifierValue=results.getAsString();
+					
+				}
+				
+				}
+				//collectorIdentifierValue = collectorIdentifierValue.substring(0, collectorIdentifierValue.length() - 4);
+				if(collectorIdentifierKey.equals("notify OID"))
+				{
+					collectorIdentifierValue = collectorIdentifierValue.substring(0, collectorIdentifierValue.length() - 4);
+				}
+				
 
-				// extracting enterprise id from notify OID of SNMP trap.
-				enterpriseId = notifyOid.substring(0, notifyOid.length() - 4);
-
-				if (VESAdapterInitializer.getMappingFiles().containsKey(enterpriseId)) {
-					configFileData = VESAdapterInitializer.getMappingFiles().get(enterpriseId);
-					debugLogger.debug("Using Mapping file as Mapping file is available for Enterprise Id:{}",enterpriseId);
+				if (VESAdapterInitializer.getMappingFiles().containsKey(collectorIdentifierValue)) {
+					configFileData = VESAdapterInitializer.getMappingFiles().get(collectorIdentifierValue);
+					debugLogger.debug("Using Mapping file as Mapping file is available for collector identifier:{}",collectorIdentifierValue);
+				
 				} else {
 
-					configFileData = VESAdapterInitializer.getMappingFiles().get(defaultEnterpriseId);
-					debugLogger.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",enterpriseId);
+					configFileData = VESAdapterInitializer.getMappingFiles().get(defaultMappingFile);
+					
+					debugLogger.debug("Using Default Mapping file as Mapping file is not available for Enterprise Id:{}",collectorIdentifierValue);
 				}
 
 				Smooks smooksTemp = new Smooks(new ByteArrayInputStream(configFileData.getBytes(StandardCharsets.UTF_8)));
-				eventToSmooksMapping.put(eventType, smooksTemp);
+				eventToSmooksMapping.put(collectorIdentifierKey, smooksTemp);
 
 			VesEvent vesEvent = SmooksUtils.getTransformedObjectForInput(smooksTemp,incomingJsonString);
-			debugLogger.info("Incoming json transformed to VES format successfully");
+			debugLogger.info("Incoming json transformed to VES format successfully:"+Thread.currentThread().getName());
 			ObjectMapper objectMapper = new ObjectMapper();
 			result = objectMapper.writeValueAsString(vesEvent);
 			debugLogger.info("Serialized VES json");
@@ -109,7 +128,8 @@ public class UniversalEventAdapter implements GenericAdapter {
 			throw new VesException("Unable to convert pojo to VES format, Reason :{}", exception);
 		} catch (SAXException | IOException exception) {
 			//Invalid Mapping file
-			errorLogger.error("Dropping this Trap :{},Reason:{}", incomingJsonString, exception); 
+			exception.printStackTrace();
+			errorLogger.error("Dropping this Trap :{},Reason:{}", incomingJsonString, exception.getMessage()); 
 
 		} catch (JsonSyntaxException exception) {
 			// Invalid Trap
@@ -120,7 +140,8 @@ public class UniversalEventAdapter implements GenericAdapter {
 		} 
 		catch (RuntimeException exception) {
 
-			errorLogger.error("Dropping this Trap :{},Reason:{}", incomingJsonString, exception);
+			exception.printStackTrace();
+			errorLogger.error("Dropping this Trap :{},Reason:{}", incomingJsonString, exception.getMessage());
 
 		}
 		return result;
