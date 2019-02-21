@@ -26,16 +26,15 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@PropertySource(value = {"classpath:application.properties","classpath:DMaapMR.properties"})
+@PropertySource(value = {"classpath:application.properties","classpath:mapper.properties"})
 @ConfigurationProperties
 public class DmaapConfig {
 	
-	@Value("${mr.dmaaphost}")
+	// Hostname of DMaaP  to  be taken from ENV var
     @NotEmpty
 	private String dmaaphost;
 	
-	 // default port number
-	@Value("${mr.DEFAULT_PORT_NUMBER}")
+	 // default port number  to  be taken from ENV var
     @NotEmpty
 	private int DEFAULT_PORT_NUMBER;
 	
@@ -103,30 +102,25 @@ public class DmaapConfig {
 
   // Subscriber Constants
 	
-  //Dmaap Subcriber Topic
-	@Value("${mr.subscriber.topic}")
+	@Value("${mr.subscriber.DEFAULT_SUBSCRIBER_TIMEOUT_MS}")
     @NotEmpty
-	private String subscriberTopic;
+	private int subscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS;
 	
-	@Value("${mr.subcriber.DEFAULT_SUBSCRIBER_TIMEOUT_MS}")
+	@Value("${mr.subscriber.DEFAULT_SUBSCRIBER_MESSAGE_LIMIT}")
     @NotEmpty
-	private int subcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS;
+	private int subscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT;
 	
-	@Value("${mr.subcriber.DEFAULT_SUBSCRIBER_MESSAGE_LIMIT}")
+	@Value("${mr.subscriber.DEFAULT_SUBSCRIBER_GROUP_PREFIX}")
     @NotEmpty
-	private int subcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT;
+	private String subscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX;
 	
-	@Value("${mr.subcriber.DEFAULT_SUBSCRIBER_GROUP_PREFIX}")
+	@Value("${mr.subscriber.SUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME}")
     @NotEmpty
-	private String subcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX;
+	private String subscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME;
 	
-	@Value("${mr.subcriber.SUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME}")
+	@Value("${mr.subscriber.SUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME}")
     @NotEmpty
-	private String subcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME;
-	
-	@Value("${mr.subcriber.SUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME}")
-    @NotEmpty
-	private String subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
+	private String subscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
 
 	 public void setDmaaphost(String dmaaphost) {
 		this.dmaaphost = dmaaphost;
@@ -241,52 +235,44 @@ public class DmaapConfig {
 		this.publisherPUBLISHER_DELAY_MS_ON_RETRIES_ON_CLOSE = publisherPUBLISHER_DELAY_MS_ON_RETRIES_ON_CLOSE;
 	}
 
-	public String getSubscriberTopic() {
-		return subscriberTopic;
+	public int getsubscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS() {
+		return subscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS;
 	}
 
-	public void setSubscriberTopic(String subscriberTopic) {
-		this.subscriberTopic = subscriberTopic;
+	public void setsubscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS(int subscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS) {
+		this.subscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS = subscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS;
 	}
 
-	public int getSubcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS() {
-		return subcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS;
+	public int getsubscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT() {
+		return subscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT;
 	}
 
-	public void setSubcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS(int subcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS) {
-		this.subcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS = subcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS;
+	public void setsubscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT(int subscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT) {
+		this.subscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT = subscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT;
 	}
 
-	public int getSubcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT() {
-		return subcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT;
+	public String getsubscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX() {
+		return subscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX;
 	}
 
-	public void setSubcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT(int subcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT) {
-		this.subcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT = subcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT;
+	public void setsubscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX(String subscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX) {
+		this.subscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX = subscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX;
 	}
 
-	public String getSubcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX() {
-		return subcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX;
+	public String getsubscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME() {
+		return subscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME;
 	}
 
-	public void setSubcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX(String subcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX) {
-		this.subcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX = subcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX;
+	public void setsubscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME(String subscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME) {
+		this.subscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME = subscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME;
 	}
 
-	public String getSubcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME() {
-		return subcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME;
+	public String getsubscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME() {
+		return subscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
 	}
 
-	public void setSubcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME(String subcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME) {
-		this.subcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME = subcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME;
-	}
-
-	public String getSubcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME() {
-		return subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
-	}
-
-	public void setSubcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME(String subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME) {
-		this.subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME = subcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
+	public void setsubscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME(String subscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME) {
+		this.subscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME = subscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME;
 	}
 
 	public int getPollingInterval() {

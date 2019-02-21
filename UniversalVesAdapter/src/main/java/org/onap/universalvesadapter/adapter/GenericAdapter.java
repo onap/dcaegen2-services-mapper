@@ -44,6 +44,6 @@ public interface GenericAdapter {
 	 * @throws ConfigFileSmooksConversionException if unable to convert config file data to smooks object 
 	 * 
 	 */
-	String transform(String incomingJsonString, String eventType) throws ConfigFileSmooksConversionException, VesException;
+	String transform(String incomingJsonString) throws ConfigFileSmooksConversionException, VesException;
 
 }
