@@ -42,7 +42,8 @@ limitations under the License.
             <directory>src/main/resources</directory>
             <outputDirectory>conf</outputDirectory>
             <includes>
-                <include>**/defaultSnmpMappingFile.xml</include>
+		 		<include>**/kv.json</include>
+		 		<include>**/mapper.properties</include>
             </includes>
         </fileSet>
 	</fileSets>

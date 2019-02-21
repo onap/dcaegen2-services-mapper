@@ -45,8 +45,6 @@ public class VesController {
     @Autowired
     private VesService vesService;
     
-    @Autowired
-    private VESAdapterInitializer vESAdapterInitializer;
     
     /**
      * @return message that application is started
@@ -66,9 +64,9 @@ public class VesController {
     }
     
     @RequestMapping("/reload")
-    public void reloadMappingFileFromDB() {
+    public void reloadMappingFile() {
     	debugLogger.debug("Reload of Mapping File is started");
-    	vESAdapterInitializer.fetchMappingFile();
+    	//vESAdapterInitializer.readJsonToMap();
     	debugLogger.debug("Reload of Mapping File is completed");
     }
     

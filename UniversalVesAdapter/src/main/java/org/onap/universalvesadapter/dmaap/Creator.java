@@ -39,22 +39,8 @@ public class Creator {
 	private DMaaPMRFactory dMaaPMRFactoryInstance;
 	private String dmaaphost;
 	private String publisherTopic;
-	private String subcriberTopic;
+	@Autowired
     private DmaapConfig dmaapConfig;
-
-    @Autowired
-	public void setDmaapConfig(DmaapConfig dmaapConfig) {
-		this.dmaapConfig = dmaapConfig;
-	}
-
-	public DmaapConfig getDmaapConfig() {
-		return dmaapConfig;
-	}
-
-
-	public Creator() {
-
-	}
 
 	// prop initializer
 
@@ -62,7 +48,6 @@ public class Creator {
 	
 			this.dmaaphost = dmaapConfig.getDmaaphost();
 			this.publisherTopic = dmaapConfig.getPublisherTopic();
-			this.subcriberTopic = dmaapConfig.getSubscriberTopic();
 			this.dMaaPMRFactoryInstance = DMaaPMRFactory.create();
 			debugLogger.info("The Hostname of DMaap is :" + dmaaphost);
 		
@@ -82,7 +67,7 @@ public class Creator {
 	}
 
 	// subscriber
-	public DMaaPMRSubscriber getDMaaPMRSubscriber(){
+	public DMaaPMRSubscriber getDMaaPMRSubscriber(String subcriberTopic){
 		propertyFileInitializer();
 		DMaaPMRSubscriberConfig dMaaPMRSubscriberConfig = null;
 		try {
@@ -94,6 +79,13 @@ public class Creator {
 		
 		return dMaaPMRFactoryInstance.createSubscriber(dMaaPMRSubscriberConfig);
 
+	}
+	public void setDmaapConfig(DmaapConfig dmaapConfig) {
+		this.dmaapConfig = dmaapConfig;
+	}
+
+	public DmaapConfig getDmaapConfig() {
+		return dmaapConfig;
 	}
 
 }

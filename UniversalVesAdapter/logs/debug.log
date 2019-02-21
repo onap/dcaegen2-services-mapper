@@ -1,0 +1,6 @@
+2019-02-21T17:47:08.151+00:00|NULL|INFO :o.o.u.utils.SmooksUtils:getTransformedObjectForInput:59: Transforming incoming json 
+2019-02-21T17:47:08.309+00:00|NULL|INFO :o.o.u.utils.SmooksUtils:getTransformedObjectForInput:61: Context created
+2019-02-21T17:47:08.379+00:00|NULL|DEBUG:o.o.u.utils.SmooksUtils:getTransformedObjectForInput:71: consversion successful to VES Event
+2019-02-21T17:56:32.321+00:00|NULL|INFO :o.o.u.utils.SmooksUtils:getTransformedObjectForInput:59: Transforming incoming json 
+2019-02-21T17:56:32.416+00:00|NULL|INFO :o.o.u.utils.SmooksUtils:getTransformedObjectForInput:61: Context created
+2019-02-21T17:56:32.478+00:00|NULL|DEBUG:o.o.u.utils.SmooksUtils:getTransformedObjectForInput:71: consversion successful to VES Event
