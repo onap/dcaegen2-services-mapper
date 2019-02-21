@@ -76,10 +76,12 @@
 
     <logger name="metricsLogger" level="info" additivity="false">
 		<appender-ref ref="metricsAppender" />
+		<appender-ref ref="STDOUT" />
 	</logger>
 	
 	<logger name="debugLogger" level="debug" additivity="false">
 		<appender-ref ref="debugAppender" />
+		<appender-ref ref="STDOUT" />
 	</logger>
 	
 	<logger name="errorLogger" level="debug" additivity="false">
@@ -92,6 +94,7 @@
 	<root level="info">
 		<!-- <appender-ref ref="STDOUT" /> -->
 		<appender-ref ref="debugAppender" />
+		<appender-ref ref="STDOUT" />
 	</root>
 	
 </configuration>

@@ -114,11 +114,11 @@ public final class DMaaPMRSubscriberConfig extends DMaaPMRBaseConfig {
             this.protocol = dmaapConfig.getDEFAULT_PROTOCOL();
             this.contentType =  dmaapConfig.getDEFAULT_CONTENT_TYPE();
             this.consumerId =  dmaapConfig.getDMAAP_DEFAULT_CONSUMER_ID();
-            this.consumerGroup = dmaapConfig.getSubcriberDEFAULT_SUBSCRIBER_GROUP_PREFIX();
-            this.timeoutMS =dmaapConfig.getSubcriberDEFAULT_SUBSCRIBER_TIMEOUT_MS();
-            this.messageLimit = dmaapConfig.getSubcriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT();
-            this.timeoutMSParam=dmaapConfig.getSubcriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME();
-            this.messageLimitParam=dmaapConfig.getSubcriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME();
+            this.consumerGroup = dmaapConfig.getsubscriberDEFAULT_SUBSCRIBER_GROUP_PREFIX();
+            this.timeoutMS =dmaapConfig.getsubscriberDEFAULT_SUBSCRIBER_TIMEOUT_MS();
+            this.messageLimit = dmaapConfig.getsubscriberDEFAULT_SUBSCRIBER_MESSAGE_LIMIT();
+            this.timeoutMSParam=dmaapConfig.getsubscriberSUBSCRIBER_TIMEOUT_QUERY_PARAM_NAME();
+            this.messageLimitParam=dmaapConfig.getsubscriberSUBSCRIBER_MSG_LIMIT_QUERY_PARAM_NAME();
             this.uriPreifix=dmaapConfig.getDMAAP_URI_PATH_PREFIX();
             
         }

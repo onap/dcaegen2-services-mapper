@@ -20,21 +20,18 @@
 package org.onap.universalvesadapter.service;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.commons.codec.binary.Hex;
+import java.util.Map.Entry;
+import java.util.Set;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.onap.universalvesadapter.dmaap.Creator;
+import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrival;
 import org.onap.universalvesadapter.utils.DmaapConfig;
+import org.onap.universalvesadapter.utils.FetchDynamicConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +45,6 @@ import org.springframework.stereotype.Component;
 //AdapterInitializer
 @Component
 public class VESAdapterInitializer implements CommandLineRunner, Ordered {
-	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
 	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	
@@ -56,29 +52,16 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	private Creator creator;
 	@Autowired
 	private DmaapConfig dmaapConfig;
-	@Value("${spring.datasource.url}")
-	String dBurl;
-	@Value("${spring.datasource.username}")
-	String user;
-	@Value("${spring.datasource.password}")
-	String pwd;
-	@Value("${defaultMappingFilelocation}")
-	String defaultMappingFileLocation;
-	@Value("${MappingFileTableName}")
-	String MappingFileTableName;
-	@Value("${defaultEnterpriseId}")
-	String defaultEnterpriseId;
 	@Value("${server.port}")
 	String serverPort;
 
 	private static Map<String, String> mappingFiles = new HashMap<String, String>();
 	private static Map<String, String> env;
-	private static String url;
-	public static String retString;
-	public static String retCBSString;
-	public static String configFile = "/opt/app/KV-Configuration.json";
-    byte[] bytesArray = null;
-    @Autowired private ApplicationContext applicationContext;
+	public static String configFile = "/opt/app/VESAdapter/conf/kv.json";
+	//public static String configFile = "src\\main\\resources\\kv.json";
+
+    @Autowired 
+    private ApplicationContext applicationContext;
     
 	@Override
 	public void run(String... args) throws Exception {
@@ -86,64 +69,36 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 		for (Map.Entry<String, String> entry : env.entrySet()) {
 			debugLogger.debug(entry.getKey() + ":" + entry.getValue());
 		}
-
+		
+		//checks for DMaaP  Host and Port No
+		if( (env.get("DMAAPHOST")==null ||(env.get("MR_DEFAULT_PORT_NUMBER")==null))) {
+			
+			errorLogger.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-service-mua --env CONFIG_BINDING_SERVICE=config_binding_service --env DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
+			
+			System.exit(SpringApplication.exit(applicationContext, () -> {errorLogger.error("Application stoped due missing DMAAPHOST or MR_DEFAULT_PORT_NUMBER environment varibales.Please refer above example for environment varibales to pass ");return-1;}));
+		} 
+			
+			dmaapConfig.setDmaaphost(env.get("DMAAPHOST"));
+			dmaapConfig.setDEFAULT_PORT_NUMBER(Integer.parseInt(env.get("MR_DEFAULT_PORT_NUMBER")));
+			creator.setDmaapConfig(dmaapConfig);
+		//check for consul details
 		if (env.containsKey("CONSUL_HOST") && env.containsKey("CONFIG_BINDING_SERVICE") && env.containsKey("HOSTNAME")) {
-			//TODO - Add logic to talk to Consul and CBS to get the configuration. For now, we will refer to configuration coming from docker env parameters
-			
 			debugLogger.info(">>>Dynamic configuration to be used");
-			
-			if( (env.get("DMAAPHOST")==null || 
-					(env.get("MR_DEFAULT_PORT_NUMBER")==null || 
-					(env.get("URL_JDBC")==null || 
-					(env.get("JDBC_USERNAME")==null || 
-					(env.get("JDBC_PASSWORD")==null )))))) {
-				
-				
-				errorLogger.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env URL_JDBC=jdbc:postgresql://10.53.172.129:5432/dummy --env JDBC_USERNAME=ngpuser --env JDBC_PASSWORD=root --env MR_DMAAPHOST=10.10.10.10 --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-collectors-ves --env CONFIG_BINDING_SERVICE=config_binding_service -e DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
-				System.exit(SpringApplication.exit(applicationContext, () -> {errorLogger.error("Application stoped due to missing default mapping file");return-1;}));
-				
-			}else {
-				
-				
-				
-				dmaapConfig.setDmaaphost(env.get("DMAAPHOST"));
-				dmaapConfig.setDEFAULT_PORT_NUMBER(Integer.parseInt(env.get("MR_DEFAULT_PORT_NUMBER")));
-				creator.setDmaapConfig(dmaapConfig);
-				
-				dBurl=env.get("URL_JDBC");
-				user=env.get("JDBC_USERNAME");
-				pwd=env.get("JDBC_PASSWORD");
-			}
-			
-			
-	
+			FetchDynamicConfig.cbsCall();
+
 		} else {
 			debugLogger.info(">>>Static configuration to be used");
+			
 		}
-		prepareDatabase();
-		fetchMappingFile();
+		readJsonToMap(configFile);
+		
+		//prepareDatabase();
+		//fetchMappingFile();
 		
 		debugLogger.info("Triggering controller's start url ");
 		executecurl("http://localhost:"+serverPort+"/start");
 	}
 
-	private void getconsul() { 
-		
-		//TODO
-	}
-	
-	public static boolean verifyConfigChange() {
-		//TODO
-		return false;
-	}
-
-	public static void getCBS() {
-		//TODO
-	}
-
-	public static void writefile(String retCBSString) {
-		//TODO
-	}
 
 	private static String executecurl(String url) {
 
@@ -172,31 +127,38 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 
 	}
 
-	public void fetchMappingFile() {
+	private void readJsonToMap(String configFile) {		
+		try {
+			JSONArray collectorArray=CollectorConfigPropertyRetrival.collectorConfigArray(configFile);
 
-		try (Connection con = DriverManager.getConnection(dBurl, user, pwd);PreparedStatement pstmt = con.prepareStatement("SELECT * FROM mapping_file");ResultSet rs = pstmt.executeQuery()) {
-			debugLogger.info("Retrieving data from DB");
-			// parsing the column each time is a linear search
-			int column1Pos = rs.findColumn("enterpriseid");
-			int column2Pos = rs.findColumn("mappingfilecontents");
-			String hexString;
-			while (rs.next()) {
-				String column1 = rs.getString(column1Pos);
-				String column2 = rs.getString(column2Pos);
-				hexString = column2.substring(2);
-				byte[] bytes = Hex.decodeHex(hexString.toCharArray());
-				String data = new String(bytes, "UTF-8");
-				mappingFiles.put(column1, data);
+			for (int i = 0; i < collectorArray.size(); i++) {
+				JSONObject obj2 = (JSONObject) collectorArray.get(i);
+
+				if (obj2.containsKey("mapping-files")) {
+
+					JSONArray a1 = (JSONArray) obj2.get("mapping-files");
+
+					for (int j = 0; j < a1.size(); j++) {
+						JSONObject obj3 = (JSONObject) a1.get(j);
+						Set<Entry<String, String>> set = obj3.entrySet();
+
+						for (Entry<String, String> entry : set) {
+
+							mappingFiles.put(entry.getKey(), entry.getValue());
+						}
+					}
+					
+				}
 			}
-			debugLogger.info("DB Initialization Completed, Total # Mappingfiles are:{}" , mappingFiles.size());
+			
 		} catch (Exception e) {
-			errorLogger.error("Error occured due to :{}", e.getMessage());
+			errorLogger.error("Exception occured while reading Collector config file cause: ",e.getCause());
 		}
 
 	}
 
 
-    private void prepareDatabase() throws IOException {
+   /* private void prepareDatabase() throws IOException {
 
 
     	debugLogger.info("The Default Mapping file Location:" + defaultMappingFileLocation.trim());
@@ -277,7 +239,33 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
             }));
         }
 
-    }
+    }*/
+    /*public void fetchMappingFile() {
+
+		try (Connection con = DriverManager.getConnection(dBurl, user, pwd)) {
+			debugLogger.info("Retrieving data from DB");
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM mapping_file");
+			ResultSet rs = pstmt.executeQuery();
+			// parsing the column each time is a linear search
+			int column1Pos = rs.findColumn("enterpriseid");
+			int column2Pos = rs.findColumn("mappingfilecontents");
+			String hexString;
+			while (rs.next()) {
+				String column1 = rs.getString(column1Pos);
+				String column2 = rs.getString(column2Pos);
+				hexString = column2.substring(2);
+				byte[] bytes = Hex.decodeHex(hexString.toCharArray());
+				String data = new String(bytes, "UTF-8");
+				mappingFiles.put(column1, data);
+			}
+			debugLogger.info("DB Initialization Completed, Total # Mappingfiles are" + mappingFiles.size());
+		} catch (Exception e) {
+			errorLogger.error("Error occured due to :" + e.getMessage());
+			e.printStackTrace();
+		}
+
+	}*/
+   
 	public static Map<String, String> getMappingFiles() {
 		return mappingFiles;
 	}
