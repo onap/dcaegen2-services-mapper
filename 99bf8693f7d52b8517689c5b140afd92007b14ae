@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7da28e7f_e9609732",
+        "filename": "UniversalVesAdapter/logs/debug.log",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "The logs and log directory should be removed",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 133
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34b16d58_2e26827d",
+        "filename": "UniversalVesAdapter/logs/error.log",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 2642
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6609e98f_80202192",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "Formatting to be fixed",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 13
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc0e3c65_9eddbb67",
+        "filename": "UniversalVesAdapter/src/main/java/com/psl/test/TestJson.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 12,
+        "endLine": 5,
+        "endChar": 16
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b55e0c08_2f2c6fef",
+        "filename": "UniversalVesAdapter/src/main/java/com/psl/test/TestJson.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "remove the unintended space added at the end",
+      "range": {
+        "startLine": 39,
+        "startChar": 6,
+        "endLine": 63,
+        "endChar": 2
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b25b261a_53e950da",
+        "filename": "UniversalVesAdapter/src/main/java/com/psl/test/TestJson.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "same comment; pls address formatting",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 2
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17f6561b_770c8fd0",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESAdapterInitializer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "change it 2018-2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 12,
+        "endLine": 5,
+        "endChar": 16
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "535ba813_1219314b",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/CollectorConfigPropertyRetrival.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 12,
+        "endLine": 5,
+        "endChar": 16
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a163bc04_4999f369",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-22T17:51:34Z",
+      "side": 1,
+      "message": "formatting to be fixed",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 13
+      },
+      "revId": "99bf8693f7d52b8517689c5b140afd92007b14ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
