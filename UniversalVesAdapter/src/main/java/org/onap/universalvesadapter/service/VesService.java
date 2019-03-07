@@ -40,6 +40,7 @@ import org.onap.universalvesadapter.utils.DmaapConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -56,6 +57,8 @@ public class VesService {
 	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
 	private boolean isRunning = true;
+	@Value("${defaultConfigFilelocation}")
+	private String defaultConfigFilelocation;
 	@Autowired
 	private Creator creator;
 	@Autowired
@@ -74,7 +77,7 @@ public class VesService {
 
 		DMaaPMRPublisher publisher = creator.getDMaaPMRPublisher();
 
-		String topicArray[]= CollectorConfigPropertyRetrival.getProperyArray("subscriberTopic");
+		String topicArray[]= CollectorConfigPropertyRetrival.getProperyArray("subscriberTopic",defaultConfigFilelocation);
 		
 		
 		ExecutorService executorService=Executors.newFixedThreadPool(topicArray.length);

@@ -19,6 +19,7 @@
 */
 package org.onap.universalvesadapter.utils;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -29,56 +30,59 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class CollectorConfigPropertyRetrival {
 
+	@Value("${defaultConfigFilelocation}")
+	public String defaultConfigFilelocation;
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+	private static JSONArray array;
 
-	 public static String configFile = "/opt/app/VESAdapter/conf/kv.json";
-	 //public static String configFile = "src\\main\\resources\\kv.json";
-	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
-	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
-	 private static  JSONArray array;
-
-	public static  JSONArray collectorConfigArray(String configFile){
+	public static JSONArray collectorConfigArray(String configFile) {
 		try {
-		JSONParser parser = new JSONParser();
-		FileReader fileReader = new FileReader(configFile);
-		JSONObject obj = (JSONObject) parser.parse(fileReader);
-		JSONObject appobj = (JSONObject) obj.get("app_preferences");
-		 array =(JSONArray) appobj.get("collectors");
-		
-		 debugLogger.info("Retrieved JsonArray from Collector Config File");
+			JSONParser parser = new JSONParser();
+
+			File file = new File(ClassLoader.getSystemResource(configFile.trim()).getFile());
+
+			FileReader fileReader = new FileReader(file);
+			JSONObject obj = (JSONObject) parser.parse(fileReader);
+			JSONObject appobj = (JSONObject) obj.get("app_preferences");
+			array = (JSONArray) appobj.get("collectors");
+
+			debugLogger.info("Retrieved JsonArray from Collector Config File");
+			
 		} catch (ParseException e) {
-			errorLogger.error("ParseException occured at position:",e.getPosition());
+			errorLogger.error("ParseException occured at position:", e.getPosition());
 		} catch (FileNotFoundException e) {
-			
-			errorLogger.error("Collector Config File is not found..",e.getMessage());
+
+			errorLogger.error("Collector Config File is not found..", e.getMessage());
 		} catch (IOException e) {
-			
-			errorLogger.error("Error occured due to :",e.getMessage());
+
+			errorLogger.error("Error occured due to :", e.getMessage());
 		}
-		
-		
+
 		return array;
-		
+
 	}
-	
-	
-	public static String [] getProperyArray(String properyName) {
-		JSONArray jsonArray =collectorConfigArray(configFile);
-		
-		String [] propertyArray=new String[jsonArray.size()];
-		
-		 for (int k=0;k<jsonArray.size();k++) {
-				
-				 JSONObject collJson= (JSONObject) jsonArray.get(k);
-				 
-				 propertyArray[k]=(String) collJson.get(properyName);
-			 }
-		 debugLogger.info("returning "+properyName+" array from Collector Config");
+
+	public static String[] getProperyArray(String properyName, String defaultConfigFilelocation) {
+		JSONArray jsonArray = collectorConfigArray(defaultConfigFilelocation);
+
+		String[] propertyArray = new String[jsonArray.size()];
+
+		for (int k = 0; k < jsonArray.size(); k++) {
+
+			JSONObject collJson = (JSONObject) jsonArray.get(k);
+
+			propertyArray[k] = (String) collJson.get(properyName);
+		}
+		debugLogger.info("returning " + properyName + " array from Collector Config");
 		return propertyArray;
-		
+
 	}
 
 }

@@ -32,17 +32,16 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Component
 public class FetchDynamicConfig {
 
 	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
-	// need to change below path
-	public static String configFile = "/opt/app/VESAdapter/conf/kv.json";
-	//public static String configFile = "src\\main\\resources\\kv.json";
 	private static String url;
 	public static String retString;
 	public static String retCBSString;
@@ -51,7 +50,7 @@ public class FetchDynamicConfig {
 	public FetchDynamicConfig() {
 	}
 
-	public static void cbsCall() {
+	public static void cbsCall(String configFile) {
 
 		env = System.getenv();
 		Boolean areEqual;
@@ -60,11 +59,11 @@ public class FetchDynamicConfig {
 		// Construct and invoke CBS API to get application Configuration
 		getCBS();
 		// Verify if data has changed
-		areEqual = verifyConfigChange();
+		areEqual = verifyConfigChange(configFile);
 
 		if (!areEqual) {
 			FetchDynamicConfig fc = new FetchDynamicConfig();
-			fc.writefile(retCBSString);
+			fc.writefile(retCBSString,configFile);
 		} else {
 			debugLogger.info("New config pull results identical -  " + configFile + " NOT refreshed");
 		}
@@ -73,16 +72,11 @@ public class FetchDynamicConfig {
 	
 	private static void getconsul() {
 		url = env.get("CONSUL_HOST") + ":8500/v1/catalog/service/" + env.get("CONFIG_BINDING_SERVICE");
-
-		// for testing :url="10.12.6.50:8500/v1/catalog/service/config_binding_service";
-		//http://10.12.6.44:8500/v1/catlog/service/config_binding_service
-
 		retString = executecurl(url);
 		debugLogger.info("CBS details fetched from Consul");
-	
 	}
 
-	public static boolean verifyConfigChange() {
+	public static boolean verifyConfigChange(String configFile) {
 
 		boolean areEqual = false;
 		// Read current data
@@ -138,12 +132,12 @@ public class FetchDynamicConfig {
 
 	}
 
-	public void writefile(String retCBSString) {
+	public void writefile(String retCBSString, String configFile) {
 		debugLogger.info("URL to fetch configuration:" + url);
 
 		String indentedretstring = (new JSONObject(retCBSString)).toString(4);
 
-		try (FileWriter file = new FileWriter(FetchDynamicConfig.configFile)) {
+		try (FileWriter file = new FileWriter(configFile)) {
 			file.write(indentedretstring);
 
 			debugLogger.info("Successfully Copied JSON Object to file " + configFile);
@@ -189,8 +183,6 @@ public class FetchDynamicConfig {
 				builder.append(line);
 			}
 			result = builder.toString();
-			debugLogger.info(result);
-
 			reader.close();
 			ipr.close();
 		} catch (IOException e) {
