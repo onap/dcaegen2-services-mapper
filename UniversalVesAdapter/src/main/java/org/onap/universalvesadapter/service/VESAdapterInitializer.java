@@ -52,19 +52,28 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 	private Creator creator;
 	@Autowired
 	private DmaapConfig dmaapConfig;
+	@Value("${defaultConfigFilelocation}")
+	String defaultConfigFilelocation;
 	@Value("${server.port}")
 	String serverPort;
 
 	private static Map<String, String> mappingFiles = new HashMap<String, String>();
 	private static Map<String, String> env;
-	public static String configFile = "/opt/app/VESAdapter/conf/kv.json";
-	//public static String configFile = "src\\main\\resources\\kv.json";
 
     @Autowired 
     private ApplicationContext applicationContext;
     
 	@Override
 	public void run(String... args) throws Exception {
+		debugLogger.info("The Default Config file Location:" + defaultConfigFilelocation.trim());
+		
+		   if (ClassLoader.getSystemResource(defaultConfigFilelocation.trim()) == null) {
+	        	errorLogger.error("Default Config file " + defaultConfigFilelocation.trim() + " is missing");
+	            System.exit(SpringApplication.exit(applicationContext, () -> {
+					errorLogger.error("Application stoped due to missing default Config file");
+	                return -1;
+	            }));
+	        }
 		env = System.getenv();
 		for (Map.Entry<String, String> entry : env.entrySet()) {
 			debugLogger.debug(entry.getKey() + ":" + entry.getValue());
@@ -73,7 +82,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 		//checks for DMaaP  Host and Port No
 		if( (env.get("DMAAPHOST")==null ||(env.get("MR_DEFAULT_PORT_NUMBER")==null))) {
 			
-			errorLogger.error("Some docker environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-service-mua --env CONFIG_BINDING_SERVICE=config_binding_service --env DMAAPHOST='10.53.172.156' onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
+			errorLogger.error("DMAAPHOST,MR_DEFAULT_PORT_NUMBER environment parameter is missing. Sample Usage is -\n sudo docker run -d -p 8085:8085/tcp --env MR_DEFAULT_PORT_NUMBER=3904 --env CONSUL_HOST=10.53.172.109 --env HOSTNAME=mvp-dcaegen2-service-mua --env CONFIG_BINDING_SERVICE=config_binding_service --env DMAAPHOST='10.53.172.156' nexus3.onap.org:10001/onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor:latest");
 			
 			System.exit(SpringApplication.exit(applicationContext, () -> {errorLogger.error("Application stoped due missing DMAAPHOST or MR_DEFAULT_PORT_NUMBER environment varibales.Please refer above example for environment varibales to pass ");return-1;}));
 		} 
@@ -84,13 +93,13 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 		//check for consul details
 		if (env.containsKey("CONSUL_HOST") && env.containsKey("CONFIG_BINDING_SERVICE") && env.containsKey("HOSTNAME")) {
 			debugLogger.info(">>>Dynamic configuration to be used");
-			FetchDynamicConfig.cbsCall();
+			FetchDynamicConfig.cbsCall(defaultConfigFilelocation);
 
 		} else {
 			debugLogger.info(">>>Static configuration to be used");
 			
 		}
-		readJsonToMap(configFile);
+		readJsonToMap(defaultConfigFilelocation);
 		
 		//prepareDatabase();
 		//fetchMappingFile();
@@ -118,7 +127,6 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
 				    builder.append(line);
 				}
 				result = builder.toString();
-				debugLogger.debug(result);
 			}
 		} catch (IOException e) {
 			errorLogger.error("error", e);

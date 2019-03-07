@@ -22,13 +22,14 @@ package org.onap.universalvesadapter.adapter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.PreDestroy;
 
 import org.milyn.Smooks;
-import org.onap.dcaegen2.ves.domain.VesEvent;
+import org.onap.dcaegen2.ves.domain.ves7_0.VesEvent;
 import org.onap.universalvesadapter.exception.ConfigFileSmooksConversionException;
 import org.onap.universalvesadapter.exception.VesException;
 import org.onap.universalvesadapter.service.VESAdapterInitializer;
@@ -36,6 +37,7 @@ import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrival;
 import org.onap.universalvesadapter.utils.SmooksUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
 
@@ -58,7 +60,9 @@ import com.google.gson.JsonSyntaxException;
 public class UniversalEventAdapter implements GenericAdapter {
 	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
-
+	 
+	@Value("${defaultConfigFilelocation}")
+	private String defaultConfigFilelocation;
 	private String collectorIdentifierValue;
 	private String collectorIdentifierKey;
 	private Map<String, Smooks> eventToSmooksMapping = new ConcurrentHashMap<>();
@@ -79,7 +83,7 @@ public class UniversalEventAdapter implements GenericAdapter {
 		String result = "";
 		String configFileData;
 		
-		String identifier[]= CollectorConfigPropertyRetrival.getProperyArray("identifier");
+		String identifier[]= CollectorConfigPropertyRetrival.getProperyArray("identifier",defaultConfigFilelocation );
 		String defaultMappingFile="defaultMappingFile-"+Thread.currentThread().getName();
 		try {
 
@@ -89,10 +93,11 @@ public class UniversalEventAdapter implements GenericAdapter {
 				JsonElement results;
 				for(int i=0;i<identifier.length;i++)
 				{
-				if(body.has(identifier[i]))
+				JsonObject obj;
+				if((obj=keyObject(body,identifier[i])).has(identifier[i]))
 				{
 					collectorIdentifierKey=identifier[i];
-					 results=body.get(identifier[i]);
+					 results=obj.get(identifier[i]);
 					 collectorIdentifierValue=results.getAsString();
 					
 				}
@@ -155,6 +160,26 @@ public class UniversalEventAdapter implements GenericAdapter {
 		for (Smooks smooks : eventToSmooksMapping.values())
 			smooks.close();
 		debugLogger.warn("All Smooks objects closed");
+	}
+	
+	public JsonObject keyObject(JsonObject  object, String searchedKey) {
+	    boolean exists = object.has(searchedKey);
+	    JsonObject jsonObject = object;
+	   
+	    if(!exists) {      
+	        Iterator<?> keys = object.keySet().iterator();
+	        while( keys.hasNext() ) {
+	            String key = (String)keys.next();
+	            if ( object.get(key) instanceof JsonObject ) {
+	            	 
+	            	jsonObject=(JsonObject) object.get(key);
+	            	JsonObject   obj = keyObject(jsonObject, searchedKey);
+	            	exists = obj.has(searchedKey);
+	            }
+	        }
+	    }
+	    
+	    return jsonObject;
 	}
 
 }
