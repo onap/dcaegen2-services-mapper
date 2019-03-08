@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "618ea04b_40c17d13",
+        "filename": "UniversalVesAdapter/logs/metrics.log",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-08T21:48:11Z",
+      "side": 1,
+      "message": "logs file to be removed",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 239
+      },
+      "revId": "ecadba716c9bc1cebcee1a05c5bdd350c0b8cc47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "25e38c57_25de08e7",
+        "filename": "snmpmapper/logs/metrics.log",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-08T21:48:11Z",
+      "side": 1,
+      "message": "to be removed",
+      "revId": "ecadba716c9bc1cebcee1a05c5bdd350c0b8cc47",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
