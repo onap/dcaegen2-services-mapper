@@ -17,13 +17,14 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
+
 package org.onap.universalvesadapter.mappingconfig;
 
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Test;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -17,6 +17,7 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
+
 package org.onap.dcaegen2.ves.domain.ves7_0;
 
 import java.util.HashMap;

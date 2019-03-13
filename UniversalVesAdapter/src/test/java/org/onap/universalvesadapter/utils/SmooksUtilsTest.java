@@ -1,30 +1,23 @@
 /*
-* ============LICENSE_START=======================================================
-* ONAP : DCAE
-* ================================================================================
-* Copyright 2018 TechMahindra
-*=================================================================================
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* ============LICENSE_END=========================================================
+ * ============LICENSE_START======================================================= ONAP : DCAE
+ * ================================================================================ Copyright 2018
+ * TechMahindra =================================================================================
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License. ============LICENSE_END=========================================================
+ */
 
 package org.onap.universalvesadapter.utils;
-
-import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-
 import org.junit.Test;
 import org.milyn.Smooks;
 import org.onap.dcaegen2.ves.domain.ves7_0.VesEvent;
@@ -34,85 +27,90 @@ import org.xml.sax.SAXException;
 
 public class SmooksUtilsTest {
 
-	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");  
-    
-    @Test
-    public void testGetTransformedObjectForInput() {
-        StringBuffer incomingJsonString = new StringBuffer("{ ")
-                .append("\"protocol version\":\"v2c\", ")
-                .append("\"notify OID\":\".1.3.6.1.4.1.74.2.46.12.1.1AAA\", ")
-                .append("\"cambria.partition\":\"dcae-snmp.client.research.att.com\", ")
-                .append("\"trap category\":\"UCSNMP-HEARTBEAT\", ")
-                .append("\"epoch_serno\": 15161177410000, ")
-                .append("\"community\":\"public\", ")
-                .append("\"time received\": 1516117741, ")
-                .append("\"agent name\":\"localhost\", ")
-                .append("\"agent address\":\"127.0.0.1\", ")
-                .append("\"community len\": 6, ")
-                .append("\"notify OID len\": 12, ")
-                .append("\"varbinds\": [{ ")
-                .append("    \"varbind_type\":\"octet\", ")
-                .append("    \"varbind_oid\":\".1.3.6.1.4.1.74.2.46.12.1.1.1\", ")
-                .append("    \"varbind_value\":\"ucsnmp heartbeat - ignore\" ")
-                .append(" }, { ")
-                .append("    \"varbind_type\":\"octet\", ")
-                .append("    \"varbind_oid\":\".1.3.6.1.4.1.74.2.46.12.1.1.2\", ")
-                .append("    \"varbind_value\":\"Tue Jan 16 10:49:01 EST 2018\" ")
-                .append(" }] ")
-                .append("}");
-        StringBuffer configFileData = new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\"?> ")
-                .append("<smooks-resource-list    xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\"   ")
-                .append("xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\"    ")
-                .append(" xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.2.xsd\">     ")
-                .append(" <json:reader rootName=\"simple\"  keyWhitspaceReplacement=\"-\">    ")
-                .append(" </json:reader>     ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.VesEvent\" beanId=\"vesEvent\" ")
-                .append(" createOnElement=\"simple\">")
-                .append("        <jb:wiring property=\"event\" beanIdRef=\"event\"/>")
-                .append(" </jb:bean>       ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.Event\" beanId=\"event\" ")
-                .append(" createOnElement=\"simple\">         ")
-                .append("     <jb:wiring property=\"commonEventHeader\" beanIdRef=\"commonEventHeader\"/>")
-                .append("     <jb:wiring property=\"faultFields\" beanIdRef=\"faultFields\"/>             ")
-                .append(" </jb:bean>       ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.CommonEventHeader\" ")
-                .append(" beanId=\"commonEventHeader\" createOnElement=\"simple\">         ")
-                .append("     <jb:value property=\"eventId\" data=\"#/community\" />      ")
-                .append("     <jb:value property=\"eventName\" data=\"#/protocol-version\" />             ")
-                .append("     <jb:value property=\"domain\" data=\"#/trap-category\" />       ")
-                .append("     <jb:value property=\"sequence\" data=\"#/time-received\" decoder=\"Long\"/>        ")
-                .append("     <jb:value property=\"lastEpochMicrosec\" data=\"#/community-len\"  decoder=\"Double\" />       ")
-                .append("     <jb:value property=\"startEpochMicrosec\" data=\"#/notify-OID-len\"   />    ")
-                .append(" </jb:bean>           ")
-                .append(" <jb:bean class=\"org.onap.dcaegen2.ves.domain.FaultFields\" beanId=\"faultFields\"")
-                .append(" createOnElement=\"simple\">        <jb:value property=\"alarmCondition\" data=\"#/cambria.partition\" />  ")
-                .append("     <jb:value property=\"eventSeverity\" data=\"#/notify-OID\" />    ")
-                .append("     <jb:value property=\"eventSourceType\" data=\"#/agent-name\" />       ")
-                .append("     <jb:value property=\"specificProblem\" data=\"#/agent-address\" />       ")
-                .append("     <jb:value property=\"faultFieldsVersion\" data=\"#/epoch_serno\" decoder=\"Double\" /> ")
-                .append(" </jb:bean>                   ")
-                .append("</smooks-resource-list>");    
-        
-        Smooks smooks = null;
-        VesEvent vesEvent = new VesEvent();
-        try {
-        //reading config file.. for now, looking at it as just one time operation
-            if(null == smooks){
-                
-                smooks = new Smooks(new ByteArrayInputStream(
-                        configFileData.toString().getBytes(StandardCharsets.UTF_8)));
-            }
-        
-            vesEvent = SmooksUtils.getTransformedObjectForInput(smooks,
-                    incomingJsonString.toString());
-        } catch (IOException | SAXException exception) {
-        	errorLogger.error("Error occurred : ", exception );
-        }
-        
-       // assertEquals(vesEvent.getEvent().getCommonEventHeader().getDomain(), "UCSNMP-HEARTBEAT");
-        
-        
+  VesEvent vesEvent;
+  private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+
+  @Test
+  public void testGetTransformedObjectForInput() {
+    StringBuffer incomingJsonString = new StringBuffer("{\n" + "    \"rule-id\": \"12121\",\n"
+        + "    \"notification\": {\n" + "        \"event-time\": \"2018-03-15T08:15:32.000Z\",\n"
+        + "        \"notification-id\":  \"2541256\",\n" + "        \"message\":  {\n"
+        + "            \"topic\":\"resource\",\n"
+        + "            \"object-type\":\"onu\",               \n"
+        + "            \"version\": \"v1\",               \n"
+        + "            \"operation\": \"create\",   \n"
+        + "            \"target\": \"ont/ont=23hk1231231232\",   \n"
+        + "            \"content\":  {\n" + "                \"onu\":  {\n"
+        + "                    \"sn\":   \"48575443FA637D1A\",\n"
+        + "                    \"refParentNE\":  \"550e8400-e29b-41d4-a716-446655440000\",\n"
+        + "                    \"refParentNeNativeId\":  \"FDN\",\n"
+        + "                    \"refParentLTP\": \"8c0db89e-218c-4e18-b0de-7a6788b3dda4\",\n"
+        + "                    \"refParentLTPNativeId\": \"FDN\",\n"
+        + "                    \"onuId\": \"213\",\n"
+        + "                    \"accessID\": \"HG65875420001\"\n" + "                }\n"
+        + "            }\n" + "        }\n" + "    }\n" + "}");
+    StringBuffer configFileData = new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        + "<smooks-resource-list xmlns=\"http://www.milyn.org/xsd/smooks-1.1.xsd\" xmlns:jb=\"http://www.milyn.org/xsd/smooks/javabean-1.4.xsd\" xmlns:json=\"http://www.milyn.org/xsd/smooks/json-1.1.xsd\">\n"
+        + "   <json:reader rootName=\"vesevent\" keyWhitspaceReplacement=\"-\">\n"
+        + "      <json:keyMap>\n"
+        + "         <json:key from=\"date&amp;time\" to=\"date-and-time\" />\n"
+        + "      </json:keyMap>\n" + "   </json:reader>\n"
+        + "   <jb:bean class=\"org.onap.dcaegen2.ves.domain.ves7_0.VesEvent\""
+        + " beanId=\"vesEvent\" createOnElement=\"vesevent\">\n"
+        + "      <jb:wiring property=\"event\" beanIdRef=\"event\" />\n" + "   </jb:bean>\n"
+        + "   <jb:bean class=\"org.onap.dcaegen2.ves.domain.ves7_0.Event\" "
+        + "beanId=\"event\" createOnElement=\"vesevent\">\n"
+        + "      <jb:wiring property=\"commonEventHeader\" beanIdRef=\"commonEventHeader\" />\n"
+        + "      <jb:wiring property=\"pnfRegistrationFields\" beanIdRef=\"pnfRegistrationFields\" />\n"
+        + "   </jb:bean>\n"
+        + "   <jb:bean class=\"org.onap.dcaegen2.ves.domain.ves7_0.CommonEventHeader\""
+        + " beanId=\"commonEventHeader\" createOnElement=\"vesevent\">\n"
+        + "<jb:expression property=\"version\">"
+        + "org.onap.dcaegen2.ves.domain.ves7_0.CommonEventHeader.Version._4_0_1</jb:expression> \n"
+        + "<jb:expression property=\"eventType\">\"pnfRegistration\"</jb:expression>\n"
+        + "<jb:expression property=\"vesEventListenerVersion\">"
+        + "org.onap.dcaegen2.ves.domain.ves7_0.CommonEventHeader.VesEventListenerVersion._7_0_1</jb:expression>\n"
+        + "       <jb:expression property=\"eventId\" execOnElement=\"vesevent\">"
+        + "\"registration_\"+commonEventHeader.ts1</jb:expression>\n"
+        + "<jb:expression property=\"reportingEntityName\">\"VESMapper\"</jb:expression>\n"
+        + "      <jb:expression property=\"domain\">"
+        + "org.onap.dcaegen2.ves.domain.ves7_0.CommonEventHeader.Domain.PNF_REGISTRATION</jb:expression>\n"
+        + "      <jb:expression property=\"eventName\" execOnElement=\"vesevent\">"
+        + "commonEventHeader.domain</jb:expression>\n"
+        + "<jb:value property=\"sequence\" data=\"0\" default=\"0\" decoder=\"Long\" />\n"
+        + "<jb:expression property=\"lastEpochMicrosec\" execOnElement=\"vesevent\">"
+        + "commonEventHeader.ts1</jb:expression>\n"
+        + "      <jb:expression property=\"startEpochMicrosec\" execOnElement=\"vesevent\">"
+        + "commonEventHeader.ts1</jb:expression>\n" + "      <jb:expression property=\"priority\">"
+        + "org.onap.dcaegen2.ves.domain.ves7_0.CommonEventHeader.Priority.NORMAL</jb:expression>\n"
+        + "      <jb:value property=\"sourceName\" data=\"notification/message/target\" />\n"
+        + "   </jb:bean>\n"
+        + "   <jb:bean class=\"org.onap.dcaegen2.ves.domain.ves7_0.PnfRegistrationFields\""
+        + " beanId=\"pnfRegistrationFields\" createOnElement=\"vesevent\">\n" + "     \n"
+        + "       <jb:expression property=\"pnfRegistrationFieldsVersion\">"
+        + "org.onap.dcaegen2.ves.domain.ves7_0.PnfRegistrationFields.PnfRegistrationFieldsVersion._2_0"
+        + "</jb:expression>\n"
+        + "      <jb:value property=\"serialNumber\" data=\"notification/message/content/onu/sn\" />\n"
+        + "      \n" + "   </jb:bean>\n" + "</smooks-resource-list>");
+
+    Smooks smooks = null;
+
+    try {
+      // reading config file.. for now, looking at it as just one time operation
+      if (null == smooks) {
+
+        smooks = new Smooks(
+            new ByteArrayInputStream(configFileData.toString().getBytes(StandardCharsets.UTF_8)));
+      }
+
+      vesEvent = SmooksUtils.getTransformedObjectForInput(smooks, incomingJsonString.toString());
+    } catch (IOException | SAXException exception) {
+      errorLogger.error("Error occurred : ", exception);
     }
 
+    // assertEquals(vesEvent.getEvent().getCommonEventHeader().getDomain(), "UCSNMP-HEARTBEAT");
+
+
+  }
+
 }
-*/

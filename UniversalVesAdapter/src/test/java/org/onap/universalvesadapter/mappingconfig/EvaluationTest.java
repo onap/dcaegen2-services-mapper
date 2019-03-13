@@ -17,6 +17,7 @@
 * limitations under the License.
 * ============LICENSE_END=========================================================
 */
+
 package org.onap.universalvesadapter.mappingconfig;
 
 import static org.junit.Assert.*;
@@ -30,9 +31,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class EvaluationTest {
     
     @Autowired
-    Evaluation evaluation =new Evaluation();
-    Evaluation lhs =new Evaluation();
-    Evaluation rhs =new Evaluation();
+    Evaluation evaluation = new Evaluation();
+    Evaluation lhs = new Evaluation();
+    Evaluation rhs = new Evaluation();
     Object value = new Object();
     Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
