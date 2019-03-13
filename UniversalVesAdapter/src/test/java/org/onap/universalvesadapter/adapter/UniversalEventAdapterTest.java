@@ -64,7 +64,7 @@ public class UniversalEventAdapterTest  {
     @Test
 	public void testtransform()  {
         StringBuffer incomingJsonString = new StringBuffer("{ ")
-                .append("\"protocol version\":\"v2c\", ")
+                .append("\"protocol version\":\"v2c\", ") 
                 .append("\"notify OID\":\".1.3.6.1.4.1.1751.2.46.12.1.1\", ")
                 .append("\"cambria.partition\":\"dcae-snmp.client.research.att.com\", ")
                 .append("\"trap category\":\"UCSNMP-HEARTBEAT\", ")
