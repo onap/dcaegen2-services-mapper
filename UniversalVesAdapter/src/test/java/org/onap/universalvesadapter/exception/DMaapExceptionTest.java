@@ -19,14 +19,23 @@
 */
 package org.onap.universalvesadapter.exception;
 
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DMaapExceptionTest {
+    private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 
-	@Test
-	public void test() {
-		DMaapException se = new DMaapException("message");
-		DMaapException se1 = new DMaapException("message", se);
-	}
-
+    @Test
+    public void test() {
+        DMaapException se = new DMaapException("message");
+        assertNotNull(se);
+        DMaapException se1 = new DMaapException("message", se);
+        assertNotNull(se1);
+        DMaapException se2 = new DMaapException("message", se.getCause());
+        assertNotNull(se2);
+        DMaapException se3 = new DMaapException("message", debugLogger, se);
+        assertNotNull(se3);
+    }
 }
