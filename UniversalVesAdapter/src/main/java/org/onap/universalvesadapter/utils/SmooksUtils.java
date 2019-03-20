@@ -27,7 +27,7 @@ import javax.xml.transform.stream.StreamSource;
 import org.milyn.Smooks;
 import org.milyn.container.ExecutionContext;
 import org.milyn.payload.StringResult;
-import org.onap.dcaegen2.ves.domain.ves7_0.VesEvent;
+import org.onap.dcaegen2.ves.domain.ves70.VesEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -29,7 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.PreDestroy;
 
 import org.milyn.Smooks;
-import org.onap.dcaegen2.ves.domain.ves7_0.VesEvent;
+import org.onap.dcaegen2.ves.domain.ves70.VesEvent;
 import org.onap.universalvesadapter.exception.ConfigFileSmooksConversionException;
 import org.onap.universalvesadapter.exception.VesException;
 import org.onap.universalvesadapter.service.VESAdapterInitializer;

@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- * ============LICENSE_START======================================================= 
 	* ONAP : DCAEGEN2/services/mapper * ================================================================================ 
 	* Copyright 2018 TechMahindra *================================================================================= 
@@ -273,6 +273,9 @@
 					<forkCount>1</forkCount>
 				</configuration>
 			</plugin> -->
+			
+			
+			
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
