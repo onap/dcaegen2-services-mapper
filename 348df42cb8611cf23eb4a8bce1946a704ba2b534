@@ -1,0 +1,487 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2732e8dd_875f4d43",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "fix formatting",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 87
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23024fae_5f5492b2",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/AdditionalMeasurementTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5dae8a78_aada27b2",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/AdditionalObjectTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35fc943e_95724dc0",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/AdditionalParameterTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5872cd90_1fabeebb",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/AlarmAdditionalInformationTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4a9c7a6_91ebaa0c",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/CodecUsageArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "55304595_624fec7b",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/CommonEventHeaderTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10b22321_992c8a1f",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/CpuUsageArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7849805_95df28d2",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/DiskUsageArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08becef9_5c8f7f8c",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/EndOfCallVqmSummariesTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "88fd1fe4_811402d3",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/EventTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3a16b9b_9823a665",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/FaultFieldsTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6ffd8e4_9211ee7b",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/FilesystemUsageArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "240725dc_dd53b05f",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/GtpPerFlowMetricsTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5343ae25_ca3500be",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/HeartbeatFieldsTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "938fd461_ac420688",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/HugePagesArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "82241c44_39d4454a",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/InternalHeaderFieldsTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "769ba90c_305a8ede",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/IpmiBaseboardTemperatureArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd989e36_e17dc13b",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/dcaegen2/ves/domain/ves70/IpmiBaseboardVoltageRegulatorArrayTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "261c37a2_87873ad7",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "change version to 1.0.0",
+      "range": {
+        "startLine": 33,
+        "startChar": 13,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4978055f_4926218c",
+        "filename": "version.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T16:31:35Z",
+      "side": 1,
+      "message": "change to 1.0.0 (and match pom)",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 7
+      },
+      "revId": "348df42cb8611cf23eb4a8bce1946a704ba2b534",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
