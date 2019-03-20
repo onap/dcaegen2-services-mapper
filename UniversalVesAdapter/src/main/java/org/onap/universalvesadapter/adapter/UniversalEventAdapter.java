@@ -2,7 +2,7 @@
 * ============LICENSE_START=======================================================
 * ONAP : DCAE
 * ================================================================================
-* Copyright 2018 TechMahindra
+* Copyright 2018-2019 TechMahindra
 *=================================================================================
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.PreDestroy;
 
 import org.milyn.Smooks;
-import org.onap.dcaegen2.ves.domain.ves7_0.VesEvent;
+import org.onap.dcaegen2.ves.domain.ves70.VesEvent;
 import org.onap.universalvesadapter.exception.ConfigFileSmooksConversionException;
 import org.onap.universalvesadapter.exception.VesException;
 import org.onap.universalvesadapter.service.VESAdapterInitializer;
