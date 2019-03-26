@@ -2,7 +2,7 @@
  * ============LICENSE_START=======================================================
  * ONAP : DCAE
  * ================================================================================
- * Copyright 2018 TechMahindra
+ * Copyright 2018-2019 TechMahindra
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import java.nio.charset.StandardCharsets;
 
 import org.junit.Test;
 import org.milyn.Smooks;
-import org.onap.dcaegen2.ves.domain.ves70.VesEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
@@ -34,7 +33,7 @@ import org.xml.sax.SAXException;
 public class SmooksUtilsTest {
     
     
-    VesEvent vesEvent;
+    Object vesEvent;
     private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
     
     @Test
