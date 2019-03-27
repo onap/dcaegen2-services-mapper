@@ -54,7 +54,7 @@ public class SmooksUtils {
 	 * @return VES json's pojo representation
 	 * @throws IOException
 	 */
-	public static VesEvent getTransformedObjectForInput(Smooks smooks, String incomingJsonString) {
+	public static Object getTransformedObjectForInput(Smooks smooks, String incomingJsonString) {
 		
 		debugLogger.info("Transforming incoming json " );
 		ExecutionContext executionContext = smooks.createExecutionContext();
@@ -67,7 +67,7 @@ public class SmooksUtils {
         smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(incomingJsonString.getBytes(StandardCharsets.UTF_8))), result);
        
         Locale.setDefault(defaultLocale);
-        VesEvent vesEvent = (VesEvent) executionContext.getBeanContext().getBean("vesEvent");
+        Object vesEvent =  executionContext.getBeanContext().getBean("vesEvent");
         debugLogger.debug("consversion successful to VES Event"); 
         
 		return vesEvent;

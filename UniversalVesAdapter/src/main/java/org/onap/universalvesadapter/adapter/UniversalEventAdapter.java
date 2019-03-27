@@ -124,7 +124,7 @@ public class UniversalEventAdapter implements GenericAdapter {
 				Smooks smooksTemp = new Smooks(new ByteArrayInputStream(configFileData.getBytes(StandardCharsets.UTF_8)));
 				eventToSmooksMapping.put(collectorIdentifierKey, smooksTemp);
 
-			VesEvent vesEvent = SmooksUtils.getTransformedObjectForInput(smooksTemp,incomingJsonString);
+				Object vesEvent = SmooksUtils.getTransformedObjectForInput(smooksTemp,incomingJsonString);
 			debugLogger.info("Incoming json transformed to VES format successfully:"+Thread.currentThread().getName());
 			ObjectMapper objectMapper = new ObjectMapper();
 			result = objectMapper.writeValueAsString(vesEvent);
