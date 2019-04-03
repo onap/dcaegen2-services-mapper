@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
@@ -39,89 +39,100 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * an array of name value pairs along with a name for the array
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"name", "arrayOfFields"})
 public class AdditionalMeasurement {
-    
+
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     private String name;
     /**
      * array of name value pairs (Required)
-     * 
+     *
      */
     @JsonProperty("arrayOfFields")
     @JsonPropertyDescription("array of name value pairs")
     private List<AlarmAdditionalInformation> arrayOfFields =
-            new ArrayList<AlarmAdditionalInformation>();
+            new ArrayList<>();
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    
+    private Map<String, Object> additionalProperties = new HashMap<>();
+
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     public String getName() {
         return name;
     }
-    
+
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
      * array of name value pairs (Required)
-     * 
+     *
      */
     @JsonProperty("arrayOfFields")
     public List<AlarmAdditionalInformation> getArrayOfFields() {
         return arrayOfFields;
     }
-    
+
     /**
      * array of name value pairs (Required)
-     * 
+     *
      */
     @JsonProperty("arrayOfFields")
     public void setArrayOfFields(List<AlarmAdditionalInformation> arrayOfFields) {
         this.arrayOfFields = arrayOfFields;
     }
-    
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
-    
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
-    
+
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-    
+
     @Override
     public int hashCode() {
         return new HashCodeBuilder().append(name).append(arrayOfFields).append(additionalProperties)
                 .toHashCode();
     }
-    
-    
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        AdditionalMeasurement other = (AdditionalMeasurement) obj;
+        return new EqualsBuilder().append(this.name, other.name).append(this.arrayOfFields, other.arrayOfFields)
+                .append(this.additionalProperties, other.additionalProperties).isEquals();
+    }
+
 }
