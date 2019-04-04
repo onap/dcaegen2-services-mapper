@@ -46,37 +46,22 @@ public final class DMaaPMRSubscriberConfig extends DMaaPMRBaseConfig {
     private  String timeoutMSParam;
 	private String messageLimitParam;
 	private String uriPrefix;
-   
-	private DMaaPMRSubscriberConfig(@Nonnull String hostName,
-                                    @Nonnull Integer portNumber,
-                                    @Nonnull String topicName,
-                                    @Nonnull String protocol,
-                                    String userName,
-                                    String userPassword,
-                                    @Nonnull String contentType,
-                                    @Nonnull String consumerId,
-                                    @Nonnull String consumerGroup,
-                                    @Nonnull int timeoutMS,
-                                    @Nonnull int messageLimit,
-                                    String timeoutMSParam,
-                                    String messageLimitParam,
-                                    String uriPrefix) {
-        this.hostName = hostName;
-        this.portNumber = portNumber;
-        this.topicName = topicName;
-        this.protocol = protocol;
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.contentType = contentType;
-        this.consumerId = consumerId;
-        this.consumerGroup = consumerGroup;
-        this.timeoutMS = timeoutMS;
-        this.messageLimit = messageLimit;
-        this.timeoutMSParam=timeoutMSParam;
-    	this.messageLimitParam=messageLimitParam;
-    	this.uriPrefix=uriPrefix;
-        
-       
+
+    public DMaaPMRSubscriberConfig(Builder builder) {
+        this.hostName = builder.hostName;
+        this.portNumber = builder.portNumber;
+        this.topicName = builder.topicName;
+        this.protocol = builder.protocol;
+        this.userName = builder.userName;
+        this.userPassword = builder.userPassword;
+        this.contentType = builder.contentType;
+        this.consumerId = builder.consumerId;
+        this.consumerGroup = builder.consumerGroup;
+        this.timeoutMS = builder.timeoutMS;
+        this.messageLimit = builder.messageLimit;
+        this.timeoutMSParam = builder.timeoutMSParam;
+        this.messageLimitParam = builder.messageLimitParam;
+        this.uriPrefix = builder.uriPreifix;
     }
 
     /**
@@ -234,12 +219,9 @@ public final class DMaaPMRSubscriberConfig extends DMaaPMRBaseConfig {
          * Builds Immutable instance of {@link DMaaPMRSubscriberConfig}
          *
          * @return immutable DMaaP Subscriber Config Object
-         * @throws IOException 
          */
-        public DMaaPMRSubscriberConfig build() throws IOException {
-            return new DMaaPMRSubscriberConfig(hostName, portNumber, topicName, protocol, userName, userPassword,
-                    contentType, consumerId, consumerGroup, timeoutMS, messageLimit, timeoutMSParam, messageLimitParam,
-                    uriPreifix);
+        public DMaaPMRSubscriberConfig build() {
+            return new DMaaPMRSubscriberConfig(this);
         }
 
     }
