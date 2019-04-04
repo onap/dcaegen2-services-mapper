@@ -57,22 +57,20 @@ public class DMaaPMRPublisherConfig extends DMaaPMRBaseConfig {
 	/**
 	 * Default uri path prefix
 	 */
-	 private String dmaapUriPathPrefix ;
+	private String dmaapUriPathPrefix ;
 
-	private DMaaPMRPublisherConfig(@Nonnull String hostName, @Nonnull Integer portNumber, @Nonnull String topicName,
-			@Nonnull String protocol, String userName, String userPassword, @Nonnull String contentType,
-			int maxBatchSize, int maxRecoveryQueueSize,String dmaapUriPathPrefix) {
-		this.hostName = hostName;
-		this.portNumber = portNumber;
-		this.topicName = topicName;
-		this.protocol = protocol;
-		this.userName = userName;
-		this.userPassword = userPassword;
-		this.contentType = contentType;
-		this.maxBatchSize = maxBatchSize;
-		this.maxRecoveryQueueSize = maxRecoveryQueueSize;
-		this.dmaapUriPathPrefix =dmaapUriPathPrefix;
-	}
+    private DMaaPMRPublisherConfig(Builder builder) {
+        this.hostName = builder.hostName;
+        this.portNumber = builder.portNumber;
+        this.topicName = builder.topicName;
+        this.protocol = builder.protocol;
+        this.userName = builder.userName;
+        this.userPassword = builder.userPassword;
+        this.contentType = builder.contentType;
+        this.maxBatchSize = builder.maxBatchSize;
+        this.maxRecoveryQueueSize = builder.maxRecoveryQueueSize;
+        this.dmaapUriPathPrefix = builder.dmaapUriPathPrefix;
+    }
 
 	/**
 	 * Builder to initialize immutable {@link DMaaPMRPublisherConfig} object
@@ -204,10 +202,9 @@ public class DMaaPMRPublisherConfig extends DMaaPMRBaseConfig {
 		 * @return Builds and returns thread safe, immutable
 		 *         {@link DMaaPMRPublisherConfig} object
 		 */
-		public DMaaPMRPublisherConfig build() {
-			return new DMaaPMRPublisherConfig(hostName, portNumber, topicName, protocol, userName, userPassword,
-					contentType, maxBatchSize, maxRecoveryQueueSize,dmaapUriPathPrefix);
-		}
+        public DMaaPMRPublisherConfig build() {
+            return new DMaaPMRPublisherConfig(this);
+        }
 
 	}
 	public String getDmaapUriPathPrefix() {
