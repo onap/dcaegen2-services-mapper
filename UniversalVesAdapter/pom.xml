@@ -25,7 +25,7 @@
 
 	<groupId>org.onap.dcaegen2.services.mapper.vesadapter</groupId>
 	<artifactId>UniversalVesAdapter</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 
 
 	<parent>
