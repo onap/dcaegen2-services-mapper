@@ -30,11 +30,9 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties
 public class DmaapConfig {
 	
-	// Hostname of DMaaP  to  be taken from ENV var
     @NotEmpty
 	private String dmaaphost;
 	
-	 // default port number  to  be taken from ENV var
     @NotEmpty
 	private int DEFAULT_PORT_NUMBER;
 	
@@ -74,11 +72,6 @@ public class DmaapConfig {
 	private String DMAAP_GROUP_PREFIX;
   
     // Publisher Constants
-			 
-    //Dmaap Publisher Topic
-	@Value("${mr.publisher.topic}")
-    @NotEmpty		
-	private String publisherTopic;
 			 
     //disable batching by default
 	@Value("${mr.publisher.DEFAULT_PUBLISHER_MAX_BATCH_SIZE}")
@@ -192,14 +185,6 @@ public class DmaapConfig {
 
 	public void setDMAAP_GROUP_PREFIX(String dMAAP_GROUP_PREFIX) {
 		DMAAP_GROUP_PREFIX = dMAAP_GROUP_PREFIX;
-	}
-
-	public String getPublisherTopic() {
-		return publisherTopic;
-	}
-
-	public void setPublisherTopic(String publisherTopic) {
-		this.publisherTopic = publisherTopic;
 	}
 
 	public int getPublisherDEFAULT_PUBLISHER_MAX_BATCH_SIZE() {

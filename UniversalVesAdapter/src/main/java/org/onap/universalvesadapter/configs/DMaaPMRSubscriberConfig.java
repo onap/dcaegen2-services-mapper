@@ -2,7 +2,7 @@
  * ===============================LICENSE_START======================================
  *  dcae-analytics
  * ================================================================================
- *    Copyright © 2017 AT&T Intellectual Property. All rights reserved.
+ *    Copyright Â© 2017 AT&T Intellectual Property. All rights reserved.
  * ================================================================================
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -86,14 +86,14 @@ public final class DMaaPMRSubscriberConfig extends DMaaPMRBaseConfig {
         
 
 
-		public Builder(@Nonnull String hostName,
-                       @Nonnull String topicName, DmaapConfig dmaapConfig) throws IOException {
+		public Builder(@Nonnull String topicName, DmaapConfig dmaapConfig) throws IOException {
         	
             // Required Values
-            this.hostName = hostName;
+            this.hostName = dmaapConfig.getDmaaphost();
+            this.portNumber = dmaapConfig.getDEFAULT_PORT_NUMBER();
             this.topicName = topicName;
             // Default values
-            this.portNumber = dmaapConfig.getDEFAULT_PORT_NUMBER();
+            
             this.userName = dmaapConfig.getDEFAULT_USER_NAME();
             this.userPassword = dmaapConfig.getDEFAULT_USER_PASSWORD();
             this.protocol = dmaapConfig.getDEFAULT_PROTOCOL();

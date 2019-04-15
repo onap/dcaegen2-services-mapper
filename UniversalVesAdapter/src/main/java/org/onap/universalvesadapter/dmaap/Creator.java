@@ -37,8 +37,8 @@ public class Creator {
 	 private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
 	 private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 	private DMaaPMRFactory dMaaPMRFactoryInstance;
-	private String dmaaphost;
-	private String publisherTopic;
+
+
 	@Autowired
     private DmaapConfig dmaapConfig;
 
@@ -46,20 +46,16 @@ public class Creator {
 
 	public void propertyFileInitializer() {
 	
-			this.dmaaphost = dmaapConfig.getDmaaphost();
-			this.publisherTopic = dmaapConfig.getPublisherTopic();
 			this.dMaaPMRFactoryInstance = DMaaPMRFactory.create();
-			debugLogger.info("The Hostname of DMaap is :" + dmaaphost);
-		
 
 	}
 
 	// publisher 
-	public DMaaPMRPublisher getDMaaPMRPublisher(){
+	public DMaaPMRPublisher getDMaaPMRPublisher(String publisherTopic){
 		propertyFileInitializer();
 		DMaaPMRPublisherConfig dMaaPMRPublisherConfig = null;
 		try {
-			dMaaPMRPublisherConfig = new DMaaPMRPublisherConfig.Builder(dmaaphost, publisherTopic,dmaapConfig).build();
+			dMaaPMRPublisherConfig = new DMaaPMRPublisherConfig.Builder(publisherTopic,dmaapConfig).build();
 		} catch (IOException e) {
 			errorLogger.error("failed or interrupted I/O operations while creating publisher config:{}",e.getCause());
 		}
@@ -71,7 +67,7 @@ public class Creator {
 		propertyFileInitializer();
 		DMaaPMRSubscriberConfig dMaaPMRSubscriberConfig = null;
 		try {
-			dMaaPMRSubscriberConfig = new DMaaPMRSubscriberConfig.Builder(dmaaphost, subcriberTopic,	dmaapConfig).build();
+			dMaaPMRSubscriberConfig = new DMaaPMRSubscriberConfig.Builder(subcriberTopic,	dmaapConfig).build();
 		} catch (IOException e) {
 			
 			errorLogger.error("failed or interrupted I/O operations while creating subcriber config:{}",e.getCause());

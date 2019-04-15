@@ -58,6 +58,11 @@ public class AlarmAdditionalInformation {
     public void setAdditionalProperty(String name, String value) {
         this.additionalProperties.put(name, value);
     }
+    @JsonAnySetter
+    public void setAdditionalProperties(Map<String, String> h) {
+        this.additionalProperties =h;
+    }
+
 
     @Override
     public int hashCode() {
