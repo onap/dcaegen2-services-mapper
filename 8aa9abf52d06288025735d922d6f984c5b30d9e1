@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40cd09b2_28a7912f",
+        "filename": "UniversalVesAdapter/dpo/blueprints/k8s-vesmapper.yaml-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-15T21:53:34Z",
+      "side": 1,
+      "message": "R4/k8splugin/1.4.12/",
+      "range": {
+        "startLine": 22,
+        "startChar": 102,
+        "endLine": 22,
+        "endChar": 121
+      },
+      "revId": "8aa9abf52d06288025735d922d6f984c5b30d9e1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fbb366a_3d33009a",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESAdapterInitializer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-15T21:53:34Z",
+      "side": 1,
+      "message": "Lot of unnecessary new lines and spacing/indentation not conforming to google java style (https://google.github.io/styleguide/javaguide.html)",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 24
+      },
+      "revId": "8aa9abf52d06288025735d922d6f984c5b30d9e1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e44a925_4af4960e",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VesService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-15T21:53:34Z",
+      "side": 1,
+      "message": "extra new lines to be removed",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 8
+      },
+      "revId": "8aa9abf52d06288025735d922d6f984c5b30d9e1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6fd040c6_b241a7c6",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/CollectorConfigPropertyRetrival.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-15T21:53:34Z",
+      "side": 1,
+      "message": "extra new lines to be removed",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 171,
+        "endChar": 9
+      },
+      "revId": "8aa9abf52d06288025735d922d6f984c5b30d9e1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4dc359f_dbc3eaf0",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FetchDynamicConfig.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-15T21:53:34Z",
+      "side": 1,
+      "message": "extra new lines to be removed",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 16
+      },
+      "revId": "8aa9abf52d06288025735d922d6f984c5b30d9e1",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
