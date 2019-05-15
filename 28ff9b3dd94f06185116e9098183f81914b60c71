@@ -1,0 +1,9 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: David Perez Caparros <david.perezcaparros@swisscom.com>
+Code-Review+1: Kedar Ambekar <akedar@TechMahindra.com>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Wed, 15 May 2019 13:22:45 +0000
+Reviewed-on: https://gerrit.onap.org/r/87746
+Project: dcaegen2/services/mapper
+Branch: refs/heads/master
