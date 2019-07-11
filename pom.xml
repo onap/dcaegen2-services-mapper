@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
 * ============LICENSE_START=======================================================
 * ONAP : DCAEGEN2/services/mapper
 * ================================================================================
@@ -24,13 +24,13 @@
     <parent>
       <groupId>org.onap.oparent</groupId>
       <artifactId>oparent</artifactId>
-      <version>1.2.0</version>
+      <version>2.0.0</version>
       <relativePath/>
     </parent>
 
     <groupId>org.onap.dcaegen2.services.mapper</groupId>
     <artifactId>mapper</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>dcaegen2-services-mapper</name>
@@ -105,7 +105,7 @@
         <!-- <compiler.source.version>1.7</compiler.source.version>
         <compiler.target.version>1.7</compiler.target.version> -->
          <compiler.source.version>1.8</compiler.source.version>
-        <compiler.target.version>1.8</compiler.target.version> 
+        <compiler.target.version>1.8</compiler.target.version>
         <unit.test.pattern>**/*Test.java</unit.test.pattern>
         <skip.unit.tests>false</skip.unit.tests>
         <integration.test.pattern>**/*IT.java</integration.test.pattern>
@@ -114,7 +114,7 @@
         <findbugs.failOnError>true</findbugs.failOnError>
         <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
         <checkstyle.file.name>checkstyle.xml</checkstyle.file.name>
-        <checkstyle.suppression.file.name>suppressions.xml</checkstyle.suppression.file.name>       
+        <checkstyle.suppression.file.name>suppressions.xml</checkstyle.suppression.file.name>
         <dependency.locations.enabled>false</dependency.locations.enabled>
         <nexusproxy>https://nexus.onap.org</nexusproxy>
         <snapshots.path>content/repositories/snapshots/</snapshots.path>
@@ -683,7 +683,7 @@
                 </plugins>
             </build>
         </profile>
-    </profiles>  
+    </profiles>
 
     <modules>
       <!--  <module>snmpmapper</module> -->
