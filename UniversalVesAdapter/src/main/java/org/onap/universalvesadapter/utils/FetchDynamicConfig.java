@@ -158,6 +158,7 @@ public class FetchDynamicConfig {
             PrintWriter printWriter = new PrintWriter(fstream);
             printWriter.print(indentedretstring);
             printWriter.close();
+            fstream.close();
             
             debugLogger.info("New Config successfully written to local file to " + configFile);
         } catch (IOException e) {
@@ -176,7 +177,7 @@ public class FetchDynamicConfig {
             file = ResourceUtils.getFile("classpath:" + configFileName);
             content = new String(Files.readAllBytes(file.toPath()));
         } catch (FileNotFoundException e) {
-            errorLogger.error("colud not find file :", file.getName());
+            errorLogger.error("colud not find file :",configFileName);
             
         } catch (IOException e) {
             errorLogger.error("unable to read the file , reason:", e.getCause());
