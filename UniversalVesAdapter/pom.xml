@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
 * ============LICENSE_START=======================================================
 * ONAP : DCAEGEN2
 * ================================================================================
@@ -25,13 +25,13 @@
 
 	<groupId>org.onap.dcaegen2.services.mapper.vesadapter</groupId>
 	<artifactId>UniversalVesAdapter</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 
 	<parent>
 		<groupId>org.onap.dcaegen2.services.mapper</groupId>
 		<artifactId>mapper</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>
@@ -248,7 +248,7 @@
 			<version>${httpclient.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		<!-- <dependency> <groupId>org.onap.aai.event-client</groupId> <artifactId>event-client-dmaap</artifactId> 
+		<!-- <dependency> <groupId>org.onap.aai.event-client</groupId> <artifactId>event-client-dmaap</artifactId>
 			<version>1.2.0</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -281,9 +281,9 @@
 					<forkCount>1</forkCount>
 				</configuration>
 			</plugin> -->
-			
-			
-			
+
+
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
@@ -422,9 +422,9 @@
 							</sources>
 						</configuration>
 					</execution>
-					<!-- <execution> <id>regex-property</id> <goals> <goal>regex-property</goal> 
-						</goals> <configuration> <name>docker.version</name> <value>${project.version}</value> 
-						<regex>(^[0-9]+.[0-9]+.[0-9]+$)</regex> <replacement>$1-STAGING</replacement> 
+					<!-- <execution> <id>regex-property</id> <goals> <goal>regex-property</goal>
+						</goals> <configuration> <name>docker.version</name> <value>${project.version}</value>
+						<regex>(^[0-9]+.[0-9]+.[0-9]+$)</regex> <replacement>$1-STAGING</replacement>
 						<failIfNoMatch>false</failIfNoMatch> </configuration> </execution> -->
 				</executions>
 			</plugin>
