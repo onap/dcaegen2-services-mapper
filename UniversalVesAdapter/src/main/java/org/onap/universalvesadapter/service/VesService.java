@@ -34,7 +34,7 @@ import org.onap.universalvesadapter.dmaap.MRSubcriber.DMaaPMRSubscriber;
 import org.onap.universalvesadapter.exception.DMaapException;
 import org.onap.universalvesadapter.exception.MapperConfigException;
 import org.onap.universalvesadapter.exception.VesException;
-import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrival;
+import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrieval;
 import org.onap.universalvesadapter.utils.DmaapConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +44,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Service that starts the universal ves adapter module to listen for events
- * 
+ *
  * @author kmalbari
  *
  */
@@ -55,11 +55,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class VesService {
-    
+
     private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
     private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
     private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
-    
+
     private boolean isRunning = true;
     @Value("${defaultConfigFilelocation}")
     private String defaultConfigFilelocation;
@@ -70,10 +70,10 @@ public class VesService {
     @Autowired
     private DmaapConfig dmaapConfig;
     @Autowired
-    private CollectorConfigPropertyRetrival collectorConfigPropertyRetrival;
+    private CollectorConfigPropertyRetrieval collectorConfigPropertyRetrival;
     private static List<String> list = new LinkedList<String>();
-    
-    
+
+
     /**
      * method triggers universal VES adapter module.
      */
@@ -85,7 +85,7 @@ public class VesService {
         // collectors in kv file
         Map<String, String> dmaapTopics = collectorConfigPropertyRetrival
                 .getDmaapTopics("stream_subscriber", "stream_publisher", defaultConfigFilelocation);
-        
+
         ExecutorService executorService = Executors.newFixedThreadPool(dmaapTopics.size());
         for (Map.Entry<String, String> entry : dmaapTopics.entrySet()) {
             String threadName = entry.getKey();
@@ -96,20 +96,20 @@ public class VesService {
                 topicName = entry2.getKey();
                 publisherTopic = entry2.getValue();
             }
-            
-            
+
+
             // Publisher and subcriber as per each collector
             DMaaPMRSubscriber subcriber = creator.getDMaaPMRSubscriber(topicName);
-            
+
             DMaaPMRPublisher publisher = creator.getDMaaPMRPublisher(publisherTopic);
             debugLogger.info(
                     "Created scriber topic:" + topicName + "publisher topic:" + publisherTopic);
-            
+
             executorService.submit(new Runnable() {
-                
+
                 @Override
                 public void run() {
-                    
+
                     Thread.currentThread().setName(threadName);
                     metricsLogger.info("fetch and publish from and to Dmaap started:"
                             + Thread.currentThread().getName());
@@ -123,9 +123,9 @@ public class VesService {
                             for (String incomingJsonString : subcriber.fetchMessages()
                                     .getFetchedMessages()) {
                                 list.add(incomingJsonString);
-                                
+
                             }
-                            
+
                             if (list.isEmpty()) {
                                 try {
                                     Thread.sleep(pollingInternalInt);
@@ -135,7 +135,7 @@ public class VesService {
                             }
                             debugLogger.debug("number of messages to be converted :{}",
                                     list.size());
-                            
+
                             if (!list.isEmpty()) {
                                 String val = ((LinkedList<String>) list).removeFirst();
                                 List<String> messages = new ArrayList<>();
@@ -144,10 +144,10 @@ public class VesService {
                                         && (!(vesEvent.isEmpty() || vesEvent.equals("")))) {
                                     messages.add(vesEvent);
                                     publisher.publish(messages);
-                                    
+
                                     metricsLogger
-                                            .info("Message successfully published to DMaaP Topic-\n"
-                                                    + vesEvent);
+                                    .info("Message successfully published to DMaaP Topic-\n"
+                                            + vesEvent);
                                 }
                             }
                         }
@@ -155,33 +155,33 @@ public class VesService {
                 }
             });
         }
-        
-        
-        
+
+
+
     }
-    
+
     /**
      * method stops universal ves adapter module
      */
     public void stop() {
         isRunning = false;
     }
-    
-    
+
+
     /**
      * method for processing the incoming json to ves
-     * 
+     *
      * @param incomingJsonString
      * @return ves
      */
     private String processReceivedJson(String incomingJsonString) {
         String outgoingJsonString = null;
         if (!"".equals(incomingJsonString)) {
-            
+
             try {
-                
+
                 outgoingJsonString = eventAdapter.transform(incomingJsonString);
-                
+
             } catch (VesException exception) {
                 errorLogger.error("Received exception : {},{}" + exception.getMessage(), exception);
                 debugLogger.warn("APPLICATION WILL BE SHUTDOWN UNTIL ABOVE ISSUE IS RESOLVED.");

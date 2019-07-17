@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.file.Files;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -45,188 +44,182 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class FetchDynamicConfig {
 
-	// @Value("${defaultProtocol}")
-	static String defaultProtocol = "http";
+    // @Value("${defaultProtocol}")
+    static String defaultProtocol = "http";
 
-	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
-	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+    private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+    private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
-	private static String url;
-	public static String retString;
-	public static String retCBSString;
+    private static String url;
+    public static String retString;
+    public static String retCBSString;
 
-	// Generate RequestID and InvocationID which will be used when logging and in
-	// HTTP requests
-	final RequestDiagnosticContext diagnosticContext = RequestDiagnosticContext.create();
-	final CbsRequest request = CbsRequests.getConfiguration(diagnosticContext);
+    // Generate RequestID and InvocationID which will be used when logging and in
+    // HTTP requests
+    final RequestDiagnosticContext diagnosticContext = RequestDiagnosticContext.create();
+    final CbsRequest request = CbsRequests.getConfiguration(diagnosticContext);
 
-	// Read necessary properties from the environment
-	static final EnvProperties env = EnvProperties.fromEnvironment();
+    // Read necessary properties from the environment
+    static final EnvProperties env = EnvProperties.fromEnvironment();
 
-	public FetchDynamicConfig() {
+    public FetchDynamicConfig() {
 
-	}
+    }
 
-	public static void cbsCall(String configFile) {
+    public static void cbsCall(String configFile) {
 
-		Boolean areEqual;
-		// Call consul api and identify the CBS Service address and port
-		getconsul();
-		// Construct and invoke CBS API to get application Configuration
-		getCBS();
-		// Verify if data has changed
-		areEqual = verifyConfigChange(configFile);
+        Boolean areEqual;
+        // Call consul api and identify the CBS Service address and port
+        getconsul();
+        // Construct and invoke CBS API to get application Configuration
+        getCBS();
+        // Verify if data has changed
+        areEqual = verifyConfigChange(configFile);
 
-		if (!areEqual) {
-			FetchDynamicConfig fc = new FetchDynamicConfig();
-			if (retCBSString!=null) {
-				fc.writefile(retCBSString, configFile);
-			} else {
-				debugLogger.debug("No content recieved from server");
-			}
-			
-		} else {
-			debugLogger.info("New config pull results identical -  " + configFile + " NOT refreshed");
-		}
-	}
+        if (!areEqual) {
+            FetchDynamicConfig fc = new FetchDynamicConfig();
+            if (retCBSString != null) {
+                fc.writefile(retCBSString, configFile);
+            } else {
+                debugLogger.debug("No content recieved from server");
+            }
+        } else {
+            debugLogger.info("New config pull results identical -  {} NOT refreshed", configFile);
+        }
+    }
 
-	private static void getconsul() {
-		url = defaultProtocol + "://" + env.consulHost() + ":" + env.consulPort() + "/v1/catalog/service/"
-				+ env.cbsName();
-		retString = fetchResultFromDestination(url);
-		debugLogger.info("CBS details fetched from Consul");
-	}
+    private static void getconsul() {
+        url = defaultProtocol + "://" + env.consulHost() + ":" + env.consulPort() + "/v1/catalog/service/"
+                + env.cbsName();
+        retString = fetchResultFromDestination(url);
+        debugLogger.info("CBS details fetched from Consul");
+    }
 
-	public static boolean verifyConfigChange(String configFile) {
+    public static boolean verifyConfigChange(String configFile) {
 
-		boolean areEqual = false;
-		// Read current data
-		try {
+        boolean areEqual = false;
+        // Read current data
+        try {
 
-			File f = new File(ClassLoader.getSystemResource(configFile.trim()).getFile());
+            File f = new File(ClassLoader.getSystemResource(configFile.trim()).getFile());
 
-			if (f.exists() && !f.isDirectory()) {
-				debugLogger.info("Comparing local configuration with the configuration fethed from CBS ");
+            if (f.exists() && !f.isDirectory()) {
+                debugLogger.info("Comparing local configuration with the configuration fethed from CBS ");
 
-				String jsonData = readFile(configFile);
-				JSONObject jsonObject = new JSONObject(jsonData);
+                String jsonData = readFile(configFile);
+                JSONObject jsonObject = new JSONObject(jsonData);
 
-				ObjectMapper mapper = new ObjectMapper();
+                ObjectMapper mapper = new ObjectMapper();
 
-				JsonNode tree1 = mapper.readTree(jsonObject.toString());
-				JsonNode tree2 = mapper.readTree(retCBSString);
-				areEqual = tree1.equals(tree2);
-				debugLogger.info("Comparison value:" + areEqual);
-			} else {
-				debugLogger.info("First time config file read: " + configFile);
-			}
+                JsonNode tree1 = mapper.readTree(jsonObject.toString());
+                JsonNode tree2 = mapper.readTree(retCBSString);
+                areEqual = tree1.equals(tree2);
+                debugLogger.info("Comparison value:{}", areEqual);
+            } else {
+                debugLogger.info("First time config file read: {}",configFile);
+            }
 
-		} catch (IOException e) {
-			errorLogger.error("Comparison with new fetched data failed" + e.getMessage());
+        } catch (IOException e) {
+            errorLogger.error("Comparison with new fetched data failed", e);
 
-		}
+        }
 
-		return areEqual;
+        return areEqual;
 
-	}
+    }
 
-	public static void getCBS() {
+    public static void getCBS() {
 
-		// consul return as array
-		JSONTokener temp = new JSONTokener(retString);
-		JSONObject cbsjobj = (JSONObject) new JSONArray(temp).get(0);
+        // consul return as array
+        JSONTokener temp = new JSONTokener(retString);
+        JSONObject cbsjobj = (JSONObject) new JSONArray(temp).get(0);
 
-		String urlPart1 = null;
-		if (cbsjobj.has("ServiceAddress") && cbsjobj.has("ServicePort")) {
+        String urlPart1 = null;
+        if (cbsjobj.has("ServiceAddress") && cbsjobj.has("ServicePort")) {
 
-			urlPart1 = cbsjobj.getString("ServiceAddress") + ":" + cbsjobj.getInt("ServicePort");
+            urlPart1 = cbsjobj.getString("ServiceAddress") + ":" + cbsjobj.getInt("ServicePort");
 
-		}
-		debugLogger.info("CONFIG_BINDING_SERVICE HOST:PORT is " + urlPart1);
+        }
+        debugLogger.info("CONFIG_BINDING_SERVICE HOST:PORT is {}", urlPart1);
 
-		if (env.appName() != null) {
-			url = defaultProtocol + "://" + urlPart1 + "/service_component/" + env.appName();
-			retCBSString = fetchResultFromDestination(url);
-			debugLogger.info("Configuration fetched from CBS successfully..");
-		} else {
-			errorLogger.error("Service name environment variable - APP_NAME/SERVICE_NAME not found within container ");
-		}
+        if (env.appName() != null) {
+            url = defaultProtocol + "://" + urlPart1 + "/service_component/" + env.appName();
+            retCBSString = fetchResultFromDestination(url);
+            debugLogger.info("Configuration fetched from CBS successfully..");
+        } else {
+            errorLogger.error("Service name environment variable - APP_NAME/SERVICE_NAME not found within container ");
+        }
+    }
 
-	}
+    public void writefile(String retCBSString, String configFile) {
 
-	public void writefile(String retCBSString, String configFile) {
+        String indentedretstring = (new JSONObject(retCBSString)).toString(4);
+        try {
+            debugLogger.info("Overwriting local configuration file {} with configuartions received from CBS",
+                    configFile);
 
-		String indentedretstring = (new JSONObject(retCBSString)).toString(4);
-		try {
-			debugLogger.info(
-					"Overwriting local configuration file " + configFile + " with configuartions received from CBS");
+            File file2 = ResourceUtils.getFile("classpath:" + configFile);
+            try (FileWriter fstream = new FileWriter(file2, false);
+                    PrintWriter printWriter = new PrintWriter(fstream)) {
+                printWriter.print(indentedretstring);
+            }
 
-			File file2 = ResourceUtils.getFile("classpath:" + configFile);
-			FileWriter fstream = new FileWriter(file2, false);
-			PrintWriter printWriter = new PrintWriter(fstream);
-			printWriter.print(indentedretstring);
-			printWriter.close();
-			fstream.close();
+            debugLogger.info("New Config successfully written to local file to {}", configFile);
+        } catch (IOException e) {
+            errorLogger.error(
+                    "Error in writing configuration into local KV file " + configFile + retString, e);
+        }
+    }
 
-			debugLogger.info("New Config successfully written to local file to " + configFile);
-		} catch (IOException e) {
-			errorLogger.error(
-					"Error in writing configuration into local KV file " + configFile + retString + e.getMessage());
-			e.printStackTrace();
-		}
+    public static String readFile(String configFileName) {
+        String content = null;
+        File file = null;
 
-	}
+        try {
+            file = ResourceUtils.getFile("classpath:" + configFileName);
+            content = new String(Files.readAllBytes(file.toPath()));
+        } catch (FileNotFoundException e) {
+            errorLogger.error("colud not find file :{}", configFileName);
+        } catch (IOException e) {
+            errorLogger.error("unable to read the file , reason:", e);
+        } catch (Exception e) {
+            errorLogger.error("Exception occured , reason:", e);
+        }
 
-	public static String readFile(String configFileName) {
-		String content = null;
-		File file = null;
+        return content;
+    }
 
-		try {
-			file = ResourceUtils.getFile("classpath:" + configFileName);
-			content = new String(Files.readAllBytes(file.toPath()));
-		} catch (FileNotFoundException e) {
-			errorLogger.error("colud not find file :", configFileName);
+    private static String fetchResultFromDestination(String url) {
+        debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : START");
 
-		} catch (IOException e) {
-			errorLogger.error("unable to read the file , reason:", e.getCause());
-		} catch (Exception e) {
-			errorLogger.error("Exception occured , reason:", e.getMessage());
-		}
+        StringBuffer sb = new StringBuffer();
+        try {
+            HttpClient client = HttpClientBuilder.create().build();
+            HttpGet request = new HttpGet(url);
+            HttpResponse response = client.execute(request);
+            BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                sb.append(line);
+                sb.append('\n');
+            }
+        } catch (ClientProtocolException e) {
+            debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : ClientProtocolException thrown.", e);
+        } catch (UnsupportedOperationException e) {
+            debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : UnsupportedOperationException thrown.",
+                    e);
+        } catch (IOException e) {
+            debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : IOException thrown.", e);
+        }
 
-		return content;
-	}
-
-	private static String fetchResultFromDestination(String url) {
-		debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : START");
-
-		StringBuffer sb = new StringBuffer();
-		try {
-			HttpClient client = HttpClientBuilder.create().build();
-			HttpGet request = new HttpGet(url);
-			HttpResponse response = client.execute(request);
-			BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-			String line = "";
-			while ((line = rd.readLine()) != null) {
-				sb.append(line);
-				sb.append('\n');
-			}
-		} catch (ClientProtocolException e) {
-			debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : ClientProtocolException thrown."+e.getMessage());
-		} catch (UnsupportedOperationException e) {
-			debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : UnsupportedOperationException thrown."+e.getMessage());
-		} catch (IOException e) {
-			debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : IOException thrown."+e.getMessage());
-		}
-
-		debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : END");
-		return sb.toString();
-	}
+        debugLogger.debug("FetchDynamicConfig : fetchResultFromDestination : END");
+        return sb.toString();
+    }
 
 }
