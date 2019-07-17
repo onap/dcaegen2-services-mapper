@@ -44,14 +44,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class CollectorConfigPropertyRetrival {
-    
-    
+
+
     private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
     private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
     private static JSONArray array;
     @Autowired
     private DmaapConfig dmaapConfig;
-    
+
     public static JSONArray collectorConfigArray(String configFile) {
         try {
             JSONParser parser = new JSONParser();
@@ -59,59 +59,58 @@ public class CollectorConfigPropertyRetrival {
             JSONObject obj = (JSONObject) parser.parse(content);
             JSONObject appobj = (JSONObject) obj.get("app_preferences");
             array = (JSONArray) appobj.get("collectors");
-            
+
             debugLogger.info("Retrieved JsonArray from Collector Config File");
-            
+
         } catch (ParseException e) {
-            errorLogger.error("ParseException occured at position:", e.getPosition());
+            errorLogger.error("ParseException occured at position:", e);
         }
-        
-        
+
         return array;
-        
+
     }
-    
-    public static String[] getProperyArray(String properyName, String defaultConfigFilelocation) {
+
+    public static String[] getProperyArray(String propertyName, String defaultConfigFilelocation) {
         JSONArray jsonArray = collectorConfigArray(defaultConfigFilelocation);
-        
+
         String[] propertyArray = new String[jsonArray.size()];
-        
+
         for (int k = 0; k < jsonArray.size(); k++) {
-            
+
             JSONObject collJson = (JSONObject) jsonArray.get(k);
-            
-            propertyArray[k] = (String) collJson.get(properyName);
+
+            propertyArray[k] = (String) collJson.get(propertyName);
         }
-        debugLogger.info("returning " + properyName + " array from Collector Config");
+        debugLogger.info("returning {} array from Collector Config", propertyName);
         return propertyArray;
-        
+
     }
-    
+
     public Map<String, String> getDmaapTopics(String subscriber, String publisher,
             String defaultConfigFilelocation) {
         JSONArray jsonArray = collectorConfigArray(defaultConfigFilelocation);
-        
+
         Map<String, String> dmaapTopics = new HashMap<>();
-        
+
         for (int k = 0; k < jsonArray.size(); k++) {
-            
+
             JSONObject collJson = (JSONObject) jsonArray.get(k);
-            
+
             dmaapTopics.put(collJson.get(subscriber).toString(),
                     collJson.get(publisher).toString());
-            
+
         }
         debugLogger.info("returning Dmaap topics from Collector Config");
         return dmaapTopics;
-        
+
     }
-    
+
     public Map<String, String> getTopics(String subscriber, String publisher,
             String defaultConfigFilelocation) {
         Map<String, String> dmaapTopics = new HashMap<>();
-        
+
         try {
-            
+
             ObjectMapper objectMapper = new ObjectMapper();
             String content = readFile(defaultConfigFilelocation);
             // read JSON like DOM Parser
@@ -120,52 +119,46 @@ public class CollectorConfigPropertyRetrival {
                     .path("dmaap_info").path("topic_url");
             JsonNode publisherUrl = rootNode.path("streams_publishes").path(publisher)
                     .path("dmaap_info").path("topic_url");
-            
+
             dmaapTopics.put(getTopicName(subscriberUrl.asText()),
                     getTopicName(publisherUrl.asText()));
             setDmaapConfig(subscriberUrl.asText());
         } catch (IOException ex) {
-            errorLogger.error("IOException occured:" + ex.getMessage());
-            
+            errorLogger.error("IOException occured:", ex);
         } catch (URISyntaxException e) {
-            
-            errorLogger.error("Invalid URI :" + e.getInput() + ": " + e.getReason());
+            errorLogger.error("Invalid URI :", e);
         }
-        
+
         return dmaapTopics;
-        
     }
-    
+
     public String getTopicName(String url) throws URISyntaxException {
         URI uri = new URI(url);
         String path = uri.getPath();
         String idStr = path.substring(path.lastIndexOf('/') + 1);
         return idStr;
-        
     }
-    
+
     public void setDmaapConfig(String url) throws URISyntaxException {
         URI uri = new URI(url);
         dmaapConfig.setDmaaphost(uri.getHost());
         dmaapConfig.setDEFAULT_PORT_NUMBER(uri.getPort());
-        
     }
-    
+
     public static String readFile(String configFileName) {
         String content = null;
         File file = null;
-        
+
         try {
             file = ResourceUtils.getFile("classpath:" + configFileName);
             content = new String(Files.readAllBytes(file.toPath()));
         } catch (FileNotFoundException e) {
-            errorLogger.error("colud not find file :", configFileName);
-            
+            errorLogger.error("colud not find file :{}", configFileName);
+
         } catch (IOException e) {
-            errorLogger.error("unable to read the file , reason:", e.getCause());
+            errorLogger.error("unable to read the file , reason:", e);
         }
-        
+
         return content;
-        
     }
 }
