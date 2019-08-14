@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5448835a_a725983f",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/CollectorConfigPropertyRetrival.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-08-14T18:29:36Z",
+      "side": 1,
+      "message": "probably should fix the spelling of propertyName (instead of properyName) here and line 84",
+      "revId": "fee24c14e2799ab42811d4cc123a96d483915d02",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
