@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-* ============LICENSE_START=======================================================
-* ONAP : DCAEGEN2
-* ================================================================================
-* Copyright 2018-2019 TechMahindra
-*=================================================================================
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* ============LICENSE_END=========================================================
- -->
+<!-- * ============LICENSE_START======================================================= 
+	* ONAP : DCAEGEN2 * ================================================================================ 
+	* Copyright 2018-2019 TechMahindra *================================================================================= 
+	* Licensed under the Apache License, Version 2.0 (the "License"); * you may 
+	not use this file except in compliance with the License. * You may obtain 
+	a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 * 
+	* Unless required by applicable law or agreed to in writing, software * distributed 
+	under the License is distributed on an "AS IS" BASIS, * WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. * See the License for 
+	the specific language governing permissions and * limitations under the License. 
+	* ============LICENSE_END========================================================= -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -50,47 +42,50 @@
 		<snapshots.path>content/repositories/snapshots/</snapshots.path>
 		<releases.path>content/repositories/releases/</releases.path>
 		<site.path>
-            content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
-        </site.path>
+			content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
+		</site.path>
 		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+
+		<!-- DCAE SDK version -->
+		<sdk.version>1.1.6</sdk.version>
 
 	</properties>
 	<dependencies>
-	<!-- Junit, Mockito, PowerMock -->
-	<dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-       <dependency>
-    <groupId>org.mockito</groupId>
-    <artifactId>mockito-core</artifactId>
-    <version>2.0.5-beta</version>
-    <scope>test</scope>
-</dependency>
-
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
-            <version>1.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>1.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-        <groupId>org.javassist</groupId>
-        <artifactId>javassist</artifactId>
-        <version>3.18.2-GA</version>
-    </dependency>
+		<!-- Junit, Mockito, PowerMock -->
 		<dependency>
-    			<groupId>com.googlecode.json-simple</groupId>
-    			<artifactId>json-simple</artifactId>
-    			<version>1.1.1</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.0.5-beta</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>1.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.18.2-GA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -185,9 +180,9 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
-		    <version>1.7.25</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
@@ -248,7 +243,7 @@
 			<version>${httpclient.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		<!-- <dependency> <groupId>org.onap.aai.event-client</groupId> <artifactId>event-client-dmaap</artifactId>
+		<!-- <dependency> <groupId>org.onap.aai.event-client</groupId> <artifactId>event-client-dmaap</artifactId> 
 			<version>1.2.0</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -256,6 +251,15 @@
 			<optional>true</optional>
 			<version>2.1.1.RELEASE</version>
 		</dependency>
+
+		<!-- DCAE sdk dependency -->
+
+		<dependency>
+			<groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
+			<artifactId>cbs-client</artifactId>
+			<version>${sdk.version}</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -273,14 +277,9 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<reuseForks>false</reuseForks>
-					<forkCount>1</forkCount>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+				<configuration> <reuseForks>false</reuseForks> <forkCount>1</forkCount> </configuration> 
+				</plugin> -->
 
 
 
@@ -309,7 +308,7 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>1.0.0</version>
 				<configuration>
-					 <skipDockerBuild>false</skipDockerBuild>
+					<skipDockerBuild>false</skipDockerBuild>
 					<serverId>${onap.nexus.dockerregistry.daily}</serverId>
 					<imageName>${onap.nexus.dockerregistry.daily}/${docker.image.name}</imageName>
 					<imageTags>
@@ -341,54 +340,18 @@
 					<entryPoint>bin/run.sh</entryPoint>
 
 				</configuration>
-				<!--<executions>
-					<execution>
-						<id>build-image</id>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>tag-and-push-image-latest</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>tag</goal>
-						</goals>
-						<configuration>
-							<image>${docker.image.name}:latest</image>
-							<newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:latest</newName>
-							<pushImage>true</pushImage>
-						</configuration>
-					</execution>
-					<execution>
-						<id>tag-and-push-image-with-version</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>tag</goal>
-						</goals>
-						<configuration>
-							<image>${docker.image.name}:latest</image>
-							<newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}
-							</newName>
-							<pushImage>true</pushImage>
-						</configuration>
-					</execution>
-					<execution>
-						<id>tag-and-push-image-with-version-and-date</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>tag</goal>
-						</goals>
-						<configuration>
-							<image>${docker.image.name}:latest</image>
-							<newName>
-								${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}-${maven.build.timestamp}Z
-							</newName>
-							<pushImage>true</pushImage>
-						</configuration>
-					</execution>
-				</executions>-->
+				<!--<executions> <execution> <id>build-image</id> <phase>package</phase> 
+					<goals> <goal>build</goal> </goals> </execution> <execution> <id>tag-and-push-image-latest</id> 
+					<phase>deploy</phase> <goals> <goal>tag</goal> </goals> <configuration> <image>${docker.image.name}:latest</image> 
+					<newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:latest</newName> 
+					<pushImage>true</pushImage> </configuration> </execution> <execution> <id>tag-and-push-image-with-version</id> 
+					<phase>deploy</phase> <goals> <goal>tag</goal> </goals> <configuration> <image>${docker.image.name}:latest</image> 
+					<newName>${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version} 
+					</newName> <pushImage>true</pushImage> </configuration> </execution> <execution> 
+					<id>tag-and-push-image-with-version-and-date</id> <phase>deploy</phase> <goals> 
+					<goal>tag</goal> </goals> <configuration> <image>${docker.image.name}:latest</image> 
+					<newName> ${onap.nexus.dockerregistry.daily}/${docker.image.name}:${project.version}-${maven.build.timestamp}Z 
+					</newName> <pushImage>true</pushImage> </configuration> </execution> </executions> -->
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -422,9 +385,9 @@
 							</sources>
 						</configuration>
 					</execution>
-					<!-- <execution> <id>regex-property</id> <goals> <goal>regex-property</goal>
-						</goals> <configuration> <name>docker.version</name> <value>${project.version}</value>
-						<regex>(^[0-9]+.[0-9]+.[0-9]+$)</regex> <replacement>$1-STAGING</replacement>
+					<!-- <execution> <id>regex-property</id> <goals> <goal>regex-property</goal> 
+						</goals> <configuration> <name>docker.version</name> <value>${project.version}</value> 
+						<regex>(^[0-9]+.[0-9]+.[0-9]+$)</regex> <replacement>$1-STAGING</replacement> 
 						<failIfNoMatch>false</failIfNoMatch> </configuration> </execution> -->
 				</executions>
 			</plugin>
