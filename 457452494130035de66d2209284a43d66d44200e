@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea8a74d5_bd9f589f",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-08-23T14:32:31Z",
+      "side": 1,
+      "message": "the formatting on the license block got messed up.\n\nI won\u0027t block if don\u0027t want to change it.",
+      "revId": "457452494130035de66d2209284a43d66d44200e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e42fbcf0_5dfe8a1e",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESAdapterInitializer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-08-23T14:32:31Z",
+      "side": 1,
+      "message": "any reason to keep dead code around?",
+      "revId": "457452494130035de66d2209284a43d66d44200e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7c1d069_6ed88ab4",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FetchDynamicConfig.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-08-23T14:32:31Z",
+      "side": 1,
+      "message": "This should really use the Java classes to retrieve a remote URL. Executing \"curl\" as a subprocess is an extremely expensive way to do this. This is especially true when doing this periodically.\n\ntry {\nURL url \u003d new URL(urlString);\nURLConnection conn \u003d url.openConnection();\nInputStream is \u003d conn.getInputStream();\netc.",
+      "revId": "457452494130035de66d2209284a43d66d44200e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
