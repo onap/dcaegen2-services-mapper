@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efb7abd9_2ee6c1f8",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESAdapterInitializer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-08-27T12:18:39Z",
+      "side": 1,
+      "message": "this will return the LAST line from the output of the destination URL.\n\nNormally you want the entire body.\n\nIf so, then use something like\n\nStringBuilder ret \u003d new StringBuilder();\n. . .\nwhile ((line \u003d rd.readLine()) !\u003d null) { \nret.append(line); \nret.append(\u0027\\n\u0027); // readLine() trims the trailing NL\n}\n. . .\nreturn ret.toString();\n\n\nIf you truly only want the last line, please change the name to fetchLastLineFromDestination().",
+      "revId": "fefabb053c2a2e2cb73301c9fec87228731fc503",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "56598d15_fb7fa0c0",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FetchDynamicConfig.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-08-27T12:18:39Z",
+      "side": 1,
+      "message": "readLine() trims off the trailing NL\nyou might want to also\nsb.append(\u0027\\n\u0027);\n\nor  append System.getProperty(\"line.separator\"), but I don\u0027t think that is as useful because it\u0027s less predictable.",
+      "revId": "fefabb053c2a2e2cb73301c9fec87228731fc503",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
