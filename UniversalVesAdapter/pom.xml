@@ -325,7 +325,7 @@
 						<tag>${project.version}-${maven.build.timestamp}Z</tag>
 						<tag>${project.version}</tag>
 					</imageTags>
-					<baseImage>ubuntu:16.04</baseImage>
+					<baseImage>alpine:3.8</baseImage>
 					<env>
 						<HOSTALIASES>/etc/host.aliases</HOSTALIASES>
 					</env>
