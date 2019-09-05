@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "645557a5_2e0aff42",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/CollectorConfigPropertyRetrival.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-09-05T12:17:22Z",
+      "side": 1,
+      "message": "This class\nCollectorConfigPropertyRetrival should REALLY be named CollectorConfigPropertyRetrieval\n\nI\u0027m not going to insist on this fix, but . . .",
+      "revId": "cde752c0014955a500972f5f4f26810a778a2b54",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0cfb2a51_1bf5e0bf",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/CollectorConfigPropertyRetrival.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-09-05T12:17:22Z",
+      "side": 1,
+      "message": "properyName \u003d\u003e propertyName",
+      "revId": "cde752c0014955a500972f5f4f26810a778a2b54",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
