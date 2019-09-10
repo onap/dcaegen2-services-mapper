@@ -339,7 +339,7 @@
 					<runs>
 						<run>chmod +x bin/run.sh</run>
 						<run>
-                            <![CDATA[apt-get update && apt-get install -y curl && apt-get install -y openjdk-8-jdk  && apt-get install -y vim && apt-get clean all]]>
+                            <![CDATA[apk update && apk add curl && apk add --no-cache openjdk8 && apk add vim]]>
 						</run>
 					</runs>
 					<exposes>
