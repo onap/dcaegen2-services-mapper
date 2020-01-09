@@ -60,6 +60,18 @@
 
 	</properties>
 	<dependencies>
+		<!-- kafka dependencies -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		
 		<!-- Junit, Mockito, PowerMock -->
 		<dependency>
 			<groupId>junit</groupId>

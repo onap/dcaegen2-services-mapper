@@ -45,7 +45,7 @@ import org.springframework.stereotype.Component;
 /**
  * Service that starts the universal ves adapter module to listen for events
  *
- * @author kmalbari
+ * @author kmalbari,rrocher
  *
  */
 /**
@@ -56,139 +56,66 @@ import org.springframework.stereotype.Component;
 @Component
 public class VesService {
 
-    private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
-    private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
-    private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
+	private static final Logger metricsLogger = LoggerFactory.getLogger("metricsLogger");
+	private static final Logger debugLogger = LoggerFactory.getLogger("debugLogger");
+	private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
 
-    private boolean isRunning = true;
-    @Value("${defaultConfigFilelocation}")
-    private String defaultConfigFilelocation;
-    @Autowired
-    private Creator creator;
-    @Autowired
-    private UniversalEventAdapter eventAdapter;
-    @Autowired
-    private DmaapConfig dmaapConfig;
-    @Autowired
-    private CollectorConfigPropertyRetrieval collectorConfigPropertyRetrival;
-    private static List<String> list = new LinkedList<String>();
+	private boolean isRunning = true;
 
+	@Value("${defaultConfigFilelocation}")
+	private String defaultConfigFilelocation;
 
-    /**
-     * method triggers universal VES adapter module.
-     */
-    public void start() throws MapperConfigException {
-        debugLogger.info("Creating Subcriber and Publisher with creator.............");
-        String topicName = null;
-        String publisherTopic = null;
-        // Hashmap of subscriber and publisher details in correspondence to the respective
-        // collectors in kv file
-        Map<String, String> dmaapTopics = collectorConfigPropertyRetrival
-                .getDmaapTopics("stream_subscriber", "stream_publisher", defaultConfigFilelocation);
+	@Value("${mode}")
+	private FunctionMode mode;
 
-        ExecutorService executorService = Executors.newFixedThreadPool(dmaapTopics.size());
-        for (Map.Entry<String, String> entry : dmaapTopics.entrySet()) {
-            String threadName = entry.getKey();
-            // subcriber and corresponding publisher topics in a Map
-            Map<String, String> subpubTopics = collectorConfigPropertyRetrival
-                    .getTopics(entry.getKey(), entry.getValue(), defaultConfigFilelocation);
-            for (Map.Entry<String, String> entry2 : subpubTopics.entrySet()) {
-                topicName = entry2.getKey();
-                publisherTopic = entry2.getValue();
-            }
+	@Autowired
+	private VESRouter pubSubRouter;
 
+	@Autowired
+	private VESRouter dmaapRouter;
 
-            // Publisher and subcriber as per each collector
-            DMaaPMRSubscriber subcriber = creator.getDMaaPMRSubscriber(topicName);
+	@Autowired
+	private VESRouter streamsRouter;
 
-            DMaaPMRPublisher publisher = creator.getDMaaPMRPublisher(publisherTopic);
-            debugLogger.info(
-                    "Created scriber topic:" + topicName + "publisher topic:" + publisherTopic);
+	/**
+	 * method triggers universal VES adapter module.
+	 */
+	public void start() throws MapperConfigException {
 
-            executorService.submit(new Runnable() {
+		switch (mode) {
+		case KAFKA:
+			pubSubRouter.process();
+			break;
+		case DMAAP:
+			dmaapRouter.process();
+			break;
+		case STREAMS:
+			streamsRouter.process();
+			break;
+		default:
+			break;
+		}
+	}
 
-                @Override
-                public void run() {
+	/**
+	 * method stops universal ves adapter module
+	 */
+	public void stop() {
+		isRunning = false;
 
-                    Thread.currentThread().setName(threadName);
-                    metricsLogger.info("fetch and publish from and to Dmaap started:"
-                            + Thread.currentThread().getName());
-                    int pollingInternalInt = dmaapConfig.getPollingInterval();
-                    debugLogger.info(
-                            "The Polling Interval in Milli Second is :{}" + pollingInternalInt);
-                    debugLogger.info("starting subscriber & publisher thread:{}",
-                            Thread.currentThread().getName());
-                    while (true) {
-                        synchronized (this) {
-                            for (String incomingJsonString : subcriber.fetchMessages()
-                                    .getFetchedMessages()) {
-                                list.add(incomingJsonString);
+		switch (mode) {
+		case KAFKA:
+			pubSubRouter.terminate();
+			break;
+		case DMAAP:
+			dmaapRouter.terminate();
+			break;
+		case STREAMS:
+			streamsRouter.terminate();
+			break;
+		default:
+			break;
+		}
+	}
 
-                            }
-
-                            if (list.isEmpty()) {
-                                try {
-                                    Thread.sleep(pollingInternalInt);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            debugLogger.debug("number of messages to be converted :{}",
-                                    list.size());
-
-                            if (!list.isEmpty()) {
-                                String val = ((LinkedList<String>) list).removeFirst();
-                                List<String> messages = new ArrayList<>();
-                                String vesEvent = processReceivedJson(val);
-                                if (vesEvent != null
-                                        && (!(vesEvent.isEmpty() || vesEvent.equals("")))) {
-                                    messages.add(vesEvent);
-                                    publisher.publish(messages);
-
-                                    metricsLogger
-                                    .info("Message successfully published to DMaaP Topic-\n"
-                                            + vesEvent);
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-
-
-    }
-
-    /**
-     * method stops universal ves adapter module
-     */
-    public void stop() {
-        isRunning = false;
-    }
-
-
-    /**
-     * method for processing the incoming json to ves
-     *
-     * @param incomingJsonString
-     * @return ves
-     */
-    private String processReceivedJson(String incomingJsonString) {
-        String outgoingJsonString = null;
-        if (!"".equals(incomingJsonString)) {
-
-            try {
-
-                outgoingJsonString = eventAdapter.transform(incomingJsonString);
-
-            } catch (VesException exception) {
-                errorLogger.error("Received exception : {},{}" + exception.getMessage(), exception);
-                debugLogger.warn("APPLICATION WILL BE SHUTDOWN UNTIL ABOVE ISSUE IS RESOLVED.");
-            } catch (DMaapException e) {
-                errorLogger.error("Received exception : {}", e.getMessage());
-            }
-        }
-        return outgoingJsonString;
-    }
 }
