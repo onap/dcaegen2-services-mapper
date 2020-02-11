@@ -122,6 +122,9 @@
         <site.path>
             content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
         </site.path>
+	<sonar.coverage.jacoco.xmlReportPaths>
+	  ${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml
+	</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <dependencyManagement>
