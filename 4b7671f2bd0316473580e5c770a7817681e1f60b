@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "6dbef454_bf30736f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "Once again, I realize the project is already using Jackson, and I don\u0027t expect you to resolve this in this commit,\n\nbut as far as I am aware ONAP as a whole has been trying to migrate away from the use of Jackson and to GSON,\n\nsee https://wiki.onap.org/display/DW/Using+Google+gson+vs+FasterXML+Jackson\nI wonder would you be willing to do that migration in a separate commit?",
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b246f34_d2cfa290",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "Should be a change to the version in the pom.xml and also the version.properties",
+      "range": {
+        "startLine": 35,
+        "startChar": 3,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "816d76c9_cee37b94",
         "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FileUtils.java",
         "patchSetId": 1
@@ -82,6 +122,46 @@
         "endLine": 50,
         "endChar": 30
       },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b2c2ba6_edc0e778",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/StreamsCollector.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "This file is added in 2020",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 17
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c9452a2_21cc8c02",
+        "filename": "UniversalVesAdapter/src/main/resources/kvWithKafkaExample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "If this file is really an example it should probably exist outside of the src/main/resources these resources are generally built into the jar no need for unused files there.\nIf it\u0027s used in a test you could use src/test/resources, if this is actually needed for the application to work then the name shouldn\u0027t imply its an example",
       "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
