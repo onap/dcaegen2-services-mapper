@@ -42,6 +42,172 @@
     },
     {
       "key": {
+        "uuid": "64fcb0d6_6863ce5c",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/kafka/pubsub/pub/ProducerCreator.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 96
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a0275b5_7d6ab806",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESGenericMessageProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "Javadoc",
+      "range": {
+        "startLine": 41,
+        "startChar": 15,
+        "endLine": 41,
+        "endChar": 34
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa757b89_da958efb",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESGenericMessageProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "This check is not very expressive, I\u0027d consider something like\nincomingJsonString !\u003d null \u0026\u0026 !incomingJsonString.isEmpty()\nyes, I know you have to add in a null check but at least its clear the intent of the check.\n\nIn addition if you did decide to use Lombok you  could annotate the paramter with @NonNull, and then reduce the check to just \n!incomingJsonString.isEmpty()",
+      "range": {
+        "startLine": 43,
+        "startChar": 6,
+        "endLine": 43,
+        "endChar": 36
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c38e77dc_e7123dc0",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VesService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "This seems a bit odd, if the goal was to have multiple output files, you could achieve that with a single logger object and multiple file appenders.\n\nAm I missing something or is there an actual need for these 3 loggers?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 0
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "207feaeb_4134a748",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VesService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "Each of these 3 classes are managing their own Executor Service, I wonder is it better to manage the executor service on level up, and have the three classes focus only on their individual business logic, would lead to a cleaner solution, with more code reuse.",
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "458493c4_ce3df57c",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VesService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "You could probably replace these switches entirely if you stored the routers in a map, then used the \"mode\" as the key, would work fine since these are all polymorphic adhering to an interface.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 2
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c984e6d_183587b2",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/Collector.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "I wonder would something like projectlombok,\nhttps://projectlombok.org/\nmake this class look significantly cleaner",
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b1a8b3c_dbb71035",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/CollectorConfigPropertyRetrieval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T13:35:48Z",
+      "side": 1,
+      "message": "Public methods should have Javadocs, there are multiple in this file without.",
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "816d76c9_cee37b94",
         "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FileUtils.java",
         "patchSetId": 1
