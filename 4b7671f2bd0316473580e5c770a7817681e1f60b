@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "816d76c9_cee37b94",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FileUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "It might be a good idea to include some trace/debug logs in the below utility functions, that way even if the client doesn\u0027t provide logging there is guaranteed to be some way of tracking what is happening.",
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10c1aa64_e09c614a",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FileUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "Given the purpose is for this to be called by clients, then you should have a Javadoc.",
+      "range": {
+        "startLine": 32,
+        "startChar": 22,
+        "endLine": 32,
+        "endChar": 43
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b98d9ea_e824047f",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FileUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "Given the resolution is the same for this FileNotFoundException and the IOException, and FileNotFoundException inherits IOException, you could just catch the IOException that will handle the FileNotFoundException too.\n\nIf you have a look at the API you will see the inheritance https://docs.oracle.com/javase/8/docs/api/java/io/FileNotFoundException.html",
+      "range": {
+        "startLine": 39,
+        "startChar": 11,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13f4a535_1c398f85",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/utils/FileUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4023
+      },
+      "writtenOn": "2020-03-02T10:23:10Z",
+      "side": 1,
+      "message": "Given the purpose is for this to be called by clients, then you should have a Javadoc.",
+      "range": {
+        "startLine": 50,
+        "startChar": 22,
+        "endLine": 50,
+        "endChar": 30
+      },
+      "revId": "4b7671f2bd0316473580e5c770a7817681e1f60b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
