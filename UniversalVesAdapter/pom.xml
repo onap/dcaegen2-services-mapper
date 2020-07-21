@@ -40,7 +40,7 @@
 		<!-- PROJECT SETTINGS -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
 		<docker.image.name>onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor</docker.image.name>
 
 		<!-- PLUGIN SETTINGS -->
@@ -331,7 +331,7 @@
 						<tag>${project.version}-${maven.build.timestamp}Z</tag>
 						<tag>${project.version}</tag>
 					</imageTags>
-					<baseImage>alpine:3.8</baseImage>
+					<baseImage>openjdk:11-jre-slim</baseImage>
 					<env>
 						<HOSTALIASES>/etc/host.aliases</HOSTALIASES>
 					</env>
@@ -345,7 +345,7 @@
 					<runs>
 						<run>chmod +x bin/run.sh</run>
 						<run>
-                            <![CDATA[apk update && apk add curl && apk add --no-cache openjdk8 && apk add vim]]>
+                            <![CDATA[apk update && apk add curl && apk add --no-cache openjdk11 && apk add vim]]>
 						</run>
 					</runs>
 					<exposes>

@@ -31,7 +31,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
 	
 
  <docker.image.name>onap/org.onap.dcaegen2.services.mapper.snmpmapper</docker.image.name>
@@ -206,7 +206,7 @@
 				<tag>${project.version}-${maven.build.timestamp}Z</tag>
 				<tag>${project.version}</tag>
                     </imageTags>
-                    <baseImage>ubuntu:16.04</baseImage>
+					<baseImage>openjdk:11-jre-slim</baseImage>
                     <env>
                     <HOSTALIASES>/etc/host.aliases</HOSTALIASES>
 			<HOME>/opt/app/SnmpMapper</HOME>
@@ -222,7 +222,7 @@
                     <runs>
                         <run>chmod +x bin/run.sh</run>
                         <run>
-                            <![CDATA[apt-get update && apt-get install -y curl && apt-get install -y openjdk-8-jdk  && apt-get install -y vim && apt-get clean all]]>
+                            <![CDATA[apt-get update && apt-get install -y curl && apt-get install -y openjdk-11-jdk  && apt-get install -y vim && apt-get clean all]]>
                         </run>
                     </runs>
                     <exposes>
