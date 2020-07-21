@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "367df9b9_f6a8082e",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-21T13:17:18Z",
+      "side": 1,
+      "message": "as 1.0.1 is already released, version should be changed (on all pom.xml, version.properties file); you can include this with java11 change and set version to 1.1.0",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 24
+      },
+      "revId": "7b8275e5128a683713f7c841a3bd7b7a12064426",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
