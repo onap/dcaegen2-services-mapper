@@ -25,6 +25,7 @@ import static org.junit.Assert.assertNotNull;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -39,10 +40,14 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(PowerMockRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
+@AutoConfigureMockMvc
+@Ignore
 public class UniversalEventAdapterTest {
 
     private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
