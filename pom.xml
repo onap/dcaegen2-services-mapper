@@ -4,7 +4,8 @@
 * ONAP : DCAEGEN2/services/mapper
 * ================================================================================
 * Copyright 2018-2019 TechMahindra
-*=================================================================================
+* Modifications Copyright (C) 2020 Huawei Technologies Co., Ltd.
+* ================================================================================
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -30,7 +31,7 @@
 
     <groupId>org.onap.dcaegen2.services.mapper</groupId>
     <artifactId>mapper</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>dcaegen2-services-mapper</name>
@@ -104,8 +105,8 @@
         <!--PLUGIN SETTINGS -->
         <!-- <compiler.source.version>1.7</compiler.source.version>
         <compiler.target.version>1.7</compiler.target.version> -->
-         <compiler.source.version>1.8</compiler.source.version>
-        <compiler.target.version>1.8</compiler.target.version>
+         <compiler.source.version>11</compiler.source.version>
+        <compiler.target.version>11</compiler.target.version>
         <unit.test.pattern>**/*Test.java</unit.test.pattern>
         <skip.unit.tests>false</skip.unit.tests>
         <integration.test.pattern>**/*IT.java</integration.test.pattern>
@@ -131,21 +132,12 @@
 
         <dependencies>
 
-            <!-- LOGGING -->
-         <!--    <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>provided</scope>
-            </dependency> -->
-
-
-<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-<dependency>
-    <groupId>com.googlecode.json-simple</groupId>
-    <artifactId>json-simple</artifactId>
-    <version>1.1</version>
-</dependency>
+            <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>1.1</version>
+            </dependency>
 
             <!-- UTILITIES -->
             <dependency>
@@ -153,31 +145,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons.lang3.version}</version>
             </dependency>
-
-            <!-- JACKSON JSON -->
-          <!-- <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>${jackson.json.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.json.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.json.version}</version>
-            </dependency>
-
-            JSON PATH
-            <dependency>
-                <groupId>com.jayway.jsonpath</groupId>
-                <artifactId>json-path</artifactId>
-                <version>${json.path.version}</version>
-            </dependency>  -->
-
 
             <!-- TEST DEPENDENCIES -->
 
@@ -264,35 +231,6 @@
                     </executions>
                 </plugin>
 
-
-                <!-- MAVEN JAVADOC PLUGIN -->
-               <!--  <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${javadoc.plugin.version}</version>
-                    <configuration>
-                        minimize console output messages
-                        <quiet>true</quiet>
-                        <verbose>false</verbose>
-                        <useStandardDocletOptions>false</useStandardDocletOptions>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>aggregate</id>
-                            <phase>site</phase>
-                            <goals>
-                                <goal>aggregate</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>attach-javadoc</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin> -->
-
                 <!-- MAVEN BUNDLE PLUGIN -->
                 <plugin>
                     <groupId>org.apache.felix</groupId>
@@ -324,203 +262,12 @@
                     <version>${autorun.plugin.version}</version>
                 </plugin>
 
-                <!-- SUREFIRE TEST PLUGIN -->
-                <!-- <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire.plugin.version}</version>
-                    <configuration>
-                        <skipTests>${skip.unit.tests}</skipTests>
-                        <argLine>-Xmx2048m -Djava.awt.headless=true -XX:+UseConcMarkSweepGC
-                            -XX:OnOutOfMemoryError="kill -9 %p" -XX:+HeapDumpOnOutOfMemoryError
-                        </argLine>
-                        <redirectTestOutputToFile>${surefire.redirectTestOutputToFile}</redirectTestOutputToFile>
-                        <parallel>methods</parallel>
-                        <threadCount>8</threadCount>
-                        <forkCount>8</forkCount>
-                        <reuseForks>true</reuseForks>
-                        <reportFormat>xml</reportFormat>
-                        <trimStackTrace>false</trimStackTrace>
-                        <systemPropertyVariables>
-                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
-                            <logback.configurationFile>
-                                ${basedir}/src/test/resources/logback-test.xml
-                            </logback.configurationFile>
-                            <HADOOP_HOME>${project.build.directory}</HADOOP_HOME>
-                        </systemPropertyVariables>
-                        <includes>
-                            <include>${unit.test.pattern}</include>
-                        </includes>
-                        <excludes>
-                            <exclude>${integration.test.pattern}</exclude>
-                        </excludes>
-                        Sets the VM argument line used when unit tests are run.
-                        <argLine>${surefireArgLine}</argLine>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.surefire</groupId>
-                            <artifactId>surefire-junit47</artifactId>
-                            <version>${surefire.plugin.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
- -->
-                <!-- FAIL SAFE PLUGIN FOR INTEGRATION TEST -->
-                <!-- <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>${failsafe.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>integration-tests</id>
-                            <goals>
-                                <goal>integration-test</goal>
-                                <goal>verify</goal>
-                            </goals>
-                            <configuration>
-                                <skipTests>${skip.integration.tests}</skipTests>
-                                Sets the VM argument line used when integration tests are run.
-                                suppress MavenModelInspection
-                                <argLine>${failsafeArgLine}</argLine>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin> -->
-
-                <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
-                <!-- <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs.plugin.version}</version>
-                    <configuration>
-                        <effort>Max</effort>
-                        <threshold>Low</threshold>
-                        <xmlOutput>true</xmlOutput>
-                        BUILD FAIL ON FINDBUGS ERRORS
-                        <failOnError>${findbugs.failOnError}</failOnError>
-                        <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
-                        <outputDirectory>${project.reporting.outputDirectory}/findbugs</outputDirectory>
-                        <findbugsXmlOutputDirectory>${project.reporting.outputDirectory}/findbugs
-                        </findbugsXmlOutputDirectory>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>analyze-compile</id>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin> -->
-
-                <!-- PMD PLUGIN SETUP -->
-               <!--  <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>${pmd.plugin.version}</version>
-                    <configuration>
-                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                        <targetJdk>${compiler.target.version}</targetJdk>
-                        <linkXRef>false</linkXRef>
-                        <excludes>
-                            IGNORE PMD & CPD ANALYTICS MODEL FACADE OBJECTS
-                            <exclude>**/model/facade/**/*.java</exclude>
-                        </excludes>
-                        BUILD FAIL ON PMD VIOLATION
-                        <failOnViolation>${pmd.violation.buildfail}</failOnViolation>
-                        <targetDirectory>${project.reporting.outputDirectory}/pmd</targetDirectory>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>pmd-check</id>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                            <configuration>
-                                <printFailingErrors>true</printFailingErrors>
-                                <excludeFromFailureFile>${main.basedir}/pmd-exclude.properties</excludeFromFailureFile>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>cpd-check</id>
-                            <goals>
-                                <goal>cpd-check</goal>
-                            </goals>
-                            <configuration>
-                                <printFailingErrors>true</printFailingErrors>
-                                <excludeFromFailureFile>${main.basedir}/cpd-exclude.properties</excludeFromFailureFile>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin> -->
-
-                <!-- CHECKSTYLE PLUGIN -->
-               <!--  <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${checkstyle.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>validate</id>
-                            <phase>validate</phase>
-                            <configuration>
-                                <configLocation>${checkstyle.file.name}</configLocation>
-                                <suppressionsLocation>${checkstyle.suppression.file.name}</suppressionsLocation>
-                                <encoding>UTF-8</encoding>
-                                <consoleOutput>true</consoleOutput>
-                                BUILD FAIL ON CHECKSTYLE VIOLATION
-                                <failOnViolation>${checkstyle.failOnViolation}</failOnViolation>
-                                <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                                <outputFile>${project.reporting.outputDirectory}/checkstyle</outputFile>
-                            </configuration>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <artifactId>checkstyle</artifactId>
-                            <version>6.19</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
- -->
                 <!-- ECLIPSE PLUGIN -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-eclipse-plugin</artifactId>
                     <version>${eclipe.plugin.version}</version>
                 </plugin>
-
-
-
-                <!-- GIT COMMIT ID PLUGIN -->
-                <!-- <plugin>
-                    <groupId>pl.project13.maven</groupId>
-                    <artifactId>git-commit-id-plugin</artifactId>
-                    <version>${gitcommitid.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>generate-git-properties</id>
-                            <phase>generate-resources</phase>
-                            <goals>
-                                <goal>revision</goal>
-                            </goals>
-                            <configuration>
-                                <failOnNoGitDirectory>false</failOnNoGitDirectory>
-                                <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                                <generateGitPropertiesFilename>
-                                    ${project.build.directory}/git/git.properties
-                                </generateGitPropertiesFilename>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin> -->
-
 
                 <!-- JAR PLUGIN -->
                 <plugin>
@@ -544,29 +291,6 @@
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven.site.plugin}</version>
                 </plugin>
-
-                <!-- <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jxr-plugin</artifactId>
-                    <version>${jxr.plugin.version}</version>
-                </plugin>
- -->
-                <!-- <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${project.info.reports.plugin.version}</version>
-                    <configuration>
-                        <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
-                        <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-                    </configuration>
-                </plugin> -->
-
-                <!-- <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>${surefire.report.plugin.version}</version>
-                </plugin> -->
-
                 <plugin>
                     <groupId>com.spotify</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
@@ -591,56 +315,16 @@
                 <artifactId>maven-jar-plugin</artifactId>
             </plugin>
 
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
- -->
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin> -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
             </plugin>
-
-           <!--  <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin> -->
-
-           <!--  <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-            </plugin> -->
-
-           <!--  <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
- -->
-           <!--  <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <inherited>false</inherited>
-            </plugin> -->
-
-            <!-- <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
-            </plugin> -->
 
         </plugins>
     </build>
 
     <reporting>
         <plugins>
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-            </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -649,47 +333,10 @@
                     <suppressionsLocation>${checkstyle.suppression.file.name}</suppressionsLocation>
                 </configuration>
             </plugin>
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-            </plugin> -->
-           <!--  <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-            </plugin> -->
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin> -->
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin> -->
         </plugins>
     </reporting>
 
-    <profiles>
-        <profile>
-            <id>doclint-java8-disable</id>
-            <activation>
-                <jdk>[1.8,)</jdk>
-            </activation>
-            <build>
-                <plugins>
-                    <!-- <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <configuration>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                        </configuration>
-                    </plugin> -->
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <modules>
-      <!--  <module>snmpmapper</module> -->
         <module>UniversalVesAdapter</module>
     </modules>
 
