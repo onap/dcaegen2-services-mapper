@@ -4,6 +4,8 @@
  * ================================================================================
  * Copyright 2018-2019 TechMahindra
  * ================================================================================
+ * Modifications Copyright (C) 2020 Huawei Technologies Co., Ltd.
+ * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,6 +37,7 @@ import org.onap.universalvesadapter.exception.VesException;
 import org.onap.universalvesadapter.service.VESAdapterInitializer;
 import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrieval;
 import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
@@ -43,6 +46,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @RunWith(PowerMockRunner.class)
 @SpringBootTest(classes = Application.class)
+@PowerMockIgnore("jdk.internal.reflect.*")
 public class UniversalEventAdapterTest {
 
     private static final Logger errorLogger = LoggerFactory.getLogger("errorLogger");
