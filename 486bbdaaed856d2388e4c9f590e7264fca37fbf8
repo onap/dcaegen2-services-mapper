@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c8027c13_8cce90e4",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/universalvesadapter/adapter/UniversalEventAdapterTest.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "add huwaei info on copyright",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 35
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97b660c2_4670ea5d",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "add huawei info in copyright",
+      "range": {
+        "startLine": 6,
+        "startChar": 1,
+        "endLine": 6,
+        "endChar": 34
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3b8872c_2b616e33",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove dependencies not used",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 29
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "502fbe22_12a1803f",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove unused dependencies",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 30
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a245db7_fa66a2f4",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove unused dependencies",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 491,
+        "endChar": 4
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b85eb80_16fe6833",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove unused dependencies",
+      "range": {
+        "startLine": 501,
+        "startChar": 0,
+        "endLine": 523,
+        "endChar": 0
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe53c7fa_2c7206c1",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove unused dependencies",
+      "range": {
+        "startLine": 548,
+        "startChar": 0,
+        "endLine": 568,
+        "endChar": 29
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f97baa49_548c51de",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove unused dependencies",
+      "range": {
+        "startLine": 609,
+        "startChar": 0,
+        "endLine": 633,
+        "endChar": 25
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf648aee_d5e85fb9",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "remove unused dependencies",
+      "range": {
+        "startLine": 652,
+        "startChar": 0,
+        "endLine": 667,
+        "endChar": 25
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d01f241_3a0c3f8e",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-27T15:37:46Z",
+      "side": 1,
+      "message": "This profile can be removed or updated for java11",
+      "range": {
+        "startLine": 670,
+        "startChar": 0,
+        "endLine": 689,
+        "endChar": 15
+      },
+      "revId": "486bbdaaed856d2388e4c9f590e7264fca37fbf8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
