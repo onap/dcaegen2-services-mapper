@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59d43dbe_e1bda7ae",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-28T12:15:51Z",
+      "side": 1,
+      "message": "remove extra \u003d\u003d\u003d\u003d\u003d line between copyright notices",
+      "revId": "37b9b86ef14bfd165b68748315592cfcd2d468e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ea0e451_547f78dd",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/universalvesadapter/adapter/UniversalEventAdapterTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-28T12:15:51Z",
+      "side": 1,
+      "message": "remove extra \u003d\u003d\u003d\u003d\u003d line between copyright lines",
+      "revId": "37b9b86ef14bfd165b68748315592cfcd2d468e2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
