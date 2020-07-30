@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e78916d7_734148c3",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-30T01:14:51Z",
+      "side": 1,
+      "message": "remove \"Modifications\"",
+      "revId": "26e56eece0c6a8088822008b2e660f827c692b87",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec1fc4c3_33d56125",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/universalvesadapter/adapter/UniversalEventAdapterTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-30T01:14:51Z",
+      "side": 1,
+      "message": "remove \"Modifications\"",
+      "revId": "26e56eece0c6a8088822008b2e660f827c692b87",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
