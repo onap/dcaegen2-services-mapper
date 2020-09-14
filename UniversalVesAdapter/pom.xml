@@ -335,7 +335,7 @@
 						</resource>
 					</resources>
 					<runs>
-						<run>chmod +x bin/run.sh</run>
+						<run>chmod a+x bin/run.sh</run>
 						<run>
                             <![CDATA[apk update && apk add curl && apk add --no-cache openjdk11 && apk add vim]]>
 						</run>
