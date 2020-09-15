@@ -323,7 +323,7 @@
 						<tag>${project.version}-${maven.build.timestamp}Z</tag>
 						<tag>${project.version}</tag>
 					</imageTags>
-					<baseImage>onap/integration-java11:7.0.0</baseImage>
+					<baseImage>openjdk:11-jre-slim</baseImage>
 					<env>
 						<HOSTALIASES>/etc/host.aliases</HOSTALIASES>
 					</env>
@@ -335,9 +335,9 @@
 						</resource>
 					</resources>
 					<runs>
-						<run>sudo chmod a+rx bin/run.sh</run>
+						<run>chmod +x bin/run.sh</run>
 						<run>
-                            <![CDATA[apk update && apk add curl && apk add --no-cache openjdk11 && apk add vim]]>
+							<![CDATA[apt-get update && apt-get install -y --no-install-recommends procps && apt-get install -y vim && apt-get install -y curl && apt-get clean all]]>
 						</run>
 					</runs>
 					<exposes>
