@@ -337,7 +337,7 @@
 					<runs>
 						<run>chmod +x bin/run.sh</run>
 						<run>
-							<![CDATA[apt-get update && apt-get install -y --no-install-recommends procps && apt-get install -y vim && apt-get install -y curl && apt-get clean all]]>
+                            <![CDATA[apk update && apk add curl && apk add --no-cache openjdk11 && apk add vim]]>
 						</run>
 					</runs>
 					<exposes>
