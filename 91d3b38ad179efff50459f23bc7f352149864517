@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4293682d_c48ac753",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-09-15T16:47:36Z",
+      "side": 1,
+      "message": "This wouldn\u0027t work on non-alpine images; was this validated locally?",
+      "range": {
+        "startLine": 340,
+        "startChar": 37,
+        "endLine": 340,
+        "endChar": 40
+      },
+      "revId": "91d3b38ad179efff50459f23bc7f352149864517",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
