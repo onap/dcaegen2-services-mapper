@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38fb92fe_39065539",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-07-13T22:03:25Z",
+      "side": 1,
+      "message": "should be set to 4.5.13 on parent pom.xml",
+      "range": {
+        "startLine": 257,
+        "startChar": 14,
+        "endLine": 257,
+        "endChar": 32
+      },
+      "revId": "b9f0e8feb92df1c9e2906f23a9a613150b4c91b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
