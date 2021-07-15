@@ -22,6 +22,30 @@
       "revId": "b9f0e8feb92df1c9e2906f23a9a613150b4c91b4",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dca94738_e84c22aa",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2021-07-15T05:19:34Z",
+      "side": 1,
+      "message": "Changes are already done in parent pom.xml",
+      "parentUuid": "38fb92fe_39065539",
+      "range": {
+        "startLine": 257,
+        "startChar": 14,
+        "endLine": 257,
+        "endChar": 32
+      },
+      "revId": "b9f0e8feb92df1c9e2906f23a9a613150b4c91b4",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
