@@ -38,7 +38,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsRequests;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsRequest;
-import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.EnvProperties;
+import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsClientConfiguration;
 import org.onap.dcaegen2.services.sdk.rest.services.model.logging.RequestDiagnosticContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,7 +66,7 @@ public class FetchDynamicConfig {
     final CbsRequest request = CbsRequests.getConfiguration(diagnosticContext);
 
     // Read necessary properties from the environment
-    static final EnvProperties env = EnvProperties.fromEnvironment();
+    static final CbsClientConfiguration env = CbsClientConfiguration.fromEnvironment();
 
     public FetchDynamicConfig() {
 

@@ -38,7 +38,7 @@ import org.json.simple.JSONObject;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsClientFactory;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsRequests;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsRequest;
-import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.EnvProperties;
+import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsClientConfiguration;
 import org.onap.dcaegen2.services.sdk.rest.services.model.logging.RequestDiagnosticContext;
 import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrieval;
 import org.onap.universalvesadapter.utils.FetchDynamicConfig;
@@ -71,7 +71,7 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
     final CbsRequest request = CbsRequests.getConfiguration(diagnosticContext);
 
     // Read necessary properties from the environment
-    final EnvProperties env = EnvProperties.fromEnvironment();
+    final CbsClientConfiguration env = CbsClientConfiguration.fromEnvironment();
 
     // Polling properties :
     final Duration initialDelay = Duration.ofSeconds(5);
