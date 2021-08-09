@@ -43,7 +43,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
 		<docker.image.name>onap/org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor</docker.image.name>
-
+		<docker.user.name>VESAdapter</docker.user.name>
+		<docker.user.dir>/opt/app/VESAdapter</docker.user.dir>
 		<!-- PLUGIN SETTINGS -->
 		<dependency.locations.enabled>false</dependency.locations.enabled>
 
@@ -333,11 +334,11 @@
 						<imageTag>${project.version}</imageTag>
 						<imageTag>latest</imageTag>
 					</imageTags>
-					<baseImage>openjdk:11-jre-slim</baseImage>
+					<baseImage>onap/integration-java11:9.0.0</baseImage>
 					<env>
 						<HOSTALIASES>/etc/host.aliases</HOSTALIASES>
 					</env>
-					<workdir>/opt/app/VESAdapter</workdir>
+					<workdir>${docker.user.dir}</workdir>
 					<resources>
 						<resource>
 							<targetPath>.</targetPath>
@@ -345,17 +346,24 @@
 						</resource>
 					</resources>
 					<runs>
-						<run>chmod +x bin/run.sh</run>
+                        <run>useradd -r -U ${docker.user.name}</run>
+                        <run>chown -R ${docker.user.name}:${docker.user.name} ${docker.user.dir}</run>
+                        <run>chmod +x ${docker.user.dir}/bin/*.sh</run>
+                    </runs>
+					<runs>
+						<run>useradd -r -U ${docker.user.name}</run>
+						<run>chown -R ${docker.user.name}:${docker.user.name} ${docker.user.dir}</run>
+						<run>chmod +x ${docker.user.dir}/bin/run.sh</run>
 						<run>
 							<![CDATA[apt-get update && apt-get install -y --no-install-recommends procps && apt-get install -y vim && apt-get install -y curl && apt-get clean all]]>
 						</run>
 					</runs>
+					<cmd>${docker.user.dir}/bin/run.sh</cmd>
 					<exposes>
 						<expose>8080</expose>
 						<expose>8443</expose>
 					</exposes>
-					<entryPoint>bin/run.sh</entryPoint>
-
+					<user>${docker.user.name}</user>
 				</configuration>
 				<!--<executions> <execution> <id>build-image</id> <phase>package</phase> 
 					<goals> <goal>build</goal> </goals> </execution> <execution> <id>tag-and-push-image-latest</id> 
