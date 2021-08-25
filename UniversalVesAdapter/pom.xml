@@ -333,29 +333,13 @@
 						<imageTag>${project.version}</imageTag>
 						<imageTag>latest</imageTag>
 					</imageTags>
-					<baseImage>openjdk:11-jre-slim</baseImage>
-					<env>
-						<HOSTALIASES>/etc/host.aliases</HOSTALIASES>
-					</env>
-					<workdir>/opt/app/VESAdapter</workdir>
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 					<resources>
 						<resource>
 							<targetPath>.</targetPath>
 							<directory>${project.build.directory}/${project.artifactId}-${project.version}</directory>
 						</resource>
 					</resources>
-					<runs>
-						<run>chmod +x bin/run.sh</run>
-						<run>
-							<![CDATA[apt-get update && apt-get install -y --no-install-recommends procps && apt-get install -y vim && apt-get install -y curl && apt-get clean all]]>
-						</run>
-					</runs>
-					<exposes>
-						<expose>8080</expose>
-						<expose>8443</expose>
-					</exposes>
-					<entryPoint>bin/run.sh</entryPoint>
-
 				</configuration>
 				<!--<executions> <execution> <id>build-image</id> <phase>package</phase> 
 					<goals> <goal>build</goal> </goals> </execution> <execution> <id>tag-and-push-image-latest</id> 
