@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f206b87_643add8c",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-24T01:22:59Z",
+      "side": 1,
+      "message": "while you have the file open, please fix the tab characters",
+      "revId": "94cc3db51d4e182b7471c08c216ebf886a678468",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a64a975_c9aedc45",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-24T01:22:59Z",
+      "side": 1,
+      "message": "while you have the file open, please fix the tab characters",
+      "revId": "94cc3db51d4e182b7471c08c216ebf886a678468",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
