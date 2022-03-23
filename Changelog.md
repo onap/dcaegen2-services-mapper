@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.0] - 2022/03/29
+         - [DCAEGEN2-3097] - VESMapper relying on CBS interface
+
 ## [1.3.3] - 2022/02/23
          - [DCAEGEN2-3048] - Vulnerability fixes for J release (xstream,jackson-core,jackson-databind,gson)
 
