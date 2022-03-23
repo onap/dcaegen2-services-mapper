@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e1a06dc8_3ab5c267",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESAdapterInitializer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-03-23T14:59:29Z",
+      "side": 0,
+      "message": "This lib is required",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 84
+      },
+      "revId": "72e071a66ff242722ac389229b2b964634b7686a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
