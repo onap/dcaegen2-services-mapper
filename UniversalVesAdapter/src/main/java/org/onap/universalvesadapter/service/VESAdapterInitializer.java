@@ -3,6 +3,7 @@
  * ONAP : DCAE
  * ================================================================================
  * Copyright 2018-2019 TechMahindra
+ * Copyright (C) 2022 Huawei Technologies Co., Ltd.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +42,7 @@ import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsRequest;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsClientConfiguration;
 import org.onap.dcaegen2.services.sdk.rest.services.model.logging.RequestDiagnosticContext;
 import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrieval;
-import org.onap.universalvesadapter.utils.FetchDynamicConfig;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,22 +96,13 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
         // Create the client and use it to get the configuration
         CbsClientFactory.createCbsClient(env).flatMapMany(cbsClient -> cbsClient.updates(request, initialDelay, period))
         .subscribe(jsonObject -> {
-
-            // If env details not fetched static configuration file will be used
-            if (env.consulHost() != null && env.cbsName() != null && env.appName() != null) {
-                debugLogger.info(">>>Dynamic configuration to be used");
-                FetchDynamicConfig.cbsCall(defaultConfigFilelocation);
-            }
-
             readJsonToMap(defaultConfigFilelocation);
 
             debugLogger.info("Triggering controller's start url ");
             fetchResultFromDestination("http://localhost:" + serverPort + "/start");
-
         }, throwable -> {
             debugLogger.warn("Cannot Connect", throwable);
         });
-
     }
 
     /**
