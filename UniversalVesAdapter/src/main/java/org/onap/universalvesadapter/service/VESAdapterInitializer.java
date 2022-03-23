@@ -35,13 +35,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsClientFactory;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsRequests;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsRequest;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsClientConfiguration;
 import org.onap.dcaegen2.services.sdk.rest.services.model.logging.RequestDiagnosticContext;
 import org.onap.universalvesadapter.utils.CollectorConfigPropertyRetrieval;
-import org.onap.universalvesadapter.utils.FetchDynamicConfig;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,26 +90,10 @@ public class VESAdapterInitializer implements CommandLineRunner, Ordered {
                 return -1;
             }));
         }
+        readJsonToMap(defaultConfigFilelocation);
 
-        // Create the client and use it to get the configuration
-        CbsClientFactory.createCbsClient(env).flatMapMany(cbsClient -> cbsClient.updates(request, initialDelay, period))
-        .subscribe(jsonObject -> {
-
-            // If env details not fetched static configuration file will be used
-            if (env.consulHost() != null && env.cbsName() != null && env.appName() != null) {
-                debugLogger.info(">>>Dynamic configuration to be used");
-                FetchDynamicConfig.cbsCall(defaultConfigFilelocation);
-            }
-
-            readJsonToMap(defaultConfigFilelocation);
-
-            debugLogger.info("Triggering controller's start url ");
-            fetchResultFromDestination("http://localhost:" + serverPort + "/start");
-
-        }, throwable -> {
-            debugLogger.warn("Cannot Connect", throwable);
-        });
-
+        debugLogger.info("Triggering controller's start url ");
+        fetchResultFromDestination("http://localhost:" + serverPort + "/start");
     }
 
     /**
