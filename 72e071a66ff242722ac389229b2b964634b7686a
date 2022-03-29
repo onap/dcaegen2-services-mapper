@@ -22,6 +22,30 @@
       "revId": "72e071a66ff242722ac389229b2b964634b7686a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a4679a4_226757fe",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/service/VESAdapterInitializer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-03-29T12:30:03Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "e1a06dc8_3ab5c267",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 84
+      },
+      "revId": "72e071a66ff242722ac389229b2b964634b7686a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
