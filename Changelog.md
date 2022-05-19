@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.1] - 2022/05/19
+         - [DCAEGEN2-3105] - Remove log4j transitive dependency from VES-Mapper
+
 ## [1.4.0] - 2022/03/29
          - [DCAEGEN2-3097] - Remove VESMapper reliance on CBS/Consul
 
