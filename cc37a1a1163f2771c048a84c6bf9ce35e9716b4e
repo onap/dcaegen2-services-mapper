@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa01a33_73c157de",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-05-20T13:41:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "022cf4a0_7e31afdb",
+      "revId": "cc37a1a1163f2771c048a84c6bf9ce35e9716b4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b0ec73f0_15605e36",
         "filename": "pom.xml",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "cc37a1a1163f2771c048a84c6bf9ce35e9716b4e",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e8098c0_a59e3a3f",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-05-20T13:41:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0ec73f0_15605e36",
+      "revId": "cc37a1a1163f2771c048a84c6bf9ce35e9716b4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
