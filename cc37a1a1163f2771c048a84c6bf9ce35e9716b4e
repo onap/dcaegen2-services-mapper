@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "022cf4a0_7e31afdb",
+        "filename": "UniversalVesAdapter/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-20T12:33:25Z",
+      "side": 1,
+      "message": "change to \n2020-2022 Huawei . . .",
+      "revId": "cc37a1a1163f2771c048a84c6bf9ce35e9716b4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0ec73f0_15605e36",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-20T12:33:25Z",
+      "side": 1,
+      "message": "change to\n2020-2022 Huawei Technologies Co., Ltd.",
+      "revId": "cc37a1a1163f2771c048a84c6bf9ce35e9716b4e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
