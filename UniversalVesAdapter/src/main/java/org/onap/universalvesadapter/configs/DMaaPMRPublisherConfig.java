@@ -59,7 +59,7 @@ public class DMaaPMRPublisherConfig extends DMaaPMRBaseConfig {
 	 */
 	private String dmaapUriPathPrefix ;
 
-    private DMaaPMRPublisherConfig(Builder builder) {
+    public DMaaPMRPublisherConfig(Builder builder) {
         this.hostName = builder.hostName;
         this.portNumber = builder.portNumber;
         this.topicName = builder.topicName;
@@ -91,9 +91,9 @@ public class DMaaPMRPublisherConfig extends DMaaPMRBaseConfig {
 		
 
 		public Builder(@Nonnull String topicName, DmaapConfig dmaapConfig) throws IOException {
-this.topicName = topicName;
-this.hostName = dmaapConfig.getDmaaphost();
-		this.portNumber = dmaapConfig.getDEFAULT_PORT_NUMBER();
+			this.topicName = topicName;
+			this.hostName = dmaapConfig.getDmaaphost();
+			this.portNumber = dmaapConfig.getDEFAULT_PORT_NUMBER();
 			// Default values
 	
 			this.userName = dmaapConfig.getDEFAULT_USER_NAME();
