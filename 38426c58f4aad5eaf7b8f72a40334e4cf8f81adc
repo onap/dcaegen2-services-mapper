@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a6ce0535_c6d2488b",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/universalvesadapter/domain/TcaAlertActionTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-14T13:24:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f18a10a0_0e90e5a1",
+      "revId": "38426c58f4aad5eaf7b8f72a40334e4cf8f81adc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0306bcd3_e63a0bfa",
         "filename": "UniversalVesAdapter/src/test/java/org/onap/universalvesadapter/utils/DmaapConfigTest.java",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "38426c58f4aad5eaf7b8f72a40334e4cf8f81adc",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86473173_f7540c1c",
+        "filename": "UniversalVesAdapter/src/test/java/org/onap/universalvesadapter/utils/DmaapConfigTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-14T13:24:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0306bcd3_e63a0bfa",
+      "revId": "38426c58f4aad5eaf7b8f72a40334e4cf8f81adc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
