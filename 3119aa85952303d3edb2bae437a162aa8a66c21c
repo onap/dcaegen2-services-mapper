@@ -33,6 +33,23 @@
       "revId": "3119aa85952303d3edb2bae437a162aa8a66c21c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b8f9216_5ab6dc55",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/configs/DMaaPMRPublisherConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-14T13:41:50Z",
+      "side": 1,
+      "message": "no newline at the end of the file",
+      "revId": "3119aa85952303d3edb2bae437a162aa8a66c21c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
