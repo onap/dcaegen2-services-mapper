@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "56a06bd1_d6628543",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/configs/DMaaPMRPublisherConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-15T22:03:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c089f81_484dcc95",
+      "revId": "3119aa85952303d3edb2bae437a162aa8a66c21c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76d3c513_79716bea",
         "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/configs/DMaaPMRPublisherConfig.java",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "c8af0b14_e414521c",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/configs/DMaaPMRPublisherConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-15T22:03:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76d3c513_79716bea",
+      "revId": "3119aa85952303d3edb2bae437a162aa8a66c21c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b8f9216_5ab6dc55",
         "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/configs/DMaaPMRPublisherConfig.java",
         "patchSetId": 3
@@ -50,6 +86,24 @@
       "revId": "3119aa85952303d3edb2bae437a162aa8a66c21c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74d2949b_4fde44e4",
+        "filename": "UniversalVesAdapter/src/main/java/org/onap/universalvesadapter/configs/DMaaPMRPublisherConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-15T22:03:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b8f9216_5ab6dc55",
+      "revId": "3119aa85952303d3edb2bae437a162aa8a66c21c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
