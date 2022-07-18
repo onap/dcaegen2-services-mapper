@@ -32,7 +32,7 @@
 
     <groupId>org.onap.dcaegen2.services.mapper</groupId>
     <artifactId>mapper</artifactId>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.4.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>dcaegen2-services-mapper</name>
