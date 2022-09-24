@@ -53,9 +53,12 @@
             content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
         </site.path>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
-
+        <jackson.core.version>2.13.3</jackson.core.version>
         <!-- DCAE SDK version -->
-        <sdk.version>1.8.7</sdk.version>
+        <sdk.version>1.8.10</sdk.version>
+
+        <!-- OGR override -->
+        <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
 
     </properties>
     <dependencies>
@@ -206,12 +209,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.12.6</version>
+            <version>${jackson.core.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.13.3</version>
+            <version>${jackson.core.version}</version>
         </dependency>
         <dependency>
             <groupId>hsqldb</groupId>
