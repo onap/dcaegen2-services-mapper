@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.5.0] - 2023/02/03
+         - [DCAEGEN2-3343] - dcaegen2-services-mapper vulnerability updates
+
 ## [1.4.3] - 2022/09/23
          - [DCAEGEN2-3217] - dcaegen2-services-mapper vulnerability updates
          - [DCAEGEN2-3269] - Fix application startup error + SDK version bump
