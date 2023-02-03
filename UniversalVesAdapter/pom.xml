@@ -6,6 +6,7 @@
 * Copyright 2018-2019 TechMahindra
 * Copyright (C) 2020-2022 Huawei Technologies Co., Ltd.
 * Copyright (c) 2021-2022 AT&T Intellectual Property. All rights reserved.
+* Copyright (C) 2023 Deutsche Telekom AG. All rights reserved.
 * ================================================================================
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -28,11 +29,11 @@
 
     <groupId>org.onap.dcaegen2.services.mapper.vesadapter</groupId>
     <artifactId>UniversalVesAdapter</artifactId>
-    <version>1.4.3-SNAPSHOT</version>
+    <version>1.5.0-SNAPSHOT</version>
     <parent>
         <groupId>org.onap.dcaegen2.services.mapper</groupId>
         <artifactId>mapper</artifactId>
-        <version>1.4.3-SNAPSHOT</version>
+        <version>1.5.0-SNAPSHOT</version>
     </parent>
     <properties>
 
@@ -53,7 +54,7 @@
             content/sites/site/org/onap/dcaegen2/services/mapper/${project.artifactId}/${project.version}
         </site.path>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
-        <jackson.core.version>2.13.3</jackson.core.version>
+        <jackson.core.version>2.14.1</jackson.core.version>
         <!-- DCAE SDK version -->
         <sdk.version>1.8.10</sdk.version>
 
@@ -166,7 +167,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.3.6</version>
+            <version>42.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -277,7 +278,7 @@
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty</artifactId>
-            <version>0.9.12.RELEASE</version>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- * ============LICENSE_START======================================================= 
-	* ONAP : DCAEGEN2/services/mapper * ================================================================================ 
-	* Copyright 2018 TechMahindra *================================================================================= 
+	* ONAP : DCAEGEN2/services/mapper 
+	* ================================================================================ 
+	* Copyright 2018 TechMahindra
+	* Copyright (C) 2023 Deutsche Telekom AG. All rights reserved.
+	*================================================================================= 
 	* Licensed under the Apache License, Version 2.0 (the "License"); * you may 
 	not use this file except in compliance with the License. * You may obtain 
 	a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 * 
@@ -16,7 +19,7 @@
 
 	<groupId>org.onap.dcaegen2.services.mapper</groupId>
 	<artifactId>snmpmapper</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>snmpmapper</name>
@@ -25,13 +28,13 @@
 	<parent>
 		<groupId>org.onap.dcaegen2.services.mapper</groupId>
 		<artifactId>mapper</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.5.0-SNAPSHOT</version>
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
 	
 
  <docker.image.name>onap/org.onap.dcaegen2.services.mapper.snmpmapper</docker.image.name>
@@ -94,7 +97,7 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
-			 <version>42.2.5</version>
+			 <version>42.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
