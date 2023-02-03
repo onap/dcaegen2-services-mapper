@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d74a0e42_b7d51a31",
+        "filename": "snmpmapper/Changelog.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-02-03T21:50:49Z",
+      "side": 1,
+      "message": "This changelog was not necessary as the specific submodule has been retired",
+      "revId": "0aa02aaafa1ee8be3bbe66b421be5d80c73e421b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b01357ac_9713fdc9",
+        "filename": "snmpmapper/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2023-02-03T21:50:49Z",
+      "side": 1,
+      "message": "snmpmapper module is not an active sub-component (check main pom.xml for active modules)",
+      "revId": "0aa02aaafa1ee8be3bbe66b421be5d80c73e421b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
