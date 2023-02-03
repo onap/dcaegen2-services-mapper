@@ -6,6 +6,7 @@
 * Copyright 2018-2019 TechMahindra
 * Copyright (C) 2020-2022 Huawei Technologies Co., Ltd.
 * Copyright (c) 2021-2022 AT&T Intellectual Property. All rights reserved.
+* Copyright (C) 2023 Deutsche Telekom AG. All rights reserved.
 * ================================================================================
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -32,7 +33,7 @@
 
     <groupId>org.onap.dcaegen2.services.mapper</groupId>
     <artifactId>mapper</artifactId>
-    <version>1.4.3-SNAPSHOT</version>
+    <version>1.5.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>dcaegen2-services-mapper</name>
