@@ -1,0 +1,10 @@
+distribution_type: 'container'
+container_release_tag: '1.5.0'
+project: 'dcaegen2/services/mapper'
+log_dir: 'dcaegen2-services-mapper-maven-docker-stage-master/1361/'
+ref: 0aa02aaafa1ee8be3bbe66b421be5d80c73e421b
+containers:
+    - name: 'org.onap.dcaegen2.services.mapper.vesadapter.universalvesadaptor'
+      version: '1.5.0-20230331T051529Z'
+git_tag: '1.5.0'
+
